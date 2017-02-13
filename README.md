@@ -1,2 +1,2 @@
 # iris_bros
-Test repository for IRIS testing based things
+This is a test repository for IRIS externally hosted page functionality. Includes options for Staging & ProdTesting
