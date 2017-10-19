@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>A Signup App Form</title>
+	<link rel="stylesheet" href="./formViews.css"/>
+</head>
+<body>
+<h1> A  SignupApp 2 Form - With Double Opt-In</h1>
+<p> This form has a Double Opt-In included. The email will not be added/processed until the customer confirmed by clicking the link in an email</p>
+
+<h3>*** FORM NEEDED *** </h3>
+</body>
+</html>
