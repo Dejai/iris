@@ -3,7 +3,7 @@
 <head>
 	<title>A Signup App Form - No Thank You Page</title>
 	<style>
-		body { padding-top:5%; padding-left:5%; }
+		body { padding-top:2%; padding-left:5%; }
 	</style>
 </head>
 <body>
