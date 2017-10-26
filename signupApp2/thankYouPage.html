@@ -6,8 +6,15 @@
 </head>
 <body>
 <h1> A  SignupApp 2 Form - With Thank You Page</h1>
-<p> This form does have a thank you page - the page the customer sees after successfully signing up.</p>
-
-<h3>*** FORM NEEDED *** </h3>
+<p> This form does have a thank you page. You will be taken to the thank you page after submitting the form</p>
+<hr/>
+<form action="https://uat.signupapp.com/signupapp/signups/process" method="post">
+    <label>Email Address</label> <input type="text" name="signup.emailAddress"/>
+    <input name="signup.listCode" type="hidden" value="IRISTEST" />
+    <input name="signup.sourceId" type="hidden" value="thankyou" />
+    <input name="signup.redirectUrl" type="hidden" value="https://pubsvs.com" />
+     <input type="submit" value="Submit" />
+</form>
+	
 </body>
 </html>
