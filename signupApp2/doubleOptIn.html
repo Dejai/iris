@@ -7,13 +7,12 @@
 <body>
 <h1> A  SignupApp 2 Form - With Double Opt-In</h1>
 <p> This form has a Double Opt-In included. The email will not be added/processed until the customer confirmed by clicking the link in an email</p>
-<hr/>
 <form action="https://uat.signupapp.com/signupapp/signups/process" method="post">
     <label>Email Address</label> <input type="text" name="signup.emailAddress"/>
-    <input name="signup.listCode" type="hidden" value="SIGNUPST" />
+    <input name="signup.listCode" type="hidden" value="IRISTEST" />
     <input name="signup.sourceId" type="hidden" value="double" />
-    <input name="signup.doubleOptInTemplateName" type="hidden" value="Double Test" />
-     <input name="signup.welcomeEmailTemplateName" type="hidden" value="Welcome Email1" />
+    <input name="signup.doubleOptInTemplateName" type="hidden" value="Double Checking" />
+     <input name="signup.welcomeEmailTemplateName" type="hidden" value="Welcome Home" />
      <input name="signup.redirectUrl" type="hidden" value="https://pubsvs.com" />
      <input type="submit" value="Submit" />
 </form>
