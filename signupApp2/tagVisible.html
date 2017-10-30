@@ -8,6 +8,16 @@
 <h1> A  SignupApp 2 Form - With a Tag (visible)</h1>
 <p> This form includes a CoReg that you cannot see. It is likely already selected for you automatically. Keep in mind that CoRegs can have their own "Welcome Emails".</p>
 <hr/>
-
+<form action="https://uat.signupapp.com/signupapp/signups/process" method="post">
+    <label>Email Address</label> <input type="text" name="signup.emailAddress"/>
+    <input name="signup.listCode" type="hidden" value="IRISTEST" />
+    <input name="signup.sourceId" type="hidden" value="tagshow" />
+    <input name="signup.redirectUrl" type="hidden" value="https://pubsvs.com" />
+     <input name="affiliateTags[0].checked" type="checkbox"  /> Affiliate Tag 1
+     <input name="affiliateTags[0].owningOrg" type="hidden" value="999" />
+    <input name="affiliateTags[0].tagName" type="hidden" value="VisibleTag" />
+    <input name="affiliateTags[0].tagValue" type="hidden" value="Visibility" />
+     <input type="submit" value="Submit" />
+</form>
 </body>
 </html>
