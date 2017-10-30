@@ -5,9 +5,16 @@
 	<link rel="stylesheet" href="./formViews.css"/>
 </head>
 <body>
+<a href="/iris_bros/signupApp2/">Home</a>
 <h1> A  SignupApp 2 Form - With a Welcome Email</h1>
 <p> This form has a 'Welcome Email included'. This is essentially the confirmation email for the main list.</p>
-<hr/>
-<h3>*** FORM NEEDED *** </h3>
+<form action="https://uat.signupapp.com/signupapp/signups/process" method="post">
+    <label>Email Address</label> <input type="text" name="signup.emailAddress"/>
+    <input name="signup.listCode" type="hidden" value="IRISTEST" />
+    <input name="signup.sourceId" type="hidden" value="welcome" />
+    <input name="signup.welcomeEmailTemplateName" type="hidden" value="Welcome Home" />
+     <input name="signup.redirectUrl" type="hidden" value="https://pubsvs.com" />
+     <input type="submit" value="Submit" />
+</form>
 </body>
 </html>
