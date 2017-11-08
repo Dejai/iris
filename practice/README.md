@@ -19,8 +19,13 @@ They were a way for me to practice my HTML/CSS/JS while also acclimating to the 
 ----
 
 ### [Permissions](https://dejai.github.io/iris_bros/practice/permissions.html) & [Permissions 2](https://dejai.github.io/iris_bros/practice/permissions2.html) & [Permissions 3](https://dejai.github.io/iris_bros/practice/permissions3.html)
-> Date: February / March, 2016 <br/><br/>
+> Date: February / March / May, 2016 <br/><br/>
 > Description: These simple pages are meant to offer short descriptions of the different permissions in IRIS.<br/>
 > Version 1 has the description at the bottom of the list. <br/>
 > Version 2 has the descriptions at the right of the list.  <br/>
 > Version 3 includes the IRIS header & footer along with updated styling.
+
+----
+### [Update Links To Secure](https://dejai.github.io/iris_bros/practice/updateLinksToSecure.html)
+> Date: December, 2016 <br/><br/>
+> Description: This page was about altering href's and src's on a page to use secure. It was a quick workaround to help affiliates adjust their pages and avoid errors.
