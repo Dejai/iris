@@ -1,4 +1,12 @@
-# IRIS 4.0 Beta Tasks & Scenarios
+# IRIS Beta Pages
+
+The pages in this repository are build primarily using Bootstrap 3.3.5. They were built as a personal initiative and as a way to help guide users through new IRIS features. 
+
+___
+
+
+
+### IRIS 4.0 Beta Tasks & Scenarios
 > #### Date: December, 2015
 > #### Preview: [iris_beta](https://dejai.github.io/iris_bros/beta_4.0/iris_beta.html)
 ---
