@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Update To HTTPS</title>
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script type="text/javascript">
+		// This function updates all links before loading the document elements (DOM)
+		$(window).ready(function(){
+
+			var alreadySecure = [];
+			var switchedToSecure = [];
+			// For each element that have the 'href' attribute
+			$("[href]").each(function(){
+				var theURL = $(this).attr('href');  //Store the URL in a variable
+				// Update the 'href' value of the element based on the following conditions:
+
+				//If the first 5 characters are already 'https' OR
+				//If the first character is a forward slash OR
+				//If the first character is a '#' symbol...
+				//do NOTHING
+				if (theURL.substring(0,5) == 'https' || theURL.substring(0,1) == '/' || theURL.substring(0,1) == '#'){
+					alreadySecure.push(theURL);
+				}
+				// If the first 5 characters are 'http:' << no 's' - then add the secure protocol
+				else if (theURL.substring(0,5) == 'http:'){ 
+					var secureURL = 'https:' + theURL.substring(5);
+					switchedToSecure.push(theURL);
+					$(this).attr("href",secureURL);
+				} 
+				// If the first 3 characters are 'www' - then add the secure protocol
+				else if (theURL.substring(0,3) == 'www'){
+					var secureURL = 'https://' + theURL;
+					switchedToSecure.push(theURL);					
+					$(this).attr("href",secureURL);
+				} 
+				// If the first characters are NEITHER 'http:' or 'www' (accounts for cases where the URL is just 'website.com') - then add the secure protocol
+				else if (theURL.substring(0,5) != 'http:' && theURL.substring(0,3) != 'www'){
+					var secureURL = 'https://' + theURL;
+					switchedToSecure.push(theURL);
+					$(this).attr("href",secureURL);
+				}
+			});
+
+			// This function is the same as above, but for elements that have the 'src' attribute
+			$("[src]").each(function(){
+				var theURL = $(this).attr('src');
+				if (theURL.substring(0,5) == 'https' || theURL.substring(0,1) == '/' || theURL.substring(0,1) == '#'){
+					alreadySecure.push(theURL);
+				} else if (theURL.substring(0,5) == 'http:'){
+					var secureURL = 'https:' + theURL.substring(5);
+					switchedToSecure.push(theURL);
+					$(this).attr("src",secureURL);
+				} else if (theURL.substring(0,3) == 'www'){
+					var secureURL = 'https://' + theURL;
+					switchedToSecure.push(theURL);
+					$(this).attr("src",secureURL);
+				} else if (theURL.substring(0,5) != 'http:' && theURL.substring(0,3) != 'www'){
+					var secureURL = 'https://' + theURL;
+					switchedToSecure.push(theURL);
+					$(this).attr("src",secureURL);
+				}
+			});
+			// These lines print out which ones were already secure, and which ones were switched to secure. 
+			console.log("Already Secure:");
+			for (var already in alreadySecure) { console.log("\t" + alreadySecure[already] + "\n");	}
+			console.log("Switched To Secure:");
+			for (var switched in switchedToSecure){	console.log("\t" + switchedToSecure[switched] + "\n"); 	}
+		});
+	</script>
+</head>
+<body>
+
+<a href="http://www.google.com">Google - not secure</a>
+<br/>
+<a href="https://www.yahoo.com">Yahoo - already secure</a>
+<br/>
+<a href="www.link.com"> Link -- no protocol</a>
+<br/>
+<a href="anotherlink.com"> Link -- no protocol, no host</a>
+<br/>
+<img src="http://institutefornaturalhealing.com/images/supplements/supplement-fact-vita-cardio.jpg" />
+<br/>
+<script data-type="required" type="text/javascript" src="/Scripts/Common.js"></script>
+<br/>
+<a href="#">Just the #</a>
+</body>
+</html>
