@@ -3,10 +3,9 @@
 The pages in this repository are build primarily using Bootstrap 3.3.5. They were built as a personal initiative and as a way to help guide users through new IRIS features. 
 
 ___
-### Advanced Filters and Multiple Status Change
+### [Advanced Filters and Multiple Status Change](https://dejai.github.io/iris_bros/beta/betaTasks.html)
 > #### Date: November, 2015
 > #### Description: This page highlights 2 features in one release.
-> #### Preview: [beta_tasks](https://dejai.github.io/iris_bros/beta/betaTasks.html)
 #### Features Included:
    1. 'Reactive' Buttons
        * There is a button to submit a support ticket (only available after entering at least one character)
@@ -15,10 +14,9 @@ ___
        * Leveraged the 'mailto' functionality.
 
 ---
-### IRIS 4.0 Beta Tasks & Scenarios
+### [IRIS 4.0 Beta Tasks & Scenarios](https://dejai.github.io/iris_bros/beta/iris_4.0.html)
 > #### Date: December, 2015
 > #### Description: This page highlights major changes in user workflow related to common user roles. Based on IRIS 4.0
-> #### Preview: [iris_4.0](https://dejai.github.io/iris_bros/beta/iris_4.0.html)
 ##### Features Included:
    1. Left side navigation bar
    1. Some 'Responsive Web Design'
