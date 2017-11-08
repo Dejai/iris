@@ -1,0 +1,2009 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>IRIS Quicklook</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<style type="text/css">
+		hr {
+			height:20px; 
+		}
+	</style>
+	
+</head>
+<body>
+
+<!-- <img class="img " src="../Images/PubSvs_logo.jpg" alt="PUBSVS LOGO" style="float:left;" data-toggle="modal" data-target="#irisModal"> -->
+
+<img class="img " src="https://files.iris.pubsvs.com/images/pub_svs_transparent.png" alt="PUBSVS LOGO" style="float:left;" data-toggle="modal" data-target="#irisModal">
+""
+<span style="font-size:90px;color:gray;"> | </span>
+<span style="font-size:50px;font-weight:bold;color:blue;" data-toggle="modal" data-target="#irisModal">IRIS</span>
+
+
+<!--MENU BAR -->
+<ul class="nav nav-pills" style="border-top:black; margin-top:20px;clear:both;" >
+
+	<li class="navbar-header">
+		<a class="navbar-brand"> </a>
+	</li>
+	<li class="active"><a href="#home" data-toggle="tab" >HOME </a></li>
+	<li><a href="#theProcess" data-toggle="tab"> ~~ THE PROCESS ~~ </a></li>
+
+	<li class="dropdown">
+		<a href="#." class="dropdown-toggle" data-toggle="dropdown" >
+			IRIS & Friends <span class="caret"></span>
+		</a>
+		<ul class="dropdown-menu">			
+			<li><a href="#codes" data-toggle="tab">Advantage Codes</a></li>	
+			<li><a href="#repreq" data-toggle="tab"> Reporting/Requests (JIRA-based) </a></li>
+		</ul>
+	</li>
+	<li class="dropdown">
+		<a href="#." class="dropdown-toggle" data-toggle="dropdown">
+			MARKETING <span class="caret"></span>
+		</a> 
+		<ul class="dropdown-menu nav nav-pills">
+			<li><a href="#creatives" data-toggle="tab" class="active">CREATIVES</a></li>
+			<li><a href="#efforts"  data-toggle="tab"> EFFORTS </a></li>
+			<li><a href="#lead"  data-toggle="tab" > LEAD GEN</a></li>
+		</ul>
+	</li>
+	<li><a href="#mailings"  data-toggle="tab" > MAILINGS </a></li>
+	<li><a href="#databases" data-toggle="tab" onclick="firstDB()">DATABASE</a></li>
+	<li><a href="#api" data-toggle="tab">API CALLS</a></li>
+	<li><a href="#practice" data-toggle="tab">PRACTICE</a></li>
+	<li><a href="#home" data-toggle="tab"> AFFILIATE MANAGEMENTS </a></li>
+	<li><a href="#permissions" data-toggle="tab">PERMISSIONS</a></li>
+	<li><a href="#dictionary" data-toggle="tab">DICTIONARY</a></li>
+</ul>
+
+
+		
+
+<div class="tab-content" style="margin-left:80px;margin-right:60px;">
+
+	<div id="home" class="tab-pane fade in ">
+		<br/> 
+		<h1> Increased Revenue With Intuitive Software </h1>
+	</div>
+
+	<div id="theProcess" class="tab-pane fade in">
+		<br/><br/>
+		<div class="panel-group" id="processAcc">
+			<div class="panel panel-default" data-toggle="collapse" data-target="#advantageProcess" data-parent="#processAcc">
+				<div class="panel-heading">
+					<h1 class="panel-title">Advantage</h1>					
+				</div>				
+				<div id="advantageProcess" class="collapse">
+					<ol>
+						<li><label class="bg-primary"> Credit Policy </label> <br/> - Select (or '<span style="font-size:75%" class="glyphicon glyphicon-plus"></span> Add') a Credit Policy</li>
+						<br/>
+						<li><span style="cursor:pointer" data-toggle="tooltip" data-placement="left" data-trigger="focus" title="This is the set of items a customer will receive per subscribing to a CIR/LG"><label class="bg-primary">Premium Set</label></span> 
+							<br/> - Begins with PubCode or BillingOrg#
+						</li>
+						<br/>
+						<li><span style="cursor:pointer" data-toggle="tooltip" data-placement="left" data-trigger="focus" title="This refers to Subscriptions, Products, Membershipts, Conferences or Agreements"><label class="bg-primary">Choice</label></span> 
+							<br/> - PubCode + <b>6</b>-Character-Code (could be term|price|renewal)
+						</li>
+						<br/>
+						<li><span style="cursor:pointer" data-toggle="tooltip" data-placement="left" data-trigger="focus" title="This is the official promotional offer code"><label class="bg-primary">Promotion Offer</label></span> 
+							<br/> - Bundling the credit policy, choice, and offer information
+							<br/> -  Things you'll need to complete a 'Promotion Offer'
+							<ul>
+								<li>Unique Promotional <b>Offer Code</b> [<b>16</b>-Characters]
+								<ul>
+									<li> Begin with pub code or owning org [<b>3</b>-Chars]</li>
+									<li> If it's a cross-sell (then place an X in front of pub code/owning org) [<b>4</b>-Chars]</li>
+								</ul>
+								</li>
+								<li>Description of offer</li>
+								<li>Publication Code of subscription being sold</li>
+								<li>Premium Set ID/code</li>
+								<li>Credit Policy ID/code </li>
+								<li>Owning Organization for affiliate</li>
+								<br/>
+								<li>Then once the offer is setup, we should add choices
+								<ul>
+									<li>Item number - a pub code (XXX) or item number (###) in promotion <br/> (usually the first 3-chars of promotion offer code)</li>
+									<li>Billing currency of the offer <br/> (usually US$)</li>
+									<li>Promotion chocie - Subscription or item choice code</li>
+									<li>Be sure to add a description of the offer</li>
+								</ul>
+								</li>
+							</ul>
+						</li>
+						<br/>
+						<li><span style="cursor:pointer" data-toggle="tooltip" data-placement="left" data-trigger="focus" title="This is the official campaign code"><label class="bg-primary">Campaign</label></span>
+							<br/> - Code based on specific fields <br/>
+								<span class="col-md-3" style="font-size:70%; border:1px solid black;"> Method/How [1-Char]</span>
+								<span class="col-md-3" style="font-size:70%; border:1px solid black;"> CIRC/PROD CODE [3-Chars]</span>
+								<span class="col-md-3" style="font-size:70%; border:1px solid black;"> YEAR/MONTH [Year -  R(2015) | Month - 0-9A-C]</span>
+								<span class="col-md-3" style="font-size:70%; border:1px solid black;"> UNIQUE ID</span>
+						</li>
+						<br style="clear:both"/><br/>
+						<li><span style="cursor:pointer" data-toggle="tooltip" data-placement="left" data-trigger="focus" title="This is the official promocode; Based on campaign code"><label class="bg-primary">Promotions</label></span> 
+							<br/> - Same codes as the first 3 fields of the campaign code; Followed by 2 unique chars for ID purposes
+							<br/> - If a campaign was recently created, some information for the promotions section will be autofilled
+							<br/> - Fill out all pertient information, but especially the following:
+							<ul>
+								<li>List - for direct mail, web or any non-Milo list</li>
+								<li>Milo List - for Agora eletter or pub</li>
+								<li>List segment</li>
+								<li>Effective from - most likely the date of the day you make the promotion</li>
+								<li>Quantity mailed</li>
+								<li>Acquitision
+								<ul>
+									<li>UI: Web/Email Promotion Internal</li>
+									<li>UX: Web/Email Promotion External</li>
+									<li>UP: Paid Direct Mail Promo</li>
+									<li>US: Insert Promo</li>
+								</ul>
+								</li>
+							</ul>
+						</li>
+					</ol>
+				</div>
+			</div>
+			<div class="panel panel-default" data-toggle="collapse" data-target="#opiumProcess" data-parent="#processAcc">
+				<div class="panel-heading">
+					<h1 class="panel-title">OPIUM</h1>					
+				</div>				
+				<div id="opiumProcess" class="collapse">
+					<ol>
+						<li><span><label class="bg-primary"> Create Effort </label>	<br/> - One would typically start by creating a new effort </span><br/>
+							<br/> - Tho complete the setup of the effort, complete the following things:
+							<ul>
+								<li>Unique descriptional <b>Effort Name</b> [<b>16</b>-Characters]</li>
+								<li> Effort type: 
+									<ul>
+										<li>One page - Chocies are provided with radio buttons ( use w/ < 4 choices)</li>
+										<li>AWAS - Choices are provided in dropdown (4+ chocies) </li>
+									</ul>Description of offer</li>
+								<li>Promo code - as made in Advantage 
+									<label class="label label-danger">NOTE: Promo code MUST be made in Advantage first</label>
+								</li>
+								<li>Optional Description</li>
+								<li> URL Nickname - just a nickname to distinguish OPIUM efforts 
+									<label class="label label-warning">NOTE: This URL code is used in IRIS offer creation</label>
+								</li>
+								<li>Start Date & optional End date</li>
+								<li>If applicable, select countries that it's not available int</li>
+								<li>MISC Options - mostly straightforward. Two significant ones: 
+									<ul>
+										<li>Pre-Auth credit cards</li>
+										<li>Enable Order Abandon Emails</li>
+									</ul>
+								</li>
+								</ul>
+						</li>
+						<br/>
+						<li><span><label class="bg-primary">Choices</label></span> 
+							<br/> - A list of choices will be presented
+							<br/> - Toggle if it is selected or not - if you'd like it to be available in this effort
+						</li>
+						<br/>
+						<li><span><label class="bg-primary">Payment Options</label></span> 
+							<br/> - Choose how the customers can pay for the item
+						</li>
+						<br/>
+						<li><span><label class="bg-primary">Optional Form Fields</label></span> 
+							<br/> - Choose which fields will be present in the order form
+						</li>
+						<br/>
+						<li><span><label class="bg-primary"> Pages </label></span> 
+							<br/> - Edit the list of pages - or add a new page as you see fit
+							<ul>
+								<li>LocationPage</li>
+								<li>OnePageOrderPage</li>
+								<li>DuplicateOrderPage</li>
+								<li>ConfirmationPage</li>
+								<li>ConfirmationEmail</li>
+								<li>OrderAbandonEmail</li>
+								<li>SoldOutPage</li>
+								<li>ErrorPage</li>
+							</ul>
+						</li>
+						<br/>
+						<li><span><label class="bg-primary">Publish</label></span> 
+							<br/> - Click the "Publish" button when you are ready to publish the OPIUM effort.
+						</li>
+					</ol>
+				</div>
+			</div>
+			<div class="panel panel-default " data-toggle="collapse" data-target="#middlewareProcess" data-parent="#processAcc">
+				<div class="panel-heading">
+					<h1 class="panel-title">Middleware</h1>					
+				</div>				
+				<div id="middlewareProcess" class="collapse">
+					<ol>
+						<li><span><label class="bg-primary"> </label></span>
+							<br/> - 
+						</li>
+						<br/>
+						<li><span><label class="bg-primary"></label></span> 
+							<br/> - 
+						</li>
+						<br/>
+						<li><span><label class="bg-primary"></label></span> 
+							<br/> - 
+						</li>
+						<br/>
+						<li><span><label class="bg-primary"></label></span> 
+							<br/> - 
+						</li>
+						<br/>
+						<li><span><label class="bg-primary">  </label></span> 
+							<br/> - 
+						</li>
+						<br/>
+						<li><span><label class="bg-primary"></label></span> 
+							<br/> - 
+						</li>
+					</ol>
+				</div>
+			</div>
+			<div class="panel panel-default" data-toggle="collapse" data-target="#messageCentralProcess" data-parent="#processAcc">
+				<div class="panel-heading " style="background-color:purple; color:white;">
+					<h1 class="panel-title ">Message Central</h1>					
+				</div>				
+				<div id="messageCentralProcess" class="collapse">
+					<ol>
+						<li><span><label class="bg-primary"> </label></span>
+							<br/> - 
+						</li>
+						<br/>
+						<li><span><label class="bg-primary"></label></span> 
+							<br/> - 
+						</li>
+						<br/>
+						<li><span><label class="bg-primary"></label></span> 
+							<br/> - 
+						</li>
+						<br/>
+						<li><span><label class="bg-primary"></label></span> 
+							<br/> - 
+						</li>
+						<br/>
+						<li><span><label class="bg-primary">  </label></span> 
+							<br/> - 
+						</li>
+						<br/>
+						<li><span><label class="bg-primary"></label></span> 
+							<br/> - 
+						</li>
+					</ol>
+				</div>
+			</div>
+			<br/>
+			
+		</div>
+	</div>
+
+	<div id="creatives" class="tab-pane fade in">
+		
+		<div class="col-lg-6">
+	
+			<h3> Offers </h3>
+			<p> This page serves as a quick reminder about the 'Offer' page in IRIS </p>
+			<br/>
+			<label class="label label-primary">Create Offer </label>
+			<ul>
+				<li>Choice code must match the choice code in Advantage</li><br/>
+				<li>Under Cross Sell/Upsell, teh Yes/No dropdown determines the following:
+					<ul>
+						<li>Yes = The page taken to if the customer selects yes</li><br/>
+						<li>No = The page taken to if they select no</li><br/>
+					</ul>
+				</li><br/>
+				<li>URL Nickname MUST match the OPIUM URL nickname. </li><br/>
+				<li>Offer Name = URL_Nickname - Price1_Choice_Code</li><br/>
+			</ul>
+			<br/>
+
+			<label class="label label-primary"> Edit Offer </label>
+			<ul>
+				<li>Filter through Status, Item Type (Sub, Prod, Lead), & Item Code</li><br/>
+				<li>Offer Page is opened; Some fields editable:
+					<ul>
+						<li>Offer Name</li><br/>
+						<li>Agora Partners</li><br/>
+						<li>Expiration Date (if not already passed)</li><br/>
+						<li>Status</li><br/>
+						<li>Tags</li><br/>
+					</ul>
+				</li><br/>
+			</ul>
+		</div>
+
+		<div class="col-lg-6">
+			<h3> Content </h3>
+			<p> This page serves as a quick reminder about important feats. for the 'Content' page </p>
+			<br/>
+
+			<label class="label label-primary">Subscriptions - Primary Content</label>
+			<ul>
+				<li>MUST create Full Promotion content first!</li><br/>
+				<li>Version Name is up to the user - be distinctive in naming</li><br/>
+				<li>In developing content, one can 'hard-code' the following placeholders:
+					<ul>
+						<li>Order Form = href="#ORDER_FORM_LINK#" class="subscribeNow"</li><br/>
+						<li>Promocode = #PROMOODE#</li><br/>
+						<li>Email Pattern = #EMAIL#</li><br/>
+					</ul>
+				 </li>
+			</ul>
+			<br/>
+
+			<label class="label label-primary">Lead Gen - Create Content</label>
+			<ul>
+				<li>Flow of Content: Sign-up Page &#8608; Confirmation Page &#8608; Confirmation Email &#8608; Free Reports &#8608; </li><br/>
+				<li>For lead Gens, there is an additional placeholder available for Signup Code; Includes an 'Email' label, an input text field and a 'Submit' button </li><br/>
+				<li>If you plan to include a Free Report, be sure that the radio button is selected</li><br/>
+			</ul>
+			<br/>
+
+			<label class="label label-primary">Edit Content </label>
+			<ul>
+				<li>Filter through: Status, Item Type, Item Code, Offer Name, Content Type</li><br/>
+				<li>Once selected, most information made in the content is editable!</li><br/>
+			</ul>
+		</div>
+		<div clss="col-lg-6">
+			<ul class='toc-indentation'>
+				<li><a href='#BuildTabDetails-Paid'>Paid</a>
+				<ul class='toc-indentation'>
+				<li><a href='#BuildTabDetails-Offer'>Offer</a>
+				<ul class='toc-indentation'>
+				<li><a href='#BuildTabDetails-MainOffer'>Main Offer</a></li>
+				<li><a href='#BuildTabDetails-CrossSellOffer'>Cross Sell Offer</a></li>
+				<li><a href='#BuildTabDetails-AdvantageOffer'>Advantage Offer</a></li>
+				</ul>
+				</li>
+				<li><a href='#BuildTabDetails-Page'>Page</a>
+				<ul class='toc-indentation'>
+				<li><a href='#BuildTabDetails-InternalItem-InternalPageLocation'>Internal Item - Internal Page Location</a></li>
+				<li><a href='#BuildTabDetails-ExternalItem-InternalPageLocation'>External Item - Internal Page Location</a></li>
+				<li><a href='#BuildTabDetails-InternalItem-ExternalPageLocation'>Internal Item - External Page Location</a></li>
+				<li><a href='#BuildTabDetails-ExternalItem-ExternalPageLocation'>External Item - External Page Location</a></li>
+				</ul>
+				</li>
+				<li><a href='#BuildTabDetails-Email'>Email</a>
+				<ul class='toc-indentation'>
+				<li><a href='#BuildTabDetails-EmailFunction=AbandonEmail'>Email Function = Abandon Email</a></li>
+				<li><a href='#BuildTabDetails-EmailFunction=Advertisement(LiftNote)'>Email Function = Advertisement (Lift Note)</a></li>
+				</ul>
+				</li>
+				<li><a href='#BuildTabDetails-BannerAd'>Banner Ad</a></li>
+				<li><a href='#BuildTabDetails-SpaceAd'>Space Ad</a></li>
+				<li><a href='#BuildTabDetails-TextAd'>Text Ad</a></li>
+				</ul>
+				</li>
+				<li><a href='#BuildTabDetails-LeadGen'>Lead Gen</a>
+				<ul class='toc-indentation'>
+				<li><a href='#BuildTabDetails-NormalOffer'>Normal Offer</a></li>
+				<li><a href='#BuildTabDetails-Co-regOffer'>Co-reg Offer</a></li>
+				<li><a href='#BuildTabDetails-SignupPage'>Signup Page</a></li>
+				<li><a href='#BuildTabDetails-ConfirmationPage/Co-regConfirmationPage/DoubleOpt-InConfirmationPage'>Confirmation Page / Co-reg Confirmation Page / Double Opt-In Confirmation Page</a></li>
+				<li><a href='#BuildTabDetails-ConfirmationEmail/Co-regConfirmationEmail/DoubleOpt-InConfirmationEmail'>Confirmation Email / Co-reg Confirmation Email / Double Opt-In Confirmation Email</a></li>
+				<li><a href='#BuildTabDetails-FreeReportPage'>Free Report Page</a></li>
+				<li><a href='#BuildTabDetails-LiftNote'>Lift Note</a></li>
+				<li><a href='#BuildTabDetails-BannerAd.1'>Banner Ad</a></li>
+				<li><a href='#BuildTabDetails-SpaceAd.1'>Space Ad</a></li>
+				<li><a href='#BuildTabDetails-TextAd.1'>Text Ad</a></li>
+				</ul>
+				</li>
+				</ul>
+		</div>
+	</div>
+	
+	<div id = "efforts" class="tab-pane fade in">
+		<h4>Efforts</h4>
+		<p> This page serves as a quick reference to special things to note for Efforts in IRIS </p>
+		<br/>
+
+		<label class="label label-primary"> Create Effort </label>
+		<ul>
+			<li>First things first, you should schedule the date! - Error will appear if you don't!</li><br/>
+			<li>Choose your <em><b>Effort Destination</b></em> & <em><b>Item Type</b></em>; Once you choose Item Type you'll get a dropdown to other fields</li><br/>
+			<li>Once you select <em><b>Effort Type</b></em> additional dropdowns that require attention will appear<br/>
+				Including: List | Target | Segment</li><br/>
+			<li>For <em><b>Host 1%</b></em> you'll have to choose a percentage (format = 0.00) of revenue to be split with a partner</li><br/>
+			<li><em><b>Host 2%</b></em> only used in a 3-way split of </li><br/>
+			<li>The <em><b>Options</b></em> that appear at the bottom of the page
+				<ul>
+					<li>Row Color - assigns an identifying color to teh row that will contain the effort info </li><br/>
+					<li>Gauntlet - this is a gauntlet series effort </li><br/>
+					<li>Testing Group - create testing groups that will both categorize and organize marketing test efforts and/or group special efforts together for easy access</li><br/>
+					<li>Vanity Url - create a vanity redirect for any promotion</li><br/>
+					<li>Lift Note Only - Displays lift note (and lift note only) in dedicated email. If not selected, will only show user designed content or - rarely - a full promotion</li><br/>
+					<li>Order Form Only - Bypass primary content or promotional step; Defaults to row-color yellow</li><br/>
+					<li>Recurring - Automatically make new efforts, and place them in 'MyQueue' </li><br/>
+					<li>Abandon email - Select email creative to send customers who abandoned promotion</li><br/>
+					<li>URL Fix - Ability to fix URL on live promotion (if there's a problem)</li><br/>
+					<li>Opens Pixel - For automatic tracking of external mailings & internal promotions</li><br/>
+				</ul>
+			</li><br/>
+		</ul>
+		<br/>
+
+		<label class="label label-primary"> Multivariates </label>
+		<ul>
+			<li>The purpose of a multivariate is to VARY a singular feature of the effort (content page | order form | Confirmation page)</li><br/>
+			<li>Keeps track of how each VARIATE is doing in terms of its marketing campaign</li><br/>
+			<li>You can click <em><b>'Edit Multivariate'</b></em> under the <em><b>'Effort Details</b></em> page to Activate/Deactivate a paticular VARIATE</li><br/>
+			<li></li>
+		</ul>
+	</div>
+
+	<div id = "mailings" class="tab-pane fade in">
+		<h4>Mailings</h4>
+		<p>This page is dedicated to the Mailings side of IRIS. Brief coverage of things to rememember</p>
+		<br/>
+
+		<label class="label label-primary">Create Mailing</label>
+		<p class="text-danger text-capitalize"> Disclaimer: Mailings are also generated upon completion of an Effort (i.e. once a unique promo code has been entered). <br/>This discusses creating mailings from the <em><b>Mailings</b></em> side of IRIS </p>
+		<ul>
+			<li>Selecting your list brings up the option to select a target</li><br/>
+			<li><em><b>IMPORTANT: </b></em> Once you select a date under Mailings, it cannot be changed! You'd have to create a new mailing!</li><br/>
+			<li>Taken to <em><b>Build Email</b></em> tab; In the WYSIWYG you have additional placeholders:
+				<ul>
+					<li>Full Promo Code = #FULL_PROMOTION_LINK#</li><br/>
+					<li>Mobile Subject = #SUPER_SUBJECT#</li><br/>
+				</ul>
+			</li><br/>
+
+
+			r/> IRIS Test Email &#8608; Create &#8608; MC Test Email (IN THAT ORDER)!</li><br/>
+			<li>Final tab - <em><b>Schedule Email</b></em>! Should be able to change the link tracking type & group; From here you can send (through Approval in top corner)</li>
+		</ul>
+	</div>
+
+	<div id = "codes" class="tab-pane fade in">
+		<h4> Billing Codes </h4>
+		<table class="table table-hover" style="width:30%; float:left; margin-right:25%">
+			<thead>
+				<tr>
+					<td>Code</td>
+					<td>Meaning</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>P</td>
+					<td>Paid</td>
+				</tr>
+				<tr>
+					<td>C</td>
+					<td>Complimentary (i.e. a "gift")</td>
+				</tr>
+				<tr>
+					<td>M</td>
+					<td>Cancellation Credit Memo</td>
+				</tr>
+				<tr>
+					<td>B</td>
+					<td>Billed (i.e. customer sent bill to pay for item)</td>
+				</tr>
+			</tbody>
+		</table>
+		<h4> Circulation Codes </h4>
+		<table class="table table-hover" style="width:25%; float:left;">
+			<thead>
+				<tr>
+					<td>Code</td>
+					<td>Meaning</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>R</td>
+					<td>Regular Receiving</td>
+				</tr>
+				<tr>
+					<td>C</td>
+					<td>Customer Request</td>
+				</tr>
+				<tr>
+					<td>B</td>
+					<td>Billing suspended</td>
+				</tr>
+				<tr>
+					<td>N</td>
+					<td>Non-pay Cancel</td>
+				</tr>
+				<tr><td colspan='2'>Suspensions</td></tr>
+				<tr>
+					<td>S</td>
+					<td>Suspension/Indefinite</td>
+				</tr>
+				<tr>
+					<td>T</td>
+					<td>Temporary Suspension</td>
+				</tr>
+				<tr>
+					<td>U</td>
+					<td>Undeliverable Item</td>
+				</tr>
+				<tr><td colspan='2'>Others</td></tr>
+				<tr>
+					<td>P</td>
+					<td>Perpetual</td>
+				</tr>
+				<tr>
+					<td>E</td>
+					<td>Expired</td>
+				</tr>
+				<tr>
+					<td>X</td>
+					<td>Publication Folded</td>
+				</tr>
+				<tr>
+					<td>W</td>
+					<td>Future Start </td>
+				</tr>
+			</tbody>
+		</table>
+		<br style="clear:both"/>
+		<!-- CIRC CODES - based on Billing Codes
+		P: {R, S, T, U, E, X, W}
+		C: {S, T, U, P} - (R,E)
+		M: {C, N} (w)
+		B: {B} (w, r) -->
+	</div>
+
+	<div id="databases" class="tab-pane fade in active ">
+
+		<label class="label label-default" style="cursor:pointer;" data-toggle="modal" data-target="#coolQueries">
+			<span>Cool Queries</span>
+		</label>
+		<div id="coolQueries" class="modal">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<span class="glyphicon glyphicon-remove close" data-dismiss="modal"></span>
+						<h1>Cool Queries</h1>
+					</div>
+					<div class="modal-body">
+						<span style="color:blue">SELECT DISTINCT</span> <span style="color:gray">TOP</span> 5 <span style="color:green">column_Name</span>, <span style="color:pink">quotename</span>(<span style="color:green">column_Name</span>, ' '' ') <br/> <span style="color:blue">FROM</span> <span style="color:green">TABLE_NAME/span>						
+					</div>
+					<div class="modal-footer">
+						
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- END OF COOL QUERIES MODAL -->
+
+		<h5>Creative Tables</h5>
+		<div class="btn-group btn-group-justified" >
+			<a id = "creative" href="#." class="btn btn-primary" > Creative &nbsp; 
+				<span class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="top"  title ='Basic Creative Details'></span>
+			</a>
+			<a id = "creativeoffer" href="#." class="btn btn-primary"> CreativeOffer &nbsp; 
+				<span class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="top"  title ='Basic Creative Details'></span>
+			</a>
+			<a id = "creativetype" href="#." class="btn btn-primary"> CreativeType &nbsp; 
+				<span class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="top"  title ='Basic Creative Details'></span>
+			</a>
+			<a id = "creativefunction" href="#." class="btn btn-primary"> CreativeFunction &nbsp; 
+				<span class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="top"  title ='Basic Creative Details'></span>
+			</a>
+			<a id = "creativestatus" href="#." class="btn btn-primary"> CreativeStatus &nbsp; 
+				<span class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="top"  title ='Basic Creative Details'></span>
+			</a>
+			
+		</div>
+
+		<h5>Offer Tables</h5>
+		<div style="margin-top:3px" class="btn-group btn-group-justified">
+			<a id = "offer" href="#." class="btn btn-primary"> Offer &nbsp; 
+				<span class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="top"  title ='Basic Creative Details'></span>
+			</a>
+			<a id="price" href="#." class="btn btn-primary"> Price &nbsp; 
+				<span class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="top"  title ='Basic Creative Details'></span>
+			</a>			
+		</div>
+
+		<h5>Page & Email Tables</h5>
+		<div style="margin-top:3px" class="btn-group btn-group-justified">
+			<a id = "page" href="#." class="btn btn-primary"> Page &nbsp; 
+				<span class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="top"  title ='Basic Creative Details'></span>
+			</a>
+			<a id = "pagecontent" href="#." class="btn btn-primary"> PageContent &nbsp; 
+				<span class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="top"  title ='Basic Creative Details'></span>
+			</a>	
+			<a id = "email" href="#." class="btn btn-primary"> Email &nbsp; 
+				<span class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="top"  title ='Basic Creative Details'></span>
+			</a>
+			<a id='link' href="#." class="btn btn-primary">Link &nbsp; 
+				<span class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="top"  title ='Basic Creative Details'></span>
+			</a>	
+			<a id = "advertisement" href="#." class="btn btn-primary"> Advertisement &nbsp; 
+				<span class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="top"  title ='Basic Creative Details'></span>
+			</a>
+		</div>
+
+		<h5>Affiliate Mngment Tables</h5>
+		<div style="margin-top:3px;" class="btn btn-group btn-group-justified">
+			<a id="item" href="#." class="btn btn-primary"> Item &nbsp; 
+				<span class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="top"  title ='Basic Creative Details'></span>
+			</a>
+			<a id="itemtype" href="#." class="btn btn-primary"> Item Type &nbsp; 
+				<span class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="top"  title ='Basic Creative Details'></span>
+			</a>
+			<a id="subscriptiontype" href="#." class="btn btn-primary"> Subscription <br/> Type &nbsp; 
+				<span class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="top"  title ='Basic Creative Details'></span>
+			</a>
+			<a id="producttype" href="#." class="btn btn-primary"> Product <br/> Type &nbsp; 
+				<span class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="top"  title ='Basic Creative Details'></span>
+			</a>
+			<a id="leangentype" href="#." class="btn btn-primary"> Lean Gen <br/> Type &nbsp; 
+				<span class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="top"  title ='Basic Creative Details'></span>
+			</a>
+			<a id="list" href="#." class="btn btn-primary"> List &nbsp; 
+				<span class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="top"  title ='Basic Creative Details'></span>
+			</a>
+			<a id="listtype" href="#." class="btn btn-primary"> List Type &nbsp; 
+				<span class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="top"  title ='Basic Creative Details'></span>
+			</a>
+		</div>
+
+		<h5>Mailing Tables</h5>
+		<div style="margin-top:3px;" class="btn btn-group btn-group-justified">
+			<a id='mailing' href="#." class="btn btn-primary">Mailing &nbsp; 
+				<span class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="top"  title ='Basic Creative Details'></span>
+			</a>
+			<a id='mailingcontent' href="#." class="btn btn-primary">MailingContent &nbsp; 
+				<span class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="top"  title ='Basic Creative Details'></span>
+			</a>
+			<a id='mailingstatus' href="#." class="btn btn-primary">MailingStatus &nbsp; 
+				<span class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="top"  title ='Basic Creative Details'></span>
+			</a>
+		</div>
+
+		<h5> Statistics </h5>
+		<div style="margin-top:3px;" class="btn btn-group btn-group-justified">
+			<a id='contentstatistics' href="#." class="btn btn-primary">ContentStatistics &nbsp; 
+				<span class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="top"  title ='Basic Creative Details'></span>
+			</a>
+			<a id='effortstatistics' href="#." class="btn btn-primary">EffortStatistics &nbsp; 
+				<span class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="top"  title ='Basic Creative Details'></span>
+			</a>
+			<a id='mailingstatistics' href="#." class="btn btn-primary">MailingStatistics &nbsp; 
+				<span class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="top"  title ='Basic Creative Details'></span>
+			</a>
+			<a id='schedulestatistics' href="#." class="btn btn-primary">ScheduleStatistics &nbsp; 
+				<span class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="top"  title ='Basic Creative Details'></span>
+			</a>
+		</div>
+
+		<h5>The Special Tables</h5>
+		<div style="margin-top:3px;" class="btn btn-group btn-group-justified">
+			<a id = "##" href="#." class="btn btn-primary">[Users] &nbsp; 
+				<span class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="top"  title ='Basic Creative Details'></span>
+			</a>
+			<a id = "##" href="#." class="btn btn-primary">[Organizations]&nbsp; 
+				<span class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="top"  title ='Basic Creative Details'></span>
+			</a>
+		</div>
+
+		<br/>
+		
+
+		<!--THIS TABLE HOLDS THE OTHER TABLES (i.e. the tables of Databases) -->
+		<table style="margin-top:25px;">
+			<tr id="row1">
+				<td id="r1c1" style="width:200px">
+					<center>
+					<table id="subTable7" style=" width:50%">
+						<thead>
+							<tr><th id="subTableHead7"> </th></tr>
+						</thead>
+						<tbody id = "subTableBody7">
+						</tbody>		
+					</table>
+					</center>
+				</td>
+				<td style="width:200px"> </td>
+				<td style="width:200px"> 
+					<center>
+					<table id="subTable011" style=" width:50%">
+						<thead>
+							<tr><th id="subTableHead011"> </th></tr>
+						</thead>
+						<tbody id = "subTableBody011">
+						</tbody>		
+					</table>
+					</center>
+				</td>
+				<td id="r1c4" rowspan="5" style="margin:auto; width:400px">
+					<center> 
+					<h1 id="selectTable"> Select A Table </h1>
+					<center>
+					<div id="tableMsg" class="label label-warning" style="font-size:10px;color:black;">Click on a table name above to display it's fields and the other tables it's connected to
+					</div>
+					</center>
+					<span id ="tableSelected" style="font-size:50px;visibility:hidden"class="glyphicon glyphicon-arrow-down"></span>
+					<table id="mainTable" style="border:1px solid blue;margin-top:15%">
+						<thead>
+						
+						<tr><th id="headingMain"> <th></tr>
+						</thead>
+						<tbody id="bodyMain">
+
+						</tbody>
+					</table>	
+					</center>				
+				</td>
+				<td style="width:200px"> 
+					<center>
+					<table id="subTable012" style=" width:50%">
+						<thead>
+							<tr><th id="subTableHead012"> </th></tr>
+						</thead>
+						<tbody id = "subTableBody012">
+						</tbody>		
+					</table>
+					</center>					
+				</td>
+				<td style="width:200px"> </td>
+				<td style="width:200px">
+					<center>
+					<table id="subTable8" style=" width:50%">
+						<thead>
+							<tr><th id="subTableHead8"> </th></tr>
+						</thead>
+						<tbody id = "subTableBody8">
+						</tbody>		
+					</table>
+					</center>
+				</td>
+			</tr>
+			<tr id="row2">
+				<td> </td>
+				<td id="r2c2">
+					<center>
+					<table id="subTable3" style=" width:50%">
+						<thead>
+							<tr><th id="subTableHead3" > </th></tr>
+						</thead>
+						<tbody id = "subTableBody3">
+						</tbody>		
+					</table>
+					</center>
+				</td>
+				<td> </td>
+
+				<td> </td>
+				<td> 
+					<center>
+					<table id="subTable4" style=" width:50%">
+						<thead>
+							<tr><th id="subTableHead4" > </th></tr>
+						</thead>
+						<tbody id = "subTableBody4">
+						</tbody>		
+					</table>
+					</center>
+				</td>
+				<td> </td>
+			</tr>
+			<tr id="row3">
+				<td> </td>
+				<td> </td>
+				<td id="r3c3">
+					<center>
+					<table id="subTable01" style=" width:50%">
+						<thead>
+							<tr><th id="subTableHead01">  </th></tr>
+						</thead>
+						<tbody id = "subTableBody01">
+						</tbody>		
+					</table>
+					</center>
+				</td>
+
+				
+				<td> 
+					<center>
+					<table id="subTable2" style=" width:50%">
+						<thead>
+							<tr><th id="subTableHead2">  </th></tr>
+						</thead>
+						<tbody id = "subTableBody2">
+						</tbody>		
+					</table>
+					</center>
+				</td>
+				<td> </td>
+				<td> </td>
+			</tr>
+			<tr id="row4">
+				<td> </td>
+				<td>
+					<center>
+					<table id="subTable5" style=" width:50%">
+						<thead>
+							<tr><th id="subTableHead5"> </th></tr>
+						</thead>
+						<tbody id = "subTableBody5">
+						</tbody>		
+					</table>
+					</center>
+				</td>
+				<td> </td>
+
+				<td> </td>
+				<td>
+					<center>
+					<table id="subTable6" style=" width:50%">
+						<thead>
+							<tr><th id="subTableHead6"> </th></tr>
+						</thead>
+						<tbody id = "subTableBody6">
+						</tbody>		
+					</table>
+					</center>
+				</td>
+				<td> </td>
+			</tr>
+			<tr  id="row5">
+				<td>
+					<center>
+					<table id="subTable9" style=" width:50%">
+						<thead>
+							<tr><th id="subTableHead9"> </th></tr>
+						</thead>
+						<tbody id = "subTableBody9">
+						</tbody>		
+					</table>
+					</center>
+				</td>
+				<td> </td>
+				<td> 
+					<center>
+					<table id="subTable013" style=" width:50%">
+						<thead>
+							<tr><th id="subTableHead013"> </th></tr>
+						</thead>
+						<tbody id = "subTableBody013">
+						</tbody>		
+					</table>
+					</center>
+				</td>
+
+				<td> 
+					<center>
+					<table id="subTable014" style=" width:50%">
+						<thead>
+							<tr><th id="subTableHead014"> </th></tr>
+						</thead>
+						<tbody id = "subTableBody014">
+						</tbody>		
+					</table>
+					</center>
+				</td>
+				<td> </td>
+				<td>
+					<center>
+					<table id="subTable10" style=" width:50%">
+						<thead>
+							<tr><th id="subTableHead10"> </th></tr>
+						</thead>
+						<tbody id = "subTableBody10">
+						</tbody>		
+					</table>
+					</center>
+				</td>
+			</tr>
+		</table>
+		<!-- END OF TABLE THAT HOLDS THE DB TABLES -->
+
+		<br/><br/> 
+	</div>
+
+	<div id="practice" class="tab-pane fade in">
+		<h1> IRIS Practice Exercises </h1>
+		<center><p>The following excercises are intended as practice to familiarize yourself with the IRIS user interface and workflow.</p></center>
+		<br/>
+		<h2> Exercise One </h2>
+		<p> PRE-CONDITIONS: 	Go to the publishing services instance of IRIS <a href="https://iris.pubsvs.com" target="_blank"> (iris.pubsvs.com) </a> and create a new offer for the item LD1.</p>
+		<div>
+			<h3> Tasks: </h3>	
+
+			<ol>
+				<li> Create an offer in IRIS with 2 main prices / choices. </li>
+				<br/>
+				<li>Attach a cross sell offer to the offer in step 1.  It can be any item other than LD1 </li>
+				<br/>
+				<li> Create a piece of HTML content using the offer from step 1 </li>
+				<br/>
+				<li>Create a piece of video content and attach the HTML version to that content </li>
+				<br/>
+				<li>No create a dedicated effort going to MC TEST LIST with the target IRIS_TEST_LIST-IRISUSER_1 using the version you just created.  Complete the following:
+					<ol type='a'>
+						<li>Enter an effort tag titled '[<i><b>enter your name</b></i>]'s First Test (trick question) </li>
+						<li>Create and save a lift note from the effort level </li>
+						<li>Enter a note on the effort level </li>
+						<li>Create and assign an effort row color </li>
+						<li>Create and assign the effort to a testing group </li>
+						<li>Give yourself receive domain request email and paid code email permissions. </li>
+					</ol>
+				</li>
+				<br/>
+				<li>Go to My Queue and request the promo code for the dedicated effort that you just created.  Click on the link in the promo code request email and enter a code (it can be random) </li>
+				<br/>
+				<li> Go back to the effort, copy it and assign it to a multivariate group but do not add a split </li>
+				<br/>
+				<li>Do not add additional multivariate efforts </li>
+				<br/>
+				<li>Repeat step 7 with the new effort you created </li>
+				<br/>
+				<li> Now go to the mailing just created (you may not have known it but you just created a mailing) </li>
+				<br/>
+				<li> Send an IRIS test email to yourself!</li>
+			</ol>
+		</div>
+
+		<input type="text" id="words1" name="commentBox"> 
+		<button id="butt1"> Add Question/Comment </button>
+		<h5 style="text-indent:92px;color:red; text-decoration:bold;font-size:20px;">NOTE: Your comments will not be saved if you exit/refresh the page, so be sure to copy & paste them elsewhere when you're done with the exercise.</h5>
+		<div id="commentsSection1" class="commentsSection">
+			<p> Questions/Comments: </p>
+			<br/>
+		</div>
+		<script type="text/javascript">
+			function addComment() {
+				var newComment = document.getElementById('words1').value;
+				var newP = document.createElement('p');
+				var newTxt = document.createTextNode(newComment);
+				newP.appendChild(newTxt)
+
+				var commBox = document.getElementById('commentsSection1');
+				commBox.appendChild(newP);
+
+				document.getElementById('words1').value = " ";
+			}
+			document.getElementById('butt1').addEventListener("click", addComment, true);
+		</script>
+		<br/><br/><br/><br/>
+		<hr/> <!-- _________________________________________________________________________________________________________________________________________________________________________________________________________________________ -->
+		<br/><br/><br/><br/>
+		<h2>Exercise Two</h2>
+		<p> NOTE: Exercise 2 involves lead gen training.  It will be more difficult than the first one because the lead gen application leaves little to be desired (and we know that lead gen in 4.0 will be completely different).</p>
+		<br/>
+		<p> PRE-CONDITION: Go to the publishing services instance of IRIS <a href="https://iris.pubsvs.com" target="_blank"> (iris.pubsvs.com) </a> </p>
+
+		<div>
+			<h3> Tasks: </h3>
+			<ol>
+				<li> This offer should include a cross sell for the list IRIS.</li>
+				<br/>
+				<li> Create a lead gen offer using the IRIS Test List and attach the co-reg from step 1. </li>
+				<br/>
+				<li> Create a signup page that also includes a checkbox for the coreg (I don't believe the system supports this through the WYSIWYG, you may need to code this yourself).  I can find examples if you need them. </li>
+				<br/>
+				<li> Create a signup page that does not have a co-reg checkbox. </li>
+				<br/>
+				<li> Create a confirmation page that includes a co-reg signup form. </li>
+				<br/>
+				<li> Create a co-reg confirmation email </li>
+				<br/>
+				<li> Create a confirmation email </li>
+				<br/>
+				<li> Create a report (this may be out of sequence but the system should prompt you to create all of these entities). </li>
+				<br/>
+				<li> Now go to the effort level and create an effort using the signup page from step 3 using the confirmation page from step 5. </li>
+				<br/>
+				<li> Copy the effort created in step 9 and create a new effort but  this time use the page from step 4.  Select the co-reg confirmation page you created in step 5 and add this effort to the multivariate group. </li>
+				<br/>
+				<li> Go to my queue and request a promo code for those two efforts. </li>
+			</ol>
+
+		</div>
+		<input type="text" id="words2" name="commentBox"> 
+		<button id="butt2"> Add Question/Comment </button>
+		<h5 style="text-indent:92px;color:red; text-decoration:bold;font-size:20px;">NOTE: Your comments will not be saved if you exit/refresh the page, so be sure to copy & paste them elsewhere when you're done with the exercise.</h5>
+		<div id="commentsSection2" class="commentsSection">
+			<p> Questions/Comments: </p>
+			<br/>
+		</div>
+		<script type="text/javascript">
+			function addComment() {
+				var newComment = document.getElementById('words2').value;
+				var newP = document.createElement('p');
+				var newTxt = document.createTextNode(newComment);
+				newP.appendChild(newTxt)
+
+				var commBox = document.getElementById('commentsSection2');
+				commBox.appendChild(newP);
+
+				document.getElementById('words2').value = " ";
+			}
+			document.getElementById('butt2').addEventListener("click", addComment, true);
+		</script>
+		<br/><br/><br/><br/>
+		<hr/> <!-- _________________________________________________________________________________________________________________________________________________________________________________________________________________________ -->
+		<br/><br/><br/><br/>
+	</div>
+
+	<div id="api" class="tab-pane fade in">
+		<h4> API Calls </h4>
+		<p> IRIS makes calls to MiddleWare, OPIUM & Message Central! Below is a quick view of some of the calls it makes (and how they relate to IRIS).</p>
+		
+		<!-- <div class="col-md-3 btn btn-primary" style="font-size:30px;" data-toggle="tab" data-target="#advantage"> Advantage </div>  -->
+
+		<div class="col-md-3 btn btn-primary" style="font-size:30px;" data-toggle="tab" data-target="#messagecentral"> Message Central </div>
+		&nbsp; 
+		<div class="col-md-3 btn btn-primary" style="font-size:30px;" data-toggle="tab" data-target="#middleware"> Midleware </div>
+		&nbsp; 
+		<div class="col-md-3 btn btn-primary" style="font-size:30px;" data-toggle="tab" data-target="#opium"> OPIUM </div>
+		&nbsp; 
+		<br style="clear:both"/>
+
+		<div id="apiTabContents" class="tab-content" style="margin-top:25px;">
+		
+			<div id="advantage" class="tab-pane">
+				<p> Advantage Info </p>
+
+			</div>
+		
+			<div id="messagecentral" class="tab-pane">
+				<div class="col-md-12">
+				
+					<center>
+					<h3> Message Central REST Services API Calls </h3>
+	
+					<p>Find the most recent release notes document <a href="http://www.ezimages.net/fspcs/MessageCentralServicesAPIs_06102015_v1.2.pdf" target="_blank">here</a></p>
+
+					<p>For the API calls, remember the following: </p>	
+					<br/><br/> 
+					<span> For paid related calls:</span> &nbsp; <label>Header = Stack: MC2 </label> <br/> 
+					<span> Also for paid related calls:</span> &nbsp; <label>Use 'mcs-paid' instead of 'mcs' within the URL </label><br/> 
+					<label> EVERY CALL REQUIRES YOUR INSTANCES TOKEN! </label> <br/> <br/> 
+					</center>
+				</div>
+				
+
+				<div class="panel-group" id="accordianAPI" style="font-size:80%; cursor:pointer">
+					
+					<div class="panel panel-default col-md-6">
+						<div class="panel-heading" data-toggle="collapse" data-target="#mcOrgIds" data-parent="#accordianAPI">
+							<h1>MC Org IDs</h1>
+						</div>
+						<div id="mcOrgIds" class="panel-collapse collapse">
+							<div>
+								
+								<table class="table table-striped table-condensed">
+									<thead>
+										<tr>
+											<th>orgid</th>
+											<th>Affiliate</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr> <td>1</td><td>Stansberry</td></tr>
+										<tr> <td>2</td><td>Health</td></tr>
+										<tr> <td>3</td><td>France</td></tr>
+										<tr> <td>4</td><td>OwnOrg_999</td></tr>
+										<tr> <td>5</td><td>London</td></tr>
+										<tr> <td>6</td><td>Common Sense Publishing</td></tr>
+										<tr> <td>7</td><td>India</td></tr>
+										<tr> <td>8</td><td>Money Map Press</td></tr>
+										<tr> <td>9</td><td>Oxford</td></tr>
+										<tr> <td>10</td><td>Sovereign Society</td></tr>
+										<tr> <td>11</td><td>Institute for Natural Healing</td></tr>
+										<tr> <td>12</td><td>International Living</td></tr>
+										<tr> <td>13</td><td>Agora Financial</td></tr>
+										<tr> <td>14</td><td>Contrarian Profits</td></tr>
+										<tr> <td>15</td><td>Institute For Individual Investors</td></tr>
+										<tr> <td>16</td><td>OmniVista Health</td></tr>
+										<tr> <td>17</td><td>Sante (Health France)</td></tr>
+										<tr> <td>18</td><td>Agora UK</td></tr>
+										<tr> <td>19</td><td>Bonner and Partners</td></tr>
+										<tr> <td>20</td><td>Port Phillip</td></tr>
+										<tr> <td>21</td><td>Portner Press</td></tr>
+										<tr> <td>22</td><td>Salud Nutricion y Bienestar</td></tr>
+										<tr> <td>23</td><td>Inversor Global</td></tr>
+										<tr> <td>24</td><td>Wall Street Daily</td></tr>
+										<tr> <td>25</td><td>Rancho Santana</td></tr>
+										<tr> <td>26</td><td>Pathfinder International</td></tr>
+										<tr> <td>27</td><td>Classical Wisdom</td></tr>
+										<tr> <td>28</td><td>China</td></tr>
+										<tr> <td>29</td><td>Brazil/Empericus</td></tr>
+									</tbody>
+								</table>
+
+								<hr/> 
+
+								<span style="color:blue;font-weight:bold;">findMCUsersByOrgId</span>
+								&nbsp;-&nbsp; 
+								<span> Find Message Central users belonging to the MC org.</span>
+								<p>USE IN IRIS - ??.</p>
+								<span style="color:gray;">https://servicegateway.agora-inc.com/mcs/user/orgid/{orgid}</span>
+
+							</div>
+						</div>
+						<!-- END OF FIND THE IDS PANEL BODY -->
+					</div>
+					<!-- END OF FIND THE IDS PANEL -->
+
+					<div class="panel panel-default col-md-6">
+						<div class="panel-heading" data-toggle="collapse" data-target="#listServicePanel" data-parent="#accordianAPI">
+							<h1>List Service</h1>
+						</div>
+						<div id="listServicePanel" class="panel-collapse collapse">
+							<div class="panel-body">
+								<span style="color:blue;font-weight:bold;">findAgoraListByOrgId</span>
+								&nbsp;-&nbsp; 
+								<span> Find information on all current mailings under a specific list and MC org.</span>
+								<p>USE IN IRIS - ??.</p>
+								<span style="color:gray;">https://servicegateway.agora-inc.com/mcs/agora/mailing/orgid/{orgid}</span>
+
+								<hr/>
+
+								<span style="color:blue;font-weight:bold;">findAgoraListByOrgIdAndUserId</span>
+								&nbsp;-&nbsp;
+								<span> Find lists a specific user has access to under an MC org. </span>
+								<p>USE IN IRIS - Populate list options when setting up mailing.</p>
+								<span style="color:gray;">https://servicegateway.agora-inc.com/mcs/agora/list/orgid/{orgid}/userid/{userid} </span>
+							
+								<hr/>
+							
+								<span style="color:blue;font-weight:bold;">findAgoraTargetByListIdOrgId</span>
+								&nbsp;-&nbsp;
+								<span> Find information on all current mailings under a specific list and MC org.</span>
+								<p>USE IN IRIS - ??</p>
+								<span style="color:gray;">https://servicegateway.agora-inc.com/mcs/agora/target/orgid/{orgid}/lid/{listid}</span>
+
+								<hr/>
+								<p><span style="color:red;">NOTE:</span> The next two are PUT calls!! They are only here to show the IRIS-MC relationship</p>
+
+								<br/> <br/> 
+
+								<span style="color:blue;font-weight:bold;"> associateContentWithAgoraList</span>
+								&nbsp;-&nbsp;
+								<span> Create an association between a mailing and a list.</span>
+								<p> USE IN IRIS - Adding a new Mailing; Clicking the "Create"/"Add" button, sends this call! </p>
+								<span style="color:gray;">https://servicegateway.agora-inc.com/mcs/agora/associatecontent/orgid/{orgid}/cid/{contentid}/lid/{listid}</span>
+
+								<hr/> 
+
+								<span style="color:blue;font-weight:bold;"> associateContentWithAgoraList</span>
+								&nbsp;-&nbsp;
+								<span> Create an association between a mailing and a list.</span>
+								<p> USE IN IRIS - Adding a new Mailing; Clicking the "Create"/"Add" button, sends this call! </p>
+								<span style="color:gray;">https://servicegateway.agora-inc.com/mcs/agora/associatemailing/orgid/{orgid}/mid/{mailingid}/lid/{listid} </span>
+							</div>
+							<!-- END OF LIST SERVICE PANEL BODY -->
+						</div>
+						<!-- END OF LIST SERVICE PANEL -->
+					</div>
+					<!-- END OF THE LIST SERVICE PANEL -->
+
+					<div class="panel panel-default col-md-6">
+						<div class="panel-heading" data-toggle="collapse" data-target="#contentServicePanel" data-parent="#accordianAPI">
+							<h1>Content Service</h1>
+						</div>
+						<div id="contentServicePanel" class="panel-collapse collapse">
+							<div class="panel-body">
+								<span style="color:blue;font-weight:bold;">findContentByOrgId</span>
+								&nbsp;-&nbsp;
+								<span> Find all content under an MC org.</span>
+								<p>USE IN IRIS - ??</p>
+								<span style="color:gray;">https://servicegateway.agora-inc.com/mcs/content/orgid/{orgid}</span>
+
+								<hr/> 
+
+								<span style="color:blue;font-weight:bold;">findContentByOrgIdAndContentId</span>
+								&nbsp;-&nbsp;
+								<span> Find a specific piece of content by the content ID and MC org.</span>
+								<p>USE IN IRIS - ??</p>
+								<span style="color:gray;">https://servicegateway.agora-inc.com/mcs/content/orgid/{orgid}/cid/{contentid}</span>
+
+								<hr/> 
+
+								<span style="color:blue;font-weight:bold;">findContentDetailByOrgIdAndContentId</span>
+								&nbsp;-&nbsp;
+								<span> Find specific content by the content ID and MC org. This call will return more details about the content than the summary call, such as the HTML, headers, attachments, etc.</span>
+								<p>USE IN IRIS - ??</p>
+								<span style="color:gray;">https://servicegateway.agora-inc.com/mcs/content/detail/orgid/{orgid}/cid/{contentid}</span>
+
+								<hr/> 
+
+								<span style="color:blue;font-weight:bold;">findAgoraContentByListIdOrgId</span>
+								&nbsp;-&nbsp;
+								<span> Find information on all current content under a specific list and MC org.</span>
+								<p>USE IN IRIS - ??</p>
+								<span style="color:gray;">https://servicegateway.agora-inc.com/mcs/agora/content/orgid/{orgid}/lid/{listid}</span>
+
+								<hr/> 
+
+								<span style="color:blue;font-weight:bold;">parseContentForLinkIds</span>
+								&nbsp;-&nbsp;
+								<span> Parse the content for links and substitute the content URLs to link-tracking formatted URLs.</span>
+								<p>USE IN IRIS - After mailing has been scheduled?? Somewhere on the mailings page, you get a switch in the links. </p>
+								<span style="color:gray;">https://servicegateway.agora-inc.com/mcs/content/parse/orgid/{orgid}/cid/{contentid}</span>
+
+								<hr/> 
+
+								<span style="color:blue;font-weight:bold;">previewContent</span>
+								&nbsp;-&nbsp;
+								<span> Preview content. </span>
+								<p>USE IN IRIS - ??</p>
+								<span style="color:gray;">https://servicegateway.agora-inc.com/mcs/content/preview/orgid/{orgid}/cid/{contentid}</span>
+
+								<hr/>
+
+								<p><span style="color:red;">NOTE:</span> The next two are POST calls!! They are only here to show the IRIS-MC relationship</p>
+
+								<br/> <br/> 
+
+								<span style="color:blue;font-weight:bold;">createContent</span>
+								&nbsp;-&nbsp;
+								<span> Create content. The newly created content object is under an MC org yet not associated with a list. To associate the content with a list, see associateContentWithAgoraList.</span>
+								<p>USE IN IRIS - ??</p>
+								<span style="color:gray;">https://servicegateway.agora-inc.com/mcs/content/orgid/{orgid}</span>
+
+								<hr/> 
+
+								<span style="color:blue;font-weight:bold;">updateContent</span>
+								&nbsp;-&nbsp;
+								<span> Update content. Content ID and modified date are required. To get content ID and modified date, see findContentByOrgId. </span>
+								<p>USE IN IRIS - ??</p>
+								<span style="color:gray;">https://servicegateway.agora-inc.com/mcs/content/orgid/{orgid}/cid/{contentid}</span>
+
+								<hr/>
+
+								<p><span style="color:red;">NOTE:</span> The next is a POST call!! They are only here to show the IRIS-MC relationship</p>
+
+
+								<span style="color:blue;font-weight:bold;">deleteContent</span>
+								&nbsp;-&nbsp;
+								<span> Delete content not associated with any mailing. </span>
+								<p>USE IN IRIS - ??</p>
+								<span style="color:gray;">https://servicegateway.agora-inc.com/mcs/content/orgid/{orgid}/cid/{contentid}</span>
+							</div>
+						</div>
+						<!-- END OF  CONTENT SERVICE PANEL BODY -->
+					</div>
+					<!-- END OF CONTENT SERVICE PANEL -->
+
+					<div class="panel panel-default col-md-6">
+						<div class="panel-heading" data-toggle="collapse" data-target="#linkServicePanel" data-parent="#accordianAPI">
+							<h1>Link Service</h1>
+						</div>
+						<div id="linkServicePanel" class="panel-collapse collapse">
+							<div class="panel-body">
+								
+								<span style="color:blue;font-weight:bold;">findLinksByOrgId</span>
+								&nbsp;-&nbsp;
+								<span>Find a set of links by MC org.</span>
+								<p>USE IN IRIS - ??</p>
+								<span style="color:gray;">https://servicegateway.agora-inc.com/mcs/link/orgid/{orgid}</span>
+
+								<hr/> 
+
+								<span style="color:blue;font-weight:bold;">findLinkByOrgIdAndLinkId</span>
+								&nbsp;-&nbsp;
+								<span>Get a specific link under an MC org.</span>
+								<p>USE IN IRIS - ??</p>
+								<span style="color:gray;">https://servicegateway.agora-inc.com/mcs/link/orgid/{orgid}/linkid/{linkid}</span>
+
+								<hr/> 
+
+								<p><span style="color:red;">NOTE:</span> The next two are POST calls!! They are only here to show the IRIS-MC relationship</p>
+
+								<br/> <br/> 
+
+								<span style="color:blue;font-weight:bold;">createLink</span>
+								&nbsp;-&nbsp;
+								<span>Create a link under a specific MC org.</span>
+								<p>USE IN IRIS - ??</p>
+								<span style="color:gray;">https://servicegateway.agora-inc.com/mcs/link/orgid/{orgid}</span>
+
+								<hr/> 
+
+								<span style="color:blue;font-weight:bold;">updateLink</span>
+								&nbsp;-&nbsp;
+								<span>Update a link under a specific MC org.</span>
+								<p>USE IN IRIS - ??</p>
+								<span style="color:gray;">https://servicegateway.agora-inc.com/mcs/link/orgid/{orgid}</span>
+							</div>
+						</div>
+						<!-- END OF LINK SERVICE PANEL BODY-->
+					</div>
+					<!-- END OF LINK SERVICE PANEL -->
+
+					<div class="panel panel-default col-md-6">
+						<div class="panel-heading" data-toggle="collapse" data-target="#mailingServicePanel" data-parent="#accordianAPI">
+							<h1>Mailing Service</h1>
+						</div>
+						<div id="mailingServicePanel" class="panel-collapse collapse">
+							<div class="panel-body">								
+								<span style="color:blue;font-weight:bold;">previewRecipientContentPlusSpamcheck</span>
+								&nbsp;-&nbsp;
+								<span>Preview content as a specific recipient with the option to include spam check or not.</span>
+								<p>USE IN IRIS - ??</p>
+								<span style="color:gray;">https://servicegateway.agora-inc.com/mcs/content/preview/email/{email}/orgid/{orgid}/cid/{contentid}/spamcheck/{spamcheck_bool}</span>
+
+								<hr/> 
+
+								<span style="color:blue;font-weight:bold;">getRecipientContentDetailSpamScore</span>
+								&nbsp;-&nbsp;
+								<span> Check the details including spam score of a specific content for a specific recipient.</span>
+								<p>USE IN IRIS - ??</p>
+								<span style="color:gray;">https://servicegateway.agora-inc.com/mcs/content/spamcheck/detail/email/{email}/orgid/{orgid}/cid/{contentid}/</span>
+
+								<hr/>
+
+								<span style="color:blue;font-weight:bold;">sendTestMailing</span>
+								&nbsp;-&nbsp;
+								<span> Send a test message to preview the content. Note that the content must be parsed prior to sending test mailing. To parse content, see parseContentForLinkIds. </span>
+								<p>USE IN IRIS - ??</p>
+								<span style="color:gray;">https://servicegateway.agora-inc.com/mcs/mailing/sendtest/email/{email}/orgid/{orgid}/cid/{contentid}/</span>
+
+
+								<hr/> 
+
+								<span style="color:blue;font-weight:bold;">findAgoraMailingsByListIdOrgId</span>
+								&nbsp;-&nbsp;
+								<span> Find information on all current mailings under a specific list and MC org.</span>
+								<p>USE IN IRIS - Double Checking If Mailing is Sent To MC</p>
+								<span style="color:gray;">https://servicegateway.agora-inc.com/mcs/agora/mailing/orgid/{orgid}/lid/{listid}</span>
+
+								<hr/> 
+
+								<span style="color:blue;font-weight:bold;">findMailingsByOrgId</span>
+								&nbsp;-&nbsp;
+								<span> Find a set of non-archived mailings by MC org. </span>
+								<p>USE IN IRIS - ?? </p>
+								<span style="color:gray;">https://servicegateway.agora-inc.com/mcs/mailing/orgid/{orgid}</span>
+
+								<hr/> 								
+
+								<span style="color:blue;font-weight:bold;">findMailingsByOrgId</span>
+								&nbsp;-&nbsp;
+								<span> Find a set of non-archived mailings by MC org. </span>
+								<p>USE IN IRIS - ?? </p>
+								<span style="color:gray;">https://servicegateway.agora-inc.com/mcs/mailing/orgid/{orgid}</span>
+
+								<hr/> 
+
+								<span style="color:blue;font-weight:bold;">suspendMailing</span>
+								&nbsp;-&nbsp;
+								<span>Suspend a mailing. Please note that mailings already suspended can be suspended again. </span>
+								<p>USE IN IRIS - ?? </p>
+								<span style="color:gray;">https://servicegateway.agora-inc.com/mcs/mailing/suspend/orgid/{orgid}/mid/{mailingid}/suspended/true</span>
+
+								<hr/>
+
+								<span style="color:blue;font-weight:bold;">unsuspendMailing</span>
+								&nbsp;-&nbsp;
+								<span>Unsuspend a mailing. Please note that mailings already unsuspended can be unsuspended again. </span>
+								<p>USE IN IRIS - ?? </p>
+								<span style="color:gray;">https://servicegateway.agora-inc.com/mcs/mailing/suspend/orgid/{orgid}/mid/{mailingid}/suspended/false</span>
+
+								<hr/>
+
+								<p><span style="color:red;">NOTE:</span> The next calls are POST/PUT calls!! They are only here to show the IRIS-MC relationship</p>
+
+								<br/> <br/> 
+
+								<span style="color:blue;font-weight:bold;">createMailing</span>
+								&nbsp;-&nbsp;
+								<span> Create a mailing. The newly created mailing is under an MC org yet not associated with a list. To associate a mailing with a list, see associateAMailingWithAgoraList. </span>
+								<p>USE IN IRIS - ?? </p>
+								<span style="color:gray;">https://servicegateway.agora-inc.com/mcs/mailing/orgid/{orgid}</span>
+
+								<hr/> 
+								
+								<span style="color:blue;font-weight:bold;">updateMailing</span>
+								&nbsp;-&nbsp;
+								<span> Update a mailing. Mailing ID and modified date are required. To get mailing ID and modified date, see findMailingsByOrgId </span>
+								<p>USE IN IRIS - ?? </p>
+								<span style="color:gray;">https://servicegateway.agora-inc.com/mcs/mailing/orgid/{orgid}</span>
+
+								<hr/>
+																
+								<span style="color:blue;font-weight:bold;">updateMailingWithAdditionalContent</span>
+								&nbsp;-&nbsp;
+								<span> Update a mailing by adding an additional segment.</span>
+								<p>USE IN IRIS - ?? </p>
+								<span style="color:gray;">https://servicegateway.agora-inc.com/mcs/mailing/addcontent/orgid/{orgid}/mid/{mailingid}/cid/{contentid}/name/{name}</span>
+
+								<hr/>								
+								
+								<span style="color:blue;font-weight:bold;">cancelMailing</span>
+								&nbsp;-&nbsp;
+								<span>Cancel a mailing. Please note that mailings already cancelled can be cancelled again.</span>
+								<p>USE IN IRIS - ?? </p>
+								<span style="color:gray;">https://servicegateway.agora-inc.com/mcs/mailing/cancel/orgid/{orgid}/mid/{mailingid}</span>
+							</div>
+
+						</div>
+						<!-- END OF MAILING SERVICE PANEL BODY -->
+					</div>
+					<!-- END OF MAILING SERVICE PANEL -->
+
+					<div class="panel panel-default col-md-6">
+						<div class="panel-heading" data-toggle="collapse" data-target="#campaignServicePanel" data-parent="#accordianAPI">
+							<h1>Campaign Service</h1>
+						</div>
+						<div id="campaignServicePanel" class="panel-collapse collapse">
+							<div class="panel-body">
+								
+							</div>
+							<!-- END OF CAMPAIGN SERVICE PANEL BODY -->
+						</div>
+					</div>
+					<!-- END OF CAMPAIGN SERVICE PANEL -->
+
+				</div>
+				<!-- END OF ACCORDIAN API PANEL GROUP -->
+
+			</div>
+			<!-- END OF MESSAGE CENTRAL INFO TAB-PANE -->
+
+			<div id="middleware" class="tab-pane">
+			<p> Middleware Calls </p>
+
+			<div class="panel-group" id="middlewareAccordian">
+				<div class="panel panel-default">
+					<div class="panel-heading" class="collapse" data-toggle="collapse" data-target="#marketingServicesPanel">
+						<h1>Marketing Services</h1>
+					</div>
+					<div id="marketingServicesPanel" class="panel-collapse collapse">
+						<div class="panel-body">
+							<span style="color:blue">findChoicesByOfferCode</span>
+							&nbsp; - &nbsp;
+							<span> Get the items and choices associated with an offerCode</span>
+							<p>USE IN IRIS - Validating choices entered in IRIS basedon Offer Code</p>
+							<span style="color:red"><span style="color:black;font-weight:bold">HTTP Verb:</span>POST</span> &nbsp; | &nbsp; <span>Content-Type</span> <span>applicatin/json</span>
+							<p style="color:gray">https://uat.servicegateway.agora-inc.com/middleware/offer/find/choiceswithoffer</p>
+							
+							<hr/> 
+							
+
+						</div>
+						<!-- END OF MARKETING SERVICES PANEL BODY -->
+					</div>
+	
+				</div>
+				<!-- END OF MARKETING SERVICES PANEL -->
+				
+			</div>
+			<div class="">
+				
+			</div>
+
+			</div>
+			<!-- END OF MIDDLEWARE TAB PANE -->
+
+			<div id="opium" class="tab-pane">
+				<p> OPIUM Info </p>
+			</div>
+			<!-- END OF OPIUM TAB PANE -->
+
+		</div>
+		<!-- END OF API TAB CONTENTS -->
+	</div>
+	<!-- END OF API TAB PANE -->
+
+	<div id="regex" class="tab-pane fade in">
+
+	</div>
+
+	<div id="permissions" class="tab-pane fade in">
+		<!-- <iframe style="width:100%; height: 1000px;" src="https://wiki.itransition.com/display/IRIS/Permissions"> </iframe> -->
+		<div id="permissionsContainer" class="container-fluid" >
+			<nav id="permissionsStack" class="navbar navbar-default col-md-3" style="font-size:250%;">
+				<ul class="nav nav-pills nav-stacked">
+					<li>
+						<a href="#." data-toggle="tab" data-target="#applications">
+						Applications
+						</a>
+					</li>
+					<li><a href="#." data-toggle="tab" data-target="#reporting">Reporting</a></li>
+					<li><a href="#." data-toggle="tab" data-target="#amsEmail">AMS Email</a></li>
+					<li><a href="#." data-toggle="tab" data-target="#affilManag">Affiliate Management</a></li>
+				</ul>
+			</nav>
+			<!-- END OF PERMISSIONS NAV BAR -->
+
+			<div class="tab-content col-md-6 container-fluid" >
+				<div id="applications" class="tab-pane fade in">
+					<ul>
+						<!-- LOGIC ... AS THEY CLICK, RUN FUNCTION WITH ID NAME. 
+						FUNC:= SEND TO ELEMENTS IN MODAL & OPEN MODAL
+						 -->
+						<li id="AdManagement">Ad Management</li>
+						<li>Hide Offer</li>
+						<li> Lead Gen </li>
+						<li> Edit Offer </li>
+						<li> Edit All </li>
+						<li> Cross Sell </li>
+						<li> Domain Request </li>
+						<li> Lead Gen Bulk Upload </li>
+						<li> Edit Content </li>
+						<li> Lead Gen Analytics </li>
+						<li> Renewals </li>
+						<li> Co Reg  </li>
+						<li> Contingency </li>
+						<li> Signup URL Variables </li>
+						<li> Production </li>
+						<li> Mailings Approval </li>
+						<li> Weekly Planner </li>
+						<li> Template Designer </li>
+						<li> Delete All </li>
+					</ul>
+				</div>
+				<div id="reporting" class="tab-pane fade in">
+					<ul>
+						<li>Testing Group</li>
+						<li>Abandons</li>
+						<li>Custom</li>
+						<li>Contingency Report</li>
+					</ul>
+				</div>
+				<div id="amsEmail" class="tab-pane fade in">
+					<ul>
+						<li>Agora Code </li>
+						<li>Paid Code </li>
+						<li>Campaign Alerts</li> 
+						<li>Recieve Domain Request</li>
+						<li>Paid Code Email</li>
+						<li>Effort Redirect </li>
+						<li>Lead Gen Code </li>
+						<li>Lead Gen Code Email</li> 
+						<li>Abandon Email Test </li>
+						<li>Data Integrity Email </li>
+						<li>Target Request </li>
+						<li>IRIS Test Email </li>
+						<li>Adv Offer Email</li>
+					</ul>
+				</div>
+				<div id="affilManag" class="tab-pane fade in">
+					<ul>
+						<li>List Placement</li>
+						<li>Item Configuration</li>
+						<li>Organization Management </li>
+						<li>Robots </li>
+						<li>Tag Management </li>
+						<li>Item Management</li>
+					</ul>
+				</div>
+			</div>	
+		</div>
+	</div>
+	<!-- END OF PERMISSIONS TAB PANE -->
+
+	<div id="repreq" class="tab-pane fade in">
+		<h4> Reporting/Requests </h4>
+		<p> Things to Remember for reporting & request </p>
+		<br/>
+		<div class="container">
+			<img src="./Images/bug.jpg" alt="Bug symbol"/> Bug: A problem which impairs or prevents functionality (discovered by QA team) <br/><br/>
+			<img src="./Images/bug.jpg" alt="Bug symbol"/> Defect: A problem which impairs or prevents functionality (reported by users, IRIS team)<br/> <br/>
+			<img src="./Images/change_request.jpg" alt="Change Request symbol"/> Change Request: A change to requirements that have already been fully specified or a task that has been completed. These should be few of these. <br/> <br/>
+			<img src="./Images/improvement.png" alt="Improvement symbol"/> Improvement: An improvement or enhancement to an existing feature or task.
+			<br/> <br/>
+			<img src="./Images/story.png" alt="Story symbol"/>  A succinct description of what’s needed from a business or user perspective.
+			<br/> <br/>
+			Epic: For us, this is just a category for grouping stories/tasks.
+		</div>
+	</div>
+
+	<div id="dictionary" class="tab-pane fade in">
+		<iframe src="https://share.agora-inc.com/intranet/Training/SitePages/Agora%20Dictionary.aspx" style="width:100%;height:1000px; margin-right:30px;"></iframe>
+	</div>
+
+</div>
+
+
+<!--THE DATABASES-->
+<script id="theDatabases">
+	
+	// CREATIVE-related TABLES
+	var creative = {
+				table_name: "Creative",			
+				fields: [' CreativeId', 'ItemtypeId', 'ItemId', 'CreativeName', 'CreativeTypeId', 
+			 			'CreativeFunctionId', 'Notes', 'CreativeStatus', 'StatusChangedManually', 
+			 			'ExpireOn', 'UserId', 'CreatedAt', 'UpdatedBy', 'UpdatedAt'],
+			 	connection: true,	
+				subTables: ['CreativeType', 'CreativeFunction', 'CreativeOffer', 'CreativeStatus',
+							'Email', 'Advertisement','Offer', 'Page']
+				};
+	var creativeoffer = {
+				table_name: "CreativeOffer",			
+				fields: ['CreativeId', 'RedirectUrl', 'IsRenewal', 'IsFromAdvantage', 'AdvantageTitle', 'AdvantageTitle', 'UrlNickname', 'OpiumPromoCode', 'OfferCode', 'AdvantageItemtype', 'AdvantageItemDescription', 'CreativeFlagId'],
+			 	connection: true,	
+				subTables: [ 'Creative', 'Offer', 'CreativeStatus', 'CreativeFunction', 'Advertisement',
+							'Email', 'Page','CreativeType', ]
+				};
+	var creativetype = {
+					table_name: "CreativeType",			
+					fields: [' CreativeTypeId' , 'Name', '','','','', '0 = None', '1 = Offer', '2 = Page', '3 = Email', '4 = Banner Ad', '5 = Space Ad', '6 = Text link'],
+				 	connection: true,	
+					subTables: ['Creative']
+					};
+	var creativefunction = {
+					table_name: "CreativeFunction",			
+					fields: [' CreativeFunctionId' , 'Name', '','','','', '0 = None', '1 = Main', '2 = Cross-Sell', '3 = Upsell', '4 = Promotion', '5 = Abandon', '6 = Advertisement', '7 = CoReg', '8 = Take Signups', '9 = Report', '10 = Confirm Signups', '11 = Prompt Double Opt-in Action', '12 = Double Opt-In ConfirmationLink', '13 = Take Signups + Confirm Signups', '14 = Confirm Co Reg Signups' ],
+				 	connection: true,	
+					subTables: ['Creative']
+					};					
+	var creativestatus = {
+					table_name: "CreativeStatus",			
+					fields: [' CreativeStatusId' , 'Name', '', '', '', '', '1 = Active', '2 = Inactive', '3 = Hidden'],
+				 	connection: true,	
+					subTables: ['Creative']
+					};
+
+
+
+	// OFFER-related TABLES
+	var offer = {
+			table_name: "Offer",			
+			fields: ['CreativeId', 'Renewal', 'OfferCode', 'UrlNickname',
+					  'RedirectUrl', 'LeadGenOfferStyleId (will be removed in next phases)', 'OfferCode', 'FirstPriceId', 'CreativeFlag', 'IsAdvantageOffer', 'AdvantageOffer', 'HasSecondaryOffers', 'AdvantageItemType', 'AdvantageItemDescription', 'IsAdvantageCrossSell' ],
+		 	connection: true,	
+			subTables: [ 'CreativeType', 'Creative', 'Page', 'Creative', 
+						 'Email', 'Advertisement']
+			};
+
+	var price = {
+					table_name: "Price",			
+					fields: ['PriceId', 'value', 'TermId  (1 = Term, 2 = Quantity)', 'CategoryId', 'ChoiceCodeName', 'OfferId',
+					'CreativeOfferId', 'PolicyId  (1 = Refund, 2 = Credit)', 'Currency', 'Renewal', 'InstallmentBillingCode', 'InstallmentDescription', 'MemberOrg', 'MemberCategory', 'UserId', 'CreatedAt', 'UpdatedById', 'UpdatedAt'],
+				 	connection: true,	
+					subTables: ['CreativeOffer']
+					};
+
+
+	//PAGE-related TABLES
+	var page = {
+				table_name: "Page",			
+				fields: [' CreativeId', 'DefaultPageId', 'ContentTypeId', 'DefaultOrderFormId',
+						 'AdvantageDescription', 'FullPromotionLink', 'OrderFormLink', 
+						 'ContentStyleId (removed during UI cahnges)', 
+						 'IsLinkUniquePerEffort (ex. Tracking Required)', 'RedirectPageId (ex Existing HTML Content ID)', 'CreativeFileName (ex: FileName)', 'ExpirationRedirectPageId(ex: ExpirationRedirectContentId)', 'isFreeReport', 'ReportTypeId', 'ExternalUrl (ex: ExternalUrl and ConfirmationExternalLink)', 'SignUpPageStyle', 'AllowMobileDetection', 'ShowHtmlOniPad', 'CustomUrlPath', 'PageContentId'],
+			 	connection: true,	
+				subTables: ['PageContent', 'Creative', 'CreativeType', 'Offer', 'Email', 'Advertisement']
+				};
+
+	var pagecontent = {
+				table_name: "PageContent",			
+				fields: ['PageContentId', 'SubscribeDelay', 'ContentTemplateTypeId', 'PageTitle (ex SignupPageTitle)', 'VideoEmbedCode', 'Body', 'Head', 'ExitPopText (WiatBeforeYouGoContent)'],
+			 	connection: true,	
+				subTables: ['Page']
+				};
+
+	var email = {
+				table_name: "Email",			
+				fields: ['CreativeId', 'DefaultPageId', 'ContentTypeId', 'SubjectLin', 'FriendlyFrom',
+						 'Body (ex Body, LiftNot)', 'MobileSubjectLine', 'FromEmailAddress', 'EmailDelay', 'ValidLeadTime'],
+			 	connection: true,	
+				subTables: [ 'Advertisement', 'Creative', 'CreativeType', 'Page', 'Offer']
+				};
+
+	var link = {
+			table_name : "Link", 
+			fields : ['LinkId', 'AgoraLinkId', 'Name', 'Url', 'LinkType', 'MailingContentId', 'Group',
+						'MultivarateId', 'UserId', 'CreatedAt', 'UpdatedById', 'UpdatedAt'],
+			connection : true, 
+			subTables : ['Mailing', 'Email']
+	};
+
+	var advertisement = {
+				table_name: "Advertisement",			
+				fields: ['CreativeId', 'DefaultPageId', 'BannerSizeId', 'BannerFileName', 'Body'],
+			 	connection: true,	
+				subTables: ['Page', 'Email', 'Creative', 'CreativeType', 'Offer']
+				};
+	var list = {
+			table_name : "List", 
+			fields: ['ListId', 'ListTypeId', 'Name', 'Code', 'ListCategoryId', 'Scheduled', 'AgoraOrganizationId', 'AgoraListId', 'ListStatusId', 'UserId', 'CreatedAt', 'UpdatedById', 'UpdatedAt'], 
+			connection: true, 
+			subTables: ['ListType']
+	};
+
+	var listtype = {
+			table_name : "ListType",
+			fields: ['ListTypeId', 'Name', '','','','','1 = Internal Free', '3 = Non Agora', '4 = Agora', '5 = Paid', '6 = Website'], 
+			connection: true, 
+			subTables : ['List']
+	};
+
+	//Affiliate Management Related table
+	var item = {
+			table_name : 'Item', 
+			fields : ['ItemId', 'Code', 'MemberCategory', 'ProductTypeId', 'SubscriptionTypeId', 'Editor',
+						'Name', 'Description', 'IsActive', 'IsAgora', 'Source', 'DeptCode', 'ListName',
+						'FreeSignupUrl', 'PubPropertyId', 'LeadGenDefaultRedirectUrl', 'LocationId', 
+						'ItemTypeId', '<b>ItemCode</b>','AnalyticsCode', 'ConversionCode', 'ConfirmationCookieName', 'ConfirmationCookieValue', 'ConfirmationEmailFromAddress', 'ConfirmationEmailFromName', 'DoNotProcess',
+						'IsMultiItem', 'IsJointVenture', 'DeliveryFrequenceTypeId', 'UserId', 'CreatedAt',
+						'UpdatedById', 'UpdatedAt', 'AgoraListId', 'XBindingHeader', 'PromoCodePrefix', 'IsSourceCodeAutogenerated', 'AgoraOrganizationId' ],
+			connection : true, 
+			subTables : ['ItemType', 'SubscriptionType', 'ProductType', 'LeanGenType']
+	};
+
+	var itemtype = {
+			table_name : 'ItemType', 
+			fields : ['ItemTypeId', 'Name', '', '', '', '', '0 = None', '1 = Subscription', '2 = Product',
+						'3 = Lead Gen'],
+			connection : true, 
+			subTables : ['Item']
+	};
+
+	var subscriptiontype = {
+			table_name : 'SubscriptionType', 
+			fields : ['SubscriptionTypeId', 'Name', '', '', '','', '0 = None', '1 = Back End', '2 = Front End', '3 = Lifetime'],
+			connection : true, 
+			subTables : ['Item']
+	};
+
+	var producttype = {
+			table_name : 'ProductType', 
+			fields : ['ProductTypeId', 'Name', '','','','','0 = None', '1 = Books', '2 = Supplements', '3 = Reports', '4 = Other'],
+			connection : true, 
+			subTables : ['Item']
+	};
+
+	var leangentype = {
+			table_name : 'LeanGenType', 
+			fields : ['LeadGenTypeId', 'Name', '','','','','1 = Paid', '2 = Free'],
+			connection : true, 
+			subTables : ['Item']
+	};
+
+
+	//Mailing related Tables
+
+	var mailing = {
+			table_name : 'Mailing', 
+			fields : ['MailingId', 'ListId', 'TargetId', 'TargetTypeId', 'Date', 'Name', 'MailingTypeId', 
+					 'TemplateId', 'Description', 'ApprovedByUserId', 'MailingStatusId', 'DefaultMailingContentId', 'TestEmailWasSent', 'MessageCentralTestEmailWasSent', 
+					 	'WasApproved', 'DedicatedTypeId', 'UserId', 'CreatedAt', 'UpdatedById', 'UpdatedAt'],
+			connection : true, 
+			subTables : ['List', 'MailingStatus', 'MailingContent']
+	};
+
+	var mailingcontent = {
+			table_name : 'MailingContent', 
+			fields : ['MailingContentId', 'MailingId', 'From', 'FriendlyFrom', 'ReplyTo', 'AgoraMailingId',		'AgoracontentId', 'IsLinkTracked', 'SpamScoreDetailsId', 'TargetId', 'SplitPercentage', 'Split', 'MailSourceId', 'UserId', 'CreatedAt', 'UpdatedById', 'UpdatedAt'],
+			connection : true, 
+			subTables : ['Mailing', 'MailingStatus']
+	}; 
+
+	var mailingstatus= {
+			table_name : 'MailingStatus', 
+			fields : ['MailingStatusId', 'Name', '','','','','1 = In Progress (Not Yet Sent To MC)', '2 = Needs Scheduling', '3 = Needs Approval', '4 = Approved',
+				'5 = Sending'],
+			connection : true, 
+			subTables : ['Mailing']
+	};
+
+
+	//Statistic related tables 
+
+	var contentstatistics = {
+			table_name : 'ContentStatistics', 
+			fields : ['CreativeId', '~~~skipped fields~~~', 'StartDate', 'Batch', 'BatchOrder', 'Gross', 
+						'GrossOrder', 'Net', 'NetOrder', 'Clicks', 'Opens', 'Delivered', 'PageViews', 
+					  'TotalSpendBatch', 'TotalSpendGross', 'TotalSpendNet', 'MainBatchOrder', 
+					  'MainGrossOrder', 'MainNetOrder', 'MainBatch', 'MainNet', 'MainGross', '~~~repeat prev 6 for <br/> CrossSell <br/> Upsell <br/> ~~~', 
+					  'Adds', 'Views', '~~~skipped fields~~~', 'Attempts', 'UniqueAttempts', 'FullPromotionViews',
+					   'ViewsForClickThroughRateToOrderForm', 'ViewsForConversionRate'], 
+			connection : true, 
+			subTables : ['Creative']
+	};
+
+	var effortstatistics = {
+			table_name : 'EffortStastics',
+			fields : ['EffortId', 'UniqueAttempts', 'Attempts', 'Views','IsCoReg','Adds','~~~skipped fields~~~', 
+						'Unsubs', 'PageViews', 'Clicks','Opens', 'Delivered', '~~skipped fields~~~', 
+						'FullPromotionViews'],
+			connection : true, 
+			subtables : ['Effort']
+	};
+
+	var mailingstatistics = {
+			table_name : 'MailingStatistics', 
+			fields : ['MailingId', 'Count', 'Delivered', 'Opens', 'Clicks', 'OpenRate', 'CTRP'], 
+			connection : true, 
+			subTables : ['Mailing']
+	};
+
+	var schedulestatistics = {
+			table_name : 'ScheduleStatistics', 
+			fields : ['OrganizationId', 'IsLiftNoteExists', 'TotalDelivered', 'EffortTypeId', 
+					'ItemTypeId', 'EffortId', 'PromoCode', '~~skipped fields~~~', 'External Link', 'ListName', 'Delivered', 'Clicks', 'Opens', 'PageViews','~~skipped a lot of fields~~~' ], 
+			connection : false, 
+			subTables : []
+	};
+</script>
+<!-- WORKING (i.e. setup correctly) -->
+
+
+
+
+
+<!-- SCRIPT FOR DATABASE TABLES-->
+<script type="text/javascript">
+																
+	//ARRAY OF DATABASE TABLES - STRINGS
+	var tables = ["creative", "creativeoffer", "creativetype", "creativefunction", "creativestatus","offer", "page", "pagecontent", "price", "email", "advertisement", "list", "listtype", "item", "itemtype", "subscriptiontype", "producttype", "leangentype", "link", "mailing", "mailingcontent", "mailingstatus", "contentstatistics", "effortstatistics", "mailingstatistics", "schedulestatistics"];
+	//ARRAY OF DATABASE TABLES - OBJECTS
+	var dbo = [creative, creativeoffer, creativetype, creativefunction, creativestatus, offer, page, pagecontent, price, email, advertisement, list, listtype, item, itemtype, subscriptiontype, producttype, leangentype, link, mailing, mailingcontent, mailingstatus, contentstatistics, effortstatistics, mailingstatistics, schedulestatistics];
+
+
+	function firstDB(){
+		// Show the help message
+		$("#tableMsg").show();
+
+		//Change major text
+		$("#selectTable").text("Select A Table");
+		//Hide the arrow
+		$("#tableSelected").css("visibility", "hidden");
+
+		// Clear the screen of any tables
+		$("#headingMain").empty();
+		$("#bodyMain").empty();
+		$('#subTableHead01').empty();
+		$('#subTableBody01').empty();	$('#subTableHead011').empty();
+										$('#subTableBody011').empty();
+		$('#subTableHead012').empty();
+		$('#subTableBody012').empty();	$('#subTableHead013').empty();
+										$('#subTableBody013').empty();
+		$('#subTableHead014').empty();
+		$('#subTableBody014').empty();
+				
+		for (var i = 0; i <=10; i++){
+			var hID = '#subTableHead' + i;
+			var bID = '#subTableBody' + i;
+			$(hID).empty();
+			$(bID).empty();
+		}
+	}
+	function showTable(tableName){
+		
+		$("#headingMain").empty();
+		$("#bodyMain").empty();
+		$('#subTableHead01').empty();
+		$('#subTableBody01').empty();	$('#subTableHead011').empty();
+										$('#subTableBody011').empty();
+		$('#subTableHead012').empty();
+		$('#subTableBody012').empty();	$('#subTableHead013').empty();
+										$('#subTableBody013').empty();
+		$('#subTableHead014').empty();
+		$('#subTableBody014').empty();		
+		
+		for (var i = 0; i <=10; i++){
+			var hID = '#subTableHead' + i;
+			var bID = '#subTableBody' + i;
+			$(hID).empty();
+			$(bID).empty();
+		}
+		$("#tableMsg").hide();
+
+		makeTable(tableName.toLowerCase(), "#headingMain", "#bodyMain"); 
+		$("#selectTable").text("Selected Table");
+		$("#tableSelected").css("visibility", "visible");
+
+
+		// If the table connects to other tables:
+		if (dbo[tables.indexOf(tableName)].connection == true) {
+			subTable(tableName.toLowerCase());
+		}
+	}
+
+	function makeTable(tableName, headID, bodyID) {
+
+		$(headID).empty();
+		$(bodyID).empty();
+
+		var table = dbo[tables.indexOf(tableName)];
+
+		// Append Table Heading
+		$(headID).append(table.table_name); 
+	// <span style=\"color:blue; margin-left:50px;\" class="glyphicon glyphicon-tag\"></span> 
+
+		// Append each of the rows 
+		var bodyRows;
+		var counter;
+		if (headID == "#headingMain"){
+			for (counter = 0; counter < table.fields.length; counter++){
+				if (counter == 0){
+					bodyRows += "<tr> <td style=\"border:1px solid blue\">" + table.fields[counter] + "<span style='margin-left:15px;' class='glyphicon glyphicon-tag'></span>" + "</td></tr>";
+				}
+				else {
+					bodyRows += "<tr> <td style=\"border:1px solid blue\">" + table.fields[counter] + "</td></tr>";
+				}
+			
+			}
+		}
+		else  {
+			for (counter = 0; counter < table.fields.length; counter++){
+				if (counter ==0){
+					bodyRows += "<tr> <td style=\"border:1px dotted black; background-color: tan;\">" + table.fields[counter] + "<span style='margin-left:15px;' class='glyphicon glyphicon-tag'></span>" + "</td></tr>";
+				}
+				else{
+					bodyRows += "<tr> <td style=\"border:1px dotted black; background-color: tan;\">" + table.fields[counter] + "</td></tr>";
+				}
+			
+			}
+		}
+		$(bodyID).append(bodyRows);
+	}
+
+	function subTable(tableName){
+
+		var table = dbo[tables.indexOf(tableName)];
+		
+		var counter; 
+		for (counter = 0; counter < table.subTables.length; counter++){
+			var nextTable, nextHead, nextBody; 
+			if (counter == 0 || counter >= 10){
+				var specialNum = counter+1;
+				nextHead = "#subTableHead0" + specialNum;
+				nextBody = "#subTableBody0" + specialNum;
+			} else if (counter != 0 && counter < 10) {
+				var endNum = counter+1;
+				nextHead = "#subTableHead" + endNum; 
+				nextBody = "#subTableBody" + endNum; 
+			}
+			else {
+				nextHead = "#subTableHead" + counter;
+				nextBody = "#subTableBody" + counter;
+			}
+			nextTable = table.subTables[counter].toLowerCase();
+			makeTable(nextTable, nextHead, nextBody); 
+		}
+	}
+
+	$('.btn-primary').click(function(){  showTable($(this).attr('id')); });
+
+	$(document).ready(function(){
+		$('[data-toggle="tooltip"]').tooltip({delay: {show:300, hide:100}}); 
+	});
+</script>
+<!--WORKING - i.e. It shows all tables (9/4/2015) -->
+
+
+
+<!--IRIS_MODAL-->
+<div id="irisModal" class="modal fade" role="modal">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<span class="glyphicon glyphicon-remove close" data-dismiss="modal"></span>
+				<p> IRIS - Increased Revenue w/ Intuitive Software </p>
+			</div>
+			<div class="modal-body">
+				<ol type="none">
+					<li>A workflow tool used to streamline the process of developing and scheduling marketing efforts</li>
+					<li>Serves as a central location to comprise offers, develope content, and schedule efforts</li>
+					<li>Also provides reporting and metrics of the efforts</li>
+				</ol>	
+			</div>
+			<div class="modal-footer">
+				<span class="col-sm-4">LONG</span>
+				<span class="col-sm-4">LIVE</span>
+				<span class="col-sm-4">IRIS</span>
+				<span class="glyphicon glyphicon-road close"></span>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+</body>
+</html>
