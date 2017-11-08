@@ -7,7 +7,7 @@ ___
 > #### Date: October, 2015
 > #### Description: This page highlights 2 features in one release.
 > #### Preview: [beta_tasks](https://dejai.github.io/iris_bros/beta/betaTasks.html)
-##### Features Included:
+#### Features Included:
    1. 'Reactive' Buttons
        * There is a button to submit a support ticket (only available after entering at least one character)
    2. An ability to submit comments to the support system
@@ -19,7 +19,7 @@ ___
 > #### Date: December, 2015
 > #### Description: This page highlights major changes in user workflow related to common user roles. Based on IRIS 4.0
 > #### Preview: [iris_4.0](https://dejai.github.io/iris_bros/beta/iris_4.0.html)
-###### Features Included:
+##### Features Included:
    1. Left side navigation bar
    1. Some 'Responsive Web Design'
    2. Bootstrap Tab-Panes (with a 'fade in')
