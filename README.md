@@ -4,9 +4,11 @@
 
 <p><a href="https://github.com/Dejai/iris_bros/beta"> Beta Pages </a></p>
 
-<p><a href="https://github.com/Dejai/iris_bros/beta"> Practice Pages </a></p>
+<p><a href="https://github.com/Dejai/iris_bros/practice"> Practice Pages </a></p>
 
-<p><a href="https://github.com/Dejai/iris_bros/beta"> Testing Pages </a></p>
+<p><a href="https://github.com/Dejai/iris_bros/signupApp2/"> Signupp App 2</a></p>
+
+<p><a href="https://github.com/Dejai/iris_bros/testing"> Testing Pages </a></p>
 
 <p><a href="https://github.com/Dejai/iris_bros/pubsvs/"> User Facing Pages </a></p>
 
