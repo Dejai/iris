@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> IRIS Practice Exercises </title>
+	<style>
+		h1{	font-size:50px; 	font-family: Times;		color:blue;
+			text-align: center;		}
+		
+		div {  text-align: left; font-size: 15px;	font-family: verdana, serif, sans-serif;  padding: 10px; 
+			margin-left:22px; }
+		
+		body {  background-color:lightblue;	}
+
+		hr { width:100%;	height: 5px; background-color: gray;
+			border-radius:5px;	border-color:black;	}
+		
+		a{ text-decoration: none; }
+		
+		.commentsSection{background-color: white; border-radius: 5px; width: 50%;
+						border: 1px solid black; padding:1px; margin-left:92px;}
+
+		input{margin-left:92px;	border: 1px solid black; width:400px;
+				height:20px;}
+		ol{
+			
+		}
+	</style>
+	
+</head>
+<body>
+<h1> IRIS Practice Exercises </h1>
+<center><p>The following excercises are intended as practice to familiarize yourself with the IRIS user interface and workflow.</p></center>
+<br/>
+<h2> Exercise One </h2>
+<p> PRE-CONDITIONS: 	Go to the publishing services instance of IRIS <a href="https://iris.pubsvs.com" target="_blank"> (iris.pubsvs.com) </a> and create a new offer for the item LD1.</p>
+<div>
+	<h3> Tasks: </h3>	
+
+	<ol>
+		<li> Create an offer in IRIS with 2 main prices / choices. </li>
+		<br/>
+		<li>Attach a cross sell offer to the offer in step 1.  It can be any item other than LD1 </li>
+		<br/>
+		<li> Create a piece of HTML content using the offer from step 1 </li>
+		<br/>
+		<li>Create a piece of video content and attach the HTML version to that content </li>
+		<br/>
+		<li>No create a dedicated effort going to MC TEST LIST with the target IRIS_TEST_LIST-IRISUSER_1 using the version you just created.  Complete the following:
+			<ol type='a'>
+				<li>Enter an effort tag titled '[<i><b>enter your name</b></i>]'s First Test (trick question) </li>
+				<li>Create and save a lift note from the effort level </li>
+				<li>Enter a note on the effort level </li>
+				<li>Create and assign an effort row color </li>
+				<li>Create and assign the effort to a testing group </li>
+				<li>Give yourself receive domain request email and paid code email permissions. </li>
+			</ol>
+		</li>
+		<br/>
+		<li>Go to My Queue and request the promo code for the dedicated effort that you just created.  Click on the link in the promo code request email and enter a code (it can be random) </li>
+		<br/>
+		<li> Go back to the effort, copy it and assign it to a multivariate group but do not add a split </li>
+		<br/>
+		<li>Do not add additional multivariate efforts </li>
+		<br/>
+		<li>Repeat step 7 with the new effort you created </li>
+		<br/>
+		<li> Now go to the mailing just created (you may not have known it but you just created a mailing) </li>
+		<br/>
+		<li> Send an IRIS test email to yourself!</li>
+	</ol>
+</div>
+
+<input type="text" id="words1" name="commentBox"> 
+<button id="butt1"> Add Question/Comment </button>
+<h5 style="text-indent:92px;color:red; text-decoration:bold;font-size:20px;">NOTE: Your comments will not be saved if you exit/refresh the page, so be sure to copy & paste them elsewhere when you're done with the exercise.</h5>
+<div id="commentsSection1" class="commentsSection">
+	<p> Questions/Comments: </p>
+	<br/>
+</div>
+<script type="text/javascript">
+	function addComment() {
+		var newComment = document.getElementById('words1').value;
+		var newP = document.createElement('p');
+		var newTxt = document.createTextNode(newComment);
+		newP.appendChild(newTxt)
+
+		var commBox = document.getElementById('commentsSection1');
+		commBox.appendChild(newP);
+
+		document.getElementById('words1').value = " ";
+	}
+	document.getElementById('butt1').addEventListener("click", addComment, true);
+</script>
+<br/><br/><br/><br/>
+<hr/> <!-- _________________________________________________________________________________________________________________________________________________________________________________________________________________________ -->
+<br/><br/><br/><br/>
+<h2>Exercise Two</h2>
+<p> NOTE: Exercise 2 involves lead gen training.  It will be more difficult than the first one because the lead gen application leaves little to be desired (and we know that lead gen in 4.0 will be completely different).</p>
+<br/>
+<p> PRE-CONDITION: Go to the publishing services instance of IRIS <a href="https://iris.pubsvs.com" target="_blank"> (iris.pubsvs.com) </a> </p>
+
+<div>
+	<h3> Tasks: </h3>
+	<ol>
+		<li> This offer should include a cross sell for the list IRIS.</li>
+		<br/>
+		<li> Create a lead gen offer using the IRIS Test List and attach the co-reg from step 1. </li>
+		<br/>
+		<li> Create a signup page that also includes a checkbox for the coreg (I don't believe the system supports this through the WYSIWYG, you may need to code this yourself).  I can find examples if you need them. </li>
+		<br/>
+		<li> Create a signup page that does not have a co-reg checkbox. </li>
+		<br/>
+		<li> Create a confirmation page that includes a co-reg signup form. </li>
+		<br/>
+		<li> Create a co-reg confirmation email </li>
+		<br/>
+		<li> Create a confirmation email </li>
+		<br/>
+		<li> Create a report (this may be out of sequence but the system should prompt you to create all of these entities). </li>
+		<br/>
+		<li> Now go to the effort level and create an effort using the signup page from step 3 using the confirmation page from step 5. </li>
+		<br/>
+		<li> Copy the effort created in step 9 and create a new effort but  this time use the page from step 4.  Select the co-reg confirmation page you created in step 5 and add this effort to the multivariate group. </li>
+		<br/>
+		<li> Go to my queue and request a promo code for those two efforts. </li>
+	</ol>
+
+</div>
+<input type="text" id="words2" name="commentBox"> 
+<button id="butt2"> Add Question/Comment </button>
+<h5 style="text-indent:92px;color:red; text-decoration:bold;font-size:20px;">NOTE: Your comments will not be saved if you exit/refresh the page, so be sure to copy & paste them elsewhere when you're done with the exercise.</h5>
+<div id="commentsSection2" class="commentsSection">
+	<p> Questions/Comments: </p>
+	<br/>
+</div>
+<script type="text/javascript">
+	function addComment() {
+		var newComment = document.getElementById('words2').value;
+		var newP = document.createElement('p');
+		var newTxt = document.createTextNode(newComment);
+		newP.appendChild(newTxt)
+
+		var commBox = document.getElementById('commentsSection2');
+		commBox.appendChild(newP);
+
+		document.getElementById('words2').value = " ";
+	}
+	document.getElementById('butt2').addEventListener("click", addComment, true);
+</script>
+<br/><br/><br/><br/>
+<hr/> <!-- _________________________________________________________________________________________________________________________________________________________________________________________________________________________ -->
+<br/><br/><br/><br/>
+</body>
+</html>
