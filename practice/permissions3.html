@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>IRIS Permissions 3</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<style>
+
+		/* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+		.row.content {height: 450px}
+		.navbar { margin-bottom: 0; margin-radius: 0;	background:#1f3e84; background: -webkit-linear-gradient(#3357a5,#1f3e84);
+			background: -o-linear-gradient(#3357a5,#1f3e84); background: -moz-linear-gradient(#3357a5,#1f3e84);
+			background: linear-gradient(#3357a5,#1f3e84); border-bottom: 1px #1d356c solid;
+		}
+		.footer {
+			padding-top: 10px;padding-bottom: 10px;	margin-top: 0px; margin-bottom: 0px;
+			background:#1f3e84;	background: -webkit-linear-gradient(#3357a5,#1f3e84); background: -o-linear-gradient(#3357a5,#1f3e84);
+			background: -moz-linear-gradient(#3357a5,#1f3e84); background: linear-gradient(#3357a5,#1f3e84);
+		}
+
+		.navbar-bottom {
+			margin-bottom: 0;
+			margin-radius: 0;
+			background:#e8ebf0;
+			box-shadow: 0px 1px 3px grey;
+			height: 40px;
+			padding: 15px;
+		}
+
+		.footer-line {
+			margin-bottom: 0;
+			margin-radius: 0;
+			background:#426dbd;
+			box-shadow: 0px 1px 3px grey;
+			height: 10px;
+			padding-bottom: 0px;
+
+		}
+		.logo {
+			display: block;
+			line-height: 28px;
+			height: 10px;
+			width: 10px;
+			font-size:13px;
+			float: left;
+			background: url("https://files.iris.pubsvs.com/images/IRIS_Logo_Clear.png");
+			text-transform: none;
+			outline: none;
+			font-family: 'Open Sans', sans-serif;
+			font-weight: 400;
+			color: #ffffff;
+			z-index: 6;
+		}
+
+		/*Maing Styling Of Permission Containers*/
+
+			#permissionsStack {
+				font-size:20px;
+				padding: 2px;
+			}
+			#thePermissions {
+				font-size: 18px;
+			}
+			#permissionsBody {
+				font-size: 20px;
+			}
+			#permissionsBody2 {
+				font-size: 20px;
+				padding-top:10px;
+			}
+			#statement {
+				margin-bottom:50px; margin-top:130px;
+			}
+
+		/*Media Styling of Permission Containers*/
+
+		@media screen and (max-width: 1280px ), screen and (max-width: 1366px) {
+			#basicStatement {
+				font-size: 16px;
+			}
+			#thePermissions {
+				font-size: 14px;
+			}
+			#permissionsHeader {
+				font-size: 18px;
+			}
+			#permissionsBody {
+				font-size: 15px;
+			}
+			#permissionsBody2 {
+				font-size: 15px;
+				padding-top:5px;
+			}
+		}
+
+		@media screen and (max-width: 768px ){
+			#basicStatement {
+				font-size: 16px;
+			}
+			#permissionsStack{
+				border-bottom: 1px solid black; 
+				font-size: 14px;
+				padding: 0px;
+			}
+			#thePermissions {
+				font-size: 14px;
+			}
+			#permissionsHeader {
+				font-size: 18px;
+			}
+			#permissionsBody {
+				font-size: 15px;
+			}
+			#permissionsBody2 {
+				font-size: 15px;
+				padding-top:5px;
+			}
+		}
+		@media screen and (max-width: 640px ){
+			#basicStatement {
+				font-size: 15px;
+			}
+			#permissionsStack{
+				border-bottom: 1px solid black; 
+				font-size: 13px;
+				padding: 0px;
+			}
+			#thePermissions {
+				font-size: 13px;
+			}
+			#permissionsHeader {
+				font-size: 16px;
+			}
+			#permissionsBody {
+				font-size: 13px;
+			}
+			#permissionsBody2 {
+				font-size: 13px;
+				padding-top:5px;
+			}
+			#statement {
+			margin-bottom:10px; margin-top:130px;
+		}
+		}
+		@media screen and (max-width: 480px ){
+			#basicStatement {
+				font-size: 12px;
+			}
+			#permissionsStack{
+				border-bottom: 1px solid black; 
+				font-size: 12px;
+				padding: 0px;
+			}
+			#thePermissions {
+				font-size: 9px;
+			}
+			#permissionsHeader {
+				font-size: 10px;
+			}
+			#permissionsBody {
+				font-size: 9px;
+			}
+			#permissionsBody2 {
+				font-size: 9px;
+				padding-top:0px;
+			}
+			#statement {
+			margin-bottom:5px; margin-top:130px;
+			}
+		}
+	</style>
+	<script type="text/javascript">
+
+		$(document).ready(function(){
+
+			var permissions = {
+
+				// Application Permissions
+				AdManagement : ["Ad Management", "Managing Ads"],
+				LeadGen : ["Lead Gen" , "Users with this permission can add, copy & edit Lead Gen Creatives & Efforts.", "NOTE: They will also need the 'Co-Reg' permission to add, edit and copy Creatives & Efforts that involve Co-Regs"] ,
+				
+				EditAll : ["Edit All" , "Users with this permission can edit fields that would typically be locked for lower level users.", "Such fields are locked to maintain data integrity."] ,
+				
+				CrossSell : ["Cross Sell" , "Users with this permission can add, edit & copy Paid Offers that are Cross-Sells or Upsells", "Furthermore, they can add, edit & copy Main Offers that have Cross-Sells and/or Upsells."] ,
+				DomainRequest : ["Domain Request " , "Users with this permission can submit a request for a vanity domain via the Domain Request page."] ,
+				LeadGenBulkUpload : ["Lead Gen Bulk Upload" , "Users with this permission can can upload a list of names via the Lead Gen Bulk Upload page."] ,
+				LeadGenAnalytics : ["Lead Gen Analytics" , "Users with this permission can update the following fields:", "Analytics Code; Conversion Code; Confirmation Cookie Name; Confirmation Cookie Value"] ,
+				Renewals : ["Renewals" , "Users with this permission can designate an Effort to be a Renewal Effort"] ,
+				CoReg : ["Co Reg" , "Users with this permission can add, edit and copy Creatives & Efforts that involve Co-Regs", "This includes Co-Reg Offers, and main Lead Gen Offers that have Co-Regs"] ,
+				
+				Contingency : ["Contingency" , "Users with this permission can set Items to the \"Do Not Process\" option."] ,
+				SignupURLVariables : ["Signup URL Variables" , "Users with this permission can define the 'Custom URL Path' on the Effort level."] ,
+				Production : ["Production" , "Users with this permission can add, edit, delete and schedule mailings.", "Those users without the permission will only be able to view the mailing schedule, and the preview page of a selected mailing."] ,
+
+				MailingsApproval : ["Mailings Approval" , "Users with this permission can approve Mailings"] ,
+				WeeklyPlanner : ["Weekly Planner" , "Users with this permission can create/edit weekly planner templates on the List management page.", "Furthermore, the \"Weekly Planner\" button will be visible."] ,
+				TemplateDesigner : ["Template Designer" , "Users with this permission can add and edit mailing Templates."] ,
+				
+				DeleteAll : ["Delete All" , "Users with this permission can delete any Effort in the system."] ,
+
+				GrantAccess : ["Grant Access" , "Users with this permission can give other users access to Creatives, which they can then use in Efforts.", "Additionally, they can also use any active Paid Creatives on the Effort level (given that they also have the Change Defaults on Efforts Permission)."] ,
+				CreateAndEditCreatives : ["Create & Edit Creatives" , "Users with this permission can add, edit and copy most paid Creatives.", "NOTE: They will also need Cross-Sell for Paid sub-offers and main offers that have sub-offers attached."] ,
+				CreateAndEditEfforts : ["Crate & Edit Efforts" , "Users with this permission can add, edit and copy most paid Efforts.", "NOTE: They will also need Lead Gen & Co-Reg for Lead Gen Efforts"] ,
+				SetDefaultsOnCreatives : ["Set Defaults on Creatives" , "Users with this permission can select the Default Order Form on Pages and Default Page on Ads."] ,
+				ChangeDefaultsOnEfforts : [ "Change Defaults on Efforts", "Users with this permission can change the default page to other pages that they have access to."],
+				ChangeDomainConfigOnEffort : [ "Change Domain Config on Efforts", "Users with this permission can change the domain configuration that will be used in the Effort link.", "NOTE: You will only be able to select from options that are set on the Item Level."],
+
+
+				// Reporting Permissions
+				TestingGroup: ["Testing Group", "This permission gives a user access to the Testing Group page."],
+				Abandons: ["Abandons", "This permission gives a user access to the Abandons Report page." ],
+				Custom: ["Custom", "This permissions gives a user access to the Custom Report page."],
+				ContingencyReport: ["Contingency Report", "This permission gives a user access to the Contingency Report page."],
+
+
+				//AMS Email Permissions
+				AgoraCode: ["Agora Code ", "Users with this permission can enter Promo Codes for Agora Efforts." ],
+				PaidCode: ["Paid Code ", "Users with this permission can enter Promo Codes for Paid Efforts.", "This can be done directly on the Edit Effort page or via the Queue page."],
+				CampaignAlerts: ["Campaign Alerts", "Users with this permission will receive email alerts when an Offer's status is changed." ], 
+				RecieveDomainRequest: ["Recieve Domain Request", "Users with this permission will receive an email alert when a new Domain Request has been submitted." ],
+				PaidCodeEmail: ["Paid Code Email", "Users with this permission will recieve an email alart when a Promo Code request has been sent for a Paid Effort." ],
+				EffortRedirect: ["Effort Redirect ", "Users with this permission can set a Redirect page for an Effort on the Effor level.", "This user would see the \"Effort Redirect\" option when editing an Effort." ],
+				LeadGenCode: ["Lead Gen Code ", "Users with this permission can enter Promo Codes for Lead Gen Efforts.", "This can be done directly on the Edit Effort page or via the Queue page."],
+				LeadGenCodeEmail: ["Lead Gen Code Email", "Users with this permission will recieve an email alart when a Promo Code request has been sent for a Lead Gen Effort. " ], 
+				AbandonEmailTest: ["Abandon Email Test ", "Users with this permission can send a test Abandon Email." ],
+				DataIntegrityEmail: ["Data Integrity Email ", "Users with this permission will recieve an email notification if there are issues with data or statistics on an Effort." ],
+				TargetRequest: ["Target Request ", "Users with this permission will receive an email notification when an Ad Matrix has been created.", "This permission is not applicable until the system can send Editorial mailings." ],
+				IRISTestEmail: ["IRIS Test Email ", "Users with this permission can send an IRIS Test email when creating a Mailing." ],
+				AdvOfferEmail: ["Adv Offer Email", "Users with this permission can send an Advantage Offer email.", "This permission is not applicable until the system can create promo codes automatically." ],
+
+
+
+
+				// Affiliate Management Permissions
+				List: ["List", "Users with this permission can add and edit lists to be used in IRIS.", "Additionally, they can also create a schedule for a list." ],
+				Placement: ["Placement", "Users with this permission can add and edit placements to be used in IRIS." ],
+				ItemConfiguration: ["Item Configuration", "Users with this permission can view the Item Configuration page. On this page, they can add and edit Item Configurations used in IRIS.", "NOTE: This should only be used by the IRIS team." ],
+				OrganizationManagement: ["Organization Management ", "Users with this permission can view the Organization Mangement Page. This page contains general information that is applied to the entire instance." , "NOTE: This page should only be used by the IRIS team."],
+				
+				Robots: ["Robots ", "Users with this permission have access to the Robots page." , "On this page, they can add and edit Robot.txt configurations for their pages." ],
+				TagManagement: ["Tag Management ", "Users with this permission can view the Tag Management page.", "On this page, they can add and edit individual Tags as well as Tag Categories." ],
+				ItemManagement: ["Item Management", "Users with this permission can add and edit Items to be used in IRIS." ]
+			};
+
+			$("#firstClick").click(); 
+
+			$(".permission").click(function(){
+				var element = $(this).attr("id");
+				$("#permissionsHeader").empty(); 
+				$("#permissionsBody").empty();
+				$("#permissionsBody2").empty();
+
+				$("#permissionsHeader").append(permissions[element][0]); 
+				$("#permissionsBody").append(permissions[element][1]); 				
+				$("#permissionsBody2").append(permissions[element][2]); 				
+
+				// $("#modalButton").click(); 
+			});
+		});
+	</script>
+</head>
+<body>
+	<nav class="navbar no-margin-bottom no-margin-left no-margin-right no-margin-top alt-font" style="border-radius:0px;position:fixed; left:0px; right:0px; top:0px; z-index:4; height:50px;">
+		<div class="container-fluid" style="height:inherit;">
+			<div class="container-fluid" style="height:inherit;"><img src="https://files.iris.pubsvs.com/images/IRIS_Logo_Clear.png" style="width: 105px; height: 33px; line-height: 28px; display:block; margin-top:10px;" /></div>
+		</div>
+	</nav>
+
+	<div class="container-fluid">
+		<div class="row" style="position:fixed; left:0px; right:0px; top:50px;  z-index:2;">
+			<div class="col-md-12 col-sm-12 navbar-bottom no-margin-lr no-margin-top sm-no-margin active">&nbsp;<span style="width:50px; margin-left: 15px; font-size: 25px; height: 34px; line-height:15px; color:#3a3b41; font-family: Arial, Helvetica, sans-serif; font-weight:bold; ">IRIS Permissions</span></div>
+		</div>
+	</div>
+
+	<div class="col-lg-12" id="statement" >
+		<h4 id='basicStatement'>Below you will find the permissions available in IRIS. Click on a Permission to see a description of its purpose. </h4>
+	</div>
+
+	<div id="IRISPermissions" >
+		<div class="container-fluid" id="permissionsContainer"  >
+			<nav class="col-md-2" id="permissionsStack" >
+				<ul class="nav nav-pills nav-stacked">
+					<li><a data-target="#applications" data-toggle="tab" href="#" id="firstClick">Applications</a></li>
+					<li><a data-target="#reporting" data-toggle="tab" href="#">Reporting</a></li>
+					<li><a data-target="#amsEmail" data-toggle="tab" href="#">AMS Email</a></li>
+					<li><a data-target="#affilManag" data-toggle="tab" href="#">Affiliate Management</a></li>
+				</ul>
+			</nav>
+			<!-- END OF PERMISSIONS NAV BAR -->
+
+			<div class="tab-content col-md-5" id="thePermissions"  >
+				<div class="tab-pane fade in active" id="applications">
+					<table class="table" id ='applicationsPermissions'>
+						<tbody>
+							<tr>
+								<td ><a class="permission" href="#" id="LeadGen">Lead Gen </a></td>
+								<td><a class="permission" href="#" id="EditAll">Edit All </a></td>
+								<td><a class="permission" href="#" id="CrossSell">Cross Sell </a></td>
+							</tr>
+							<tr>
+								<td><a class="permission" href="#" id="DomainRequest">Domain Request </a></td>
+								<td><a class="permission" href="#" id="LeadGenBulkUpload">Lead Gen Bulk Upload </a></td>
+								<td><a class="permission" href="#" id="LeadGenAnalytics">Lead Gen Analytics </a></td>
+							</tr>
+							<tr>
+								<td><a class="permission" href="#" id="Renewals">Renewals</a></td>
+								<td><a class="permission" href="#" id="CoReg">Co Reg</a></td>
+								<td><a class="permission" href="#" id="Contingency">Contingency </a></td>
+							</tr>
+							<tr>
+								<td><a class="permission" href="#" id="SignupURLVariables">Signup URL Variables </a></td>
+								<td><a class="permission" href="#" id="Production">Production </a></td>
+								<td><a class="permission" href="#" id="MailingsApproval">Mailings Approval </a></td>
+							</tr>
+							<tr>
+								<td><a class="permission" href="#" id="WeeklyPlanner">Weekly Planner </a></td>
+								<td><a class="permission" href="#" id="TemplateDesigner">Template Designer </a></td>
+								<td><a class="permission" href="#" id="DeleteAll">Delete All </a></td>
+							</tr>
+							<tr>
+								<td><a class="permission" href="#" id="CreateAndEditEfforts">Create &amp; Edit Efforts </a></td>
+								<td><a class="permission" href="#" id="GrantAccess">Grant Access </a></td>
+								<td><a class="permission" href="#" id="CreateAndEditCreatives">Create &amp; Edit Creatives </a></td>
+							</tr>
+							<tr>
+								<td><a class="permission" href="#" id="ChangeDefaultsOnEfforts">Change Defaults on Efforts </a></td>
+								<td><a class="permission" href="#" id="SetDefaultsOnCreatives">Set Defaults on Creatives </a></td>
+								<td><a class="permission" href="#" id="ChangeDomainConfigOnEffort">Change Domain Config on Effort </a></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<div class="tab-pane fade in" id="reporting">
+					<table class="table">
+						<tbody>
+							<tr>
+								<td><a class="permission" href="#" id="TestingGroup">Testing Group</a></td>
+								<td><a class="permission" href="#" id="Abandons">Abandons</a></td>
+								<td><a class="permission" href="#" id="Custom">Custom</a></td>
+							</tr>
+							<tr>
+								<td colspan="3"><a class="permission" href="#" id="ContingencyReport">Contingency Report</a></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="tab-pane fade in" id="amsEmail">
+					<table class="table">
+						<tbody>
+							<tr>
+								<td><a class="permission" href="#" id="AgoraCode">Agora Code </a></td>
+								<td><a class="permission" href="#" id="PaidCode">Paid Code </a></td>
+								<td><a class="permission" href="#" id="CampaignAlerts">Campaign Alerts</a></td>
+							</tr>
+							<tr>
+								<td><a class="permission" href="#" id="RecieveDomainRequest">Recieve Domain Request</a></td>
+								<td><a class="permission" href="#" id="PaidCodeEmail">Paid Code Email</a></td>
+								<td><a class="permission" href="#" id="EffortRedirect">Effort Redirect </a></td>
+							</tr>
+							<tr>
+								<td><a class="permission" href="#" id="LeadGenCode">Lead Gen Code </a></td>
+								<td><a class="permission" href="#" id="LeadGenCodeEmail">Lead Gen Code Email</a></td>
+								<td><a class="permission" href="#" id="AbandonEmailTest">Abandon Email Test </a></td>
+							</tr>
+							<tr>
+								<td><a class="permission" href="#" id="DataIntegrityEmail">Data Integrity Email </a></td>
+								<td><a class="permission" href="#" id="TargetRequest">Target Request </a></td>
+								<td><a class="permission" href="#" id="IRISTestEmail">IRIS Test Email </a></td>
+							</tr>
+							<tr>
+								<td colspan="3"><a class="permission" href="#" id="AdvOfferEmail">Adv Offer Email</a></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<div class="tab-pane fade in" id="affilManag">
+					<table class="table">
+						<tbody>
+							<tr>
+								<td><a class="permission" href="#" id="List">List</a></td>
+								<td><a class="permission" href="#" id="Placement">Placement</a></td>
+								<td><a class="permission" href="#" id="ItemConfiguration">Item Configuration</a></td>
+							</tr>
+							<tr>
+								<td><a class="permission" href="#" id="OrganizationManagement">Organization Management</a></td>
+								<td><a class="permission" href="#" id="Robots">Robots</a></td>
+								<td><a class="permission" href="#" id="TagManagement">Tag Management</a></td>
+							</tr>
+							<tr>
+								<td colspan="3"><a class="permission" href="#" id="ItemManagement">Item Management</a></td>
+							</tr>
+							
+							
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div class="col-md-5" style="border:1px solid; margin:auto;">
+				<center>
+					<h3>Permission Description: <br/><br/> <span id="permissionsHeader" style="color:blue;"></span></h3>
+				<hr/>
+				</center>
+				<table>
+					<tbody>
+						<tr>
+							<td id="permissionsBody">&nbsp;</td>
+						</tr>
+						<tr>
+							<td id="permissionsBody2">&nbsp;</td>
+						</tr>
+					</tbody>
+				</table>
+				
+			</div>
+		</div>		
+	</div>
+	<br style="clear:both;"/>
+
+	<div class="container-fluid">
+		<div class="row" style="height: 20px; position:fixed; bottom:70px; left:0px; right:0px; z-index:-6;">
+			<div align="center">
+			<p style="text-align:center; color:#000; font-size:10px; font-family:'lato', serif;">Courtesy of The IRIS Team - Agora Publishing Services.</p>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="row" style="color:white; position:fixed; bottom:0px; left:0px; right:0px; height:70px;">
+		<div class="col-md-12 col-sm-12 footer">
+			<p align="center" style="color:fff; font-family:'Lato', serif; font-size:12px; padding:0px 5px 0px 0px">This example video was taken in the <u>staging.iris.training.pubsvs.com</u> instance.<br />
+				Please note that some functionality may not work as expected in a staging area.<br />
+				If you uncover any issues while in the staging area, please submit a ticket to Zendesk via: <a href="mailto:support@pubsvs.com"><u>support@pubsvs.com</u></a></p>
+		</div>
+	</div>
+</body>
+</html>
