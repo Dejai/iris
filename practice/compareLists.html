@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Compare Lists</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<style type="text/css">
+		.compare { height:700px; border:1px solid black; overflow-y:scroll; background-color:white; margin-top:10px;}
+		#results { border:1px; solid }
+	</style>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("#results").hide();
+
+			// var ignoreThese = ["ordertracking.stansberryresearch.com", "pro.stansberryresearch.com", "pro1.stansberryresearch.com", "ordertracking.pubsvs.com", "ordertracking2.pubsvs.com", ""];
+			// var ignoreThese = ["pro", "pros", "pro1", "pros1"]
+			 // ordertracking.stansberryresearch.com", "pro.stansberryresearch.com", "pro1.stansberryresearch.com", "ordertracking.pubsvs.com", "ordertracking2.pubsvs.com", ""];
+			$("#compare").click(function(){
+				var inIRIS = $("#inIRIS").text().toLowerCase().split(',');
+				var onCERT = $("#onCERT").text().toLowerCase().split(',');
+				var goodToGo = [];
+				var doubleCheck = [];
+
+				for (var domain in inIRIS){
+					if (onCERT.includes(inIRIS[domain])){
+						goodToGo.push(inIRIS[domain]);						
+					}
+					// } else if (!onCERT.includes(inIRIS[domain]) && !ignoreThese.includes(inIRIS[domain]) && !inIRIS[domain].includes("pubsvs")){
+					// 	doubleCheck.push(inIRIS[domain]);
+					// }
+				}
+				// console.log("These are on the cert: " + goodToGo);
+				// console.log("These should be double checked: " + doubleCheck);
+				var ans;
+				for (var res in goodToGo){
+					ans += "<li>" + goodToGo[res] + "</li>";
+				}
+				$("#resultsList").html(ans);
+				$("#results").show();
+			});
+
+		});
+	</script>
+</head>
+<body>
+<h1>Compare Lists</h1>
+
+<div class="col-lg-6">
+	<label class="label label-primary" style="font-size:24px;">Domains in IRIS</label>
+	<br/>
+	<div id='inIRIS' contenteditable="true" class="compare"></div>
+</div>
+<div class="col-lg-6">
+	<label class="label label-success" style="font-size:24px; width:100%;">Domains on the CERT</label>
+	<div id='onCERT' contenteditable="true" class="compare"></div>	
+</div>
+<br style="clear:both;"/>
+<br style="clear:both;"/>
+<span class="col-lg-5"></span>
+<button id="compare" class="btn btn-primary btn-lg col-lg-2">Compare</button>
+<span class="col-lg-5"></span>
+<br style="clear:both;"/>
+<span class="col-lg-5"></span>
+<div id="results" class="col-lg-2" style="font-size:25px;">
+	<h3>These are on the CERT ... But not used in Efforts:</h3>
+	<ol id="resultsList"></ol>
+</div>
+<span class="col-lg-5"></span>
+</body>
+</html>
