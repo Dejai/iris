@@ -6,10 +6,10 @@ ___
 
 
 
+---
 ### IRIS 4.0 Beta Tasks & Scenarios
 > #### Date: December, 2015
-> #### Preview: [iris_beta](https://dejai.github.io/iris_bros/beta_4.0/iris_beta.html)
----
+> #### Preview: [iris_beta](https://dejai.github.io/iris_bros/beta/iris_4.0.html)
 <br/>
 This page was dedicated to providing IRIS users a way to practice certain tasks when it comes to the newest version of IRIS (4.0). 
 
