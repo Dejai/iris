@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>IRIS Signup Page</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<style>
+		/* Remove the navbar's default margin-bottom and rounded borders */ 
+		h1 {
+			color:#fff;
+			font-family:Arial, Helvetica, sans-serif;
+			padding:15px;
+			font-size:32px;
+		}
+
+		/* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+		.row.content {height: 450px}
+
+		.navbar {
+			margin-bottom: 0;
+			margin-radius: 0;
+			background:#1f3e84;
+			background: -webkit-linear-gradient(#3357a5,#1f3e84);
+			background: -o-linear-gradient(#3357a5,#1f3e84);
+			background: -moz-linear-gradient(#3357a5,#1f3e84);
+			background: linear-gradient(#3357a5,#1f3e84);
+		}
+		.footer {
+			padding-top: 15px;
+			padding-bottom: 15px;
+			margin-top: 0px;
+			margin-bottom: 15px;
+			background:#1f3e84;
+			background: -webkit-linear-gradient(#3357a5,#1f3e84);
+			background: -o-linear-gradient(#3357a5,#1f3e84);
+			background: -moz-linear-gradient(#3357a5,#1f3e84);
+			background: linear-gradient(#3357a5,#1f3e84);
+
+		}
+		/* unvisited link */
+		a:link {
+			color: #fff;
+
+
+		}
+
+		/* visited link */
+		a:visited {
+			color: #fff;
+		}
+
+		/* mouse over link */
+		a:hover {
+			color: #000;
+		}
+
+		/* selected link */
+		a:active {
+			color: #000;
+		}
+		a {
+			font-family: 'Lato', serif;
+		}
+
+
+		/* On small screens, set height to 'auto' for sidenav and grid */
+		@media screen and (max-width: 767px) {
+			.sidenav {
+				height: 100%;
+				padding: 15px;
+			}
+			.row.content {height:auto;} 
+		}
+
+		hr { 
+			display: block;
+			margin-top: 0.5em;
+			margin-bottom: 0.5em;
+			margin-left: 5px;
+			margin-right: 5px;
+			border-style: inset;
+			border-width: 1px;
+		} 
+
+		p {
+			margin-top: 0;
+			margin-bottom: 0;
+
+		}
+
+		.navbar-bottom {
+			margin-bottom: 0;
+			margin-radius: 0;
+			background:#e8ebf0;
+			box-shadow: 0px 1px 3px grey;
+			height: 40px;
+			padding: 15px;
+		}
+
+		.footer-line {
+
+			margin-bottom: 0;
+			margin-radius: 0;
+			background:#426dbd;
+			box-shadow: 0px 1px 3px grey;
+			height: 10px;
+			padding-bottom: 0px;
+		}
+		.signupDescription { margin:auto; font-family: 'lato', serif; font-size:20px; color:#000;  }
+		.emailsList {padding-left:5%; font-size: 18px; padding-top:4%;}
+		.emailName { font-weight:bolder; }
+		.emailDashSpace { padding-right:1%; padding-left:1%;}
+		.pageSentence { padding-top:4%; padding:bottom:4%; }
+		.pageSentence2 { padding-top:2%; padding:bottom:4%; }
+
+		#email { width:100%; height:100%;}
+	</style>
+</head>
+<body>
+	<nav class="navbar container-fluid no-margin-bottom no-margin-left alt-font">
+		<div class="container-fluid navigation-menu">
+			<div class="row">
+				<div class="container-fluid col-md-12 col-sm-12 navbar-header no-margin-lr no-margin-top sm-no-margin active" style="color:#fff; font-family:'Lato', serif; font-size:30px; padding:5px 0px 0px 5px">IRIS Signup Page</div>
+			</div>
+		</div>
+	</nav>
+	<div class="sidebar-wrapper personal" style="background:#fff">
+		<section class="full-screen no-padding" id="home" style="min-height:550px; visibility:visible;">
+			<div class="container-fluid" style="padding: 70px 20px 0px 20px">
+				<p style="font-family:'Lato', serif; font-weight:800; font-size:30px; padding:0px 0px 20px 5px; text-align:center">Greetings IRIS User!</p>
+				<table class="signupDescription">
+					<tr>
+						<td class="pageSentence">Before every production release, the IRIS Team sends the following emails to highlight important features that will be included in that release.</td>
+					</tr>
+					<!-- <tr>
+						<td class="pageSentence2">We usually send the following emails: </td>
+					</tr> -->
+					<tr>
+						<td class="emailsList">
+							<span class="emailName">Staging Announcment</span><span class="emailDashSpace">&#45;</span>This email is sent a week after new features have been uploaded to the staging environment.
+						</td>
+
+					</tr>
+					<tr>
+						<td class="emailsList">
+							<span class="emailName">Pre-Release Announcement</span><span class="emailDashSpace">&#45;</span>This email is sent the <strong><em>Thursday</em></strong> before the new features get uploaded to production. 
+						</td>
+					</tr>
+					<tr>
+						<td class="emailsList">
+							<span class="emailName">Production Release Notes</span><span class="emailDashSpace">&#45;</span>This email is sent on the day the new features get uploaded to production. 
+						</td>
+					</tr>
+
+					<tr>
+						<td class="pageSentence">Signup below if you you would like to receive these emails.</td>
+					</tr>
+				</table>
+
+				<div style="text-align:center; padding-top:3%;">
+					<form action="#SubscribeUrl#" id="LeadGen" method="post"><input name="source" style="display: none;" type="hidden" value="#PROMOCODE#" /> <input name="NotSaveSignup" style="display: none;" type="hidden" value="False" />
+						<div align="center">
+							<div style="">
+								<table cellpadding="5" cellspacing="0" style="border:none;">
+									<tbody>
+										<tr style="border:none;">
+											<td style="border:none;">
+												<label for="email" id="emailLabel" style="font-size:16px;">Email:</label>
+												<input id="email" maxlength="50" name="email" placeholder="Enter email" onblur="javascript:if (this.value == '') this.value = '';" onfocus="javascript:if (this.value == '') this.value = '';" type="text" value="" style="height:25px;" />
+											</td>
+										</tr>
+										<tr>
+											<td style="text-align:center;">
+												<input name="submit" style="margin-top:15px;" type="submit" value="Signup Now"/>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<div class="coregForm" style="display: block;">
+								<div class="coreg-item" style="display: block;"><label><input checked="checked" name="CoRegs" type="hidden" value="148088" /></label></div>
+							</div>
+
+							<div style=""></div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</section>
+	</div>
+
+	<div class="row" style="color:white">
+		<div class="col-md-12 col-sm-12 footer margin-twenty" style="position:fixed;bottom:45px;left:0px;right:0px;">
+			<p align="center" style="color:fff; font-family:'Lato', serif; font-size:12px; padding:0px 15px 0px 0px">If you wish to be removed from this list, please submit a ticket to Zendesk via: <a href="mailto:support@pubsvs.com"><u>support@pubsvs.com</u></a></p>
+		</div>
+	</div>
+
+	<div style="text-align:center;position:fixed; bottom:0px; left:0px; right:0px; height:55px;">
+		<p style="color:#000; font-size:12px; font-family:'lato', serif; padding:0px 0px 15px 0px">Courtesy of <br/>The IRIS Team <br/>Agora Publishing Services.</p>
+	</div>
+</body>
+</html>
