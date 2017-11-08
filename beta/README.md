@@ -10,9 +10,9 @@ ___
 ### IRIS 4.0 Beta Tasks & Scenarios
 > #### Date: December, 2015
 > #### Preview: [iris_beta](https://dejai.github.io/iris_bros/beta/iris_4.0.html)
+> #### Description: This page highlighted the major changes in user workflow and related it to common user roles. Based on IRIS 4.0
 <br/>
-This page was dedicated to providing IRIS users a way to practice certain tasks when it comes to the newest version of IRIS (4.0). 
-
+#### Features Include:
 It was built using primarily Bootstrap 3.3.5, and features the following: 
    1. Left side navigation bar
    1. Some 'Responsive Web Design'
