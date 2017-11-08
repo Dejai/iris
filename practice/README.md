@@ -29,3 +29,8 @@ They were a way for me to practice my HTML/CSS/JS while also acclimating to the 
 ### [Update Links To Secure](https://dejai.github.io/iris_bros/practice/updateLinksToSecure.html)
 > Date: December, 2016 <br/><br/>
 > Description: This page was about altering href's and src's on a page to use secure. It was a quick workaround to help affiliates adjust their pages and avoid errors.
+
+----
+### [Compare Lists](https://dejai.github.io/iris_bros/practice/compareLists.html)
+> Date: May, 2017 <br/><br/>
+> Description: This page had a specific purpose of comparing domains on an SSL certificate to ones that were not used on IRIS efforts.
