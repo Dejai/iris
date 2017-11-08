@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang='en-US'>
+<head>
+	<meta charset='utf-8'/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<title>Beta Tasks</title>
+	<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'/>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+	<!-- BEGIN: Personal Styled Elements -->
+	<style type="text/css">
+		body { background-color: gainsboro; padding:10px;}
+		#central {	margin-right: 25%;	margin-left: 25%;	padding: 10px; 	}
+		.jumbotron { text-align: center;}
+		.steps { font-size: 16px; 	}
+		.steps li { padding:10px;}
+		a { text-decoration: none; color:inherit; }
+		a:hover { text-decoration: none; color:inherit;}
+		h2 { font-family: Verdana, Geneva, sans-serif;}
+		#disclaimer { margin-right: 25%; margin-left: 25%; font-weight:bold; color:white; text-align:center; font-size:15px; }
+		[type="text"] {	  background-color : ghostwhite; }
+	</style>
+	<!-- END: Personal Styled Elements -->
+
+	<!-- BEGIN: Personal JQuery -->
+	<script type="text/javascript">		
+		$(document).ready(function(){
+
+			$('[data-toggle="tooltip"]').tooltip(); 
+
+			$("a").hide(); 
+			$("button").hide();
+
+			$('#filterComms').keyup(function(){
+				var FC = $("#filterComms");
+				if (FC.val().length > 0) {
+			    	$('#zenA').show(); 
+				} 
+			});
+
+			$('#statusComms').keyup(function(){
+				var SC = $("#statusComms");
+				if (SC.val().length >= 1) {
+			    	$('#zenB').show(); 
+				}
+			});
+
+
+	    	$("#zenA").mouseover(function(){
+	        	var mailtoA =  "mailto:support@pubsvs.com?subject='#IRISBeta'&body=";
+	        	var filter_comments = $("#filterComms");
+
+	        	var fcArr = filter_comments.val().split('\n');
+	        	var body_line = escape("\n"); 
+
+	        	for (var i = 0; i < fcArr.length; ++i){
+	        		mailtoA += fcArr[i] + body_line; 
+	        	}
+		    	$("#zenA").attr("href",  mailtoA);
+	    	});
+
+	    	$("#zenB").mouseover(function(){
+	    		var mailtoB =  "mailto:support@pubsvs.com?subject='#IRISBeta'&body=";
+	        	var status_comments = $("#statusComms");
+
+	   			var scArr = status_comments.val().split('\n');
+	        	var body_line = escape("\n"); 
+
+	        	for (var i = 0; i < scArr.length; ++i){
+	        		mailtoB += scArr[i] + body_line; 
+	        	}
+
+	        	$("#zenB").attr("href", mailtoB);
+	    	});
+
+
+			$("#zenA").click(function(){ $("#clearFilterComms").show(); });
+	    	$("#clearFilterComms").click(function(){ $("#filterComms").val(""); $("#zenA").hide(); $("#clearFilterComms").hide();});
+    		$("#zenB").click(function(){ $("#clearStatusComms").show(); });
+    		$("#clearStatusComms").click(function(){ $("#statusComms").val("");	$("#zenB").hide(); $("#clearStatusComms").hide();});
+		});
+	</script>
+	<!-- END: Personal JQuery -->
+
+</head>
+<body>
+<div id='central'>
+	<div class='container-fluid'>
+		<div class="jumbotron">
+			<h1>IRIS Beta Tasks</h1>
+			<p>Below are a set of beta tasks for features to be released in 15.13 </p>
+			<br/> 
+			<p> Please complete these tests by: <span style="font-weight:bold;margin-left:10px;">November 13th, 2015</span></p>
+		</div>
+	</div>
+	<div id ='advFilt' class='col-md-12'>
+		<h2>Advanced Filters</h2>
+		<br/> 
+		<p style="font-size:18px; font-family:Sans-serif;"> Using the Advanced Filter button, complete the following tasks </p>
+		<ol class="steps">
+			<li style="inline:inline-block;"> Locate Offers that are are Paid creatives </li>
+			<li> Find all paid creatives that were created between January 1st 2015 and January 31st 2015. </li>
+			<li> Show those creatives that were last used between July 1st 2015 and September 1st 2015. </li>
+			<li> View those pages that are for a product, and are either active OR shelved. </li>
+			<li> Find all the creatives that are for Lead Gen Items and are Inactive. </li>
+			<li> Show only those paid emails that have an active status. </li>
+			<li> Look up the paid banner ads that are for the same item (choose any item code). </li>
+			<li> Now look up paid banner ads for multiple items (choose more than one item code); Sort by Item code.</li>
+			<li>	Try to find any lead gen creative that meets ALL of the following criteria: 
+				<ul>
+					<li> Created between January 1st and Today's date </li>
+					<li> Last used between August 15th and yesterday's date. </li>
+					<li> Active, Shelved or Inactive. </li>
+					<li> Sort them by last used date in ascending order (most recent date last). </li>
+				</ul>	
+			</li>
+		</ol>
+
+		<label> Comments/Notes</label>
+		<form role='form'> 
+			<textarea type="text" class='form-control' rows='10' id='filterComms'> </textarea>
+			<br/> 
+			<a style="float:right" id='zenA'  href="#." class="btn btn-danger">Submit Zendesk Ticket</a>
+			<br/><br/>
+			<a href="#advFilt" style="float:right" id="clearFilterComms" type="submit" class="btn btn-info"> Clear Comments</a>
+		</form>
+	</div>
+	<!-- END OF ADVANCED FILTERING SECTION -->
+
+
+	<div id="multStats" class="col-md-12" style="margin-top:70px; margin-bottom:50px;">
+		<h2> Multiple Status Change</h2>
+		<br/> 
+		<ol class="steps">
+			<li> Try to change multiple status of your creatives without filtering. </li>
+			<li> Try again to filter your creatives by only filtering the Creative Type; Now filter by Creative Type and Item and try again.</li>
+			<li> Filter your emails to the same Item, Creative Type and Status (choose any status). Change the status of 3 of these to another status. </li>
+			<li> Filter your pages to the same Item, Creative Type, status and OFFER. Then change 3 of these to another status. </li>
+			<li> Filter your offers to the same Item, Creative Type, Status and Function. </li>
+			<li> Add three creatives for the same Item <label class="label label-warning" style="color:red;"> be sure to use a naming convention to easily locate these three creatives again. </label>
+				<ul>
+					<li> Set them all to be shelved at different times in the future (2 month, 4 months and 6 months respectively). </li>
+					<li> Now, try to change the status of just these three creatives. Set them to expire 5 months from now.
+					<span>Hint <span class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="right" title="Error message should appear"></span></span>
+					</li>
+				</ul>
+			</li>
+		</ol>
+
+		<label> Comments/Notes</label>
+		<form role='form'> 
+			<textarea type="text" class='form-control' rows='10' id='statusComms' sytle="color: blue;"> </textarea>
+			<br/> 
+			<a style="float:right" id='zenB' href="#." class="btn btn-danger"> Submit Zendesk Ticket</a>
+			</button>
+			<br/><br/> 
+			<a href="#multStats" style="float:right" id="clearStatusComms" type="submit" class="btn btn-info"> Clear Comments</a>
+		</form> 
+	</div>
+	<!-- END OF MULTIPLE STATUS CHANGE SECTION -->
+</div>
+<br style="clear:both;"/>
+<div id="disclaimer">
+	<p>DISCLAIMER: <br/> These test steps are brought to you by the IRIS team, and are for testing purposes only. </p>
+	<p>Courtesy of the IRIS team - Agora Publishing Services. </p>
+</div>
+
+
+
+
+</body>
+</html>
