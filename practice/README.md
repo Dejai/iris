@@ -20,6 +20,6 @@ They were a way for me to practice my HTML/CSS/JS while also acclimating to the 
 ----
 
 ### [Permissions](https://dejai.github.io/iris_bros/practice/permissions.html) & [Permissions 2](https://dejai.github.io/iris_bros/practice/permissions2.html)
-> #### Date: February / March, 2016
-> #### Description: These simple pages are meant to offer short descriptions of the different permissions in IRIS.
-> #### The difference between the two is just a matter of where the description shows up.
+> Date: February / March, 2016 <br/><br/>
+> Description: These simple pages are meant to offer short descriptions of the different permissions in IRIS.<br/>
+> The difference between the two is just a matter of where the description shows up.
