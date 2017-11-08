@@ -2,15 +2,13 @@
 
 <p> This repository stores the pages that I worked on as a member of the IRIS team - Agora.</p>
 
-<p><a href="https://github.com/Dejai/iris_bros/beta"> Beta Pages </a></p>
+<p><a href="https://github.com/Dejai/iris_bros/tree/master/beta"> Beta Pages </a></p>
 
-<p><a href="https://github.com/Dejai/iris_bros/practice"> Practice Pages </a></p>
+<p><a href="https://github.com/Dejai/iris_bros/tree/master/practice"> Practice Pages </a></p>
 
-<p><a href="https://github.com/Dejai/iris_bros/signupApp2/"> Signupp App 2</a></p>
+<p><a href="https://github.com/Dejai/iris_bros/tree/master/signupApp2/"> Signupp App 2</a></p>
 
-<p><a href="https://github.com/Dejai/iris_bros/testing"> Testing Pages </a></p>
+<p><a href="https://github.com/Dejai/iris_bros/tree/master/testing"> Testing Pages </a></p>
 
-<p><a href="https://github.com/Dejai/iris_bros/pubsvs/"> User Facing Pages </a></p>
-
-## [Test](https://dejai.github.io/iris_bros)
+<p><a href="https://github.com/Dejai/iris_bros/tree/master/pubsvs/"> User Facing Pages </a></p>
 
