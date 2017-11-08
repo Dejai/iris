@@ -1,0 +1,1367 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>IRIS Beta Tasks & Scenarios</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<meta charset="UTF-8"/>
+	<link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+	<!-- Two additional scripts to leverage JQuery animation -->
+	<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  	<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+	<style type="text/css">
+		/*.main-menu { background-color:blue; color:white; font-size: 25px; font-family: courier sans-serif;	}*/
+		#main-left { float:left; }
+		#main-top { float:right; margin-bottom: 30px; }
+		#main-top::after { clear:both; }
+		#main-body { float:right; }
+
+		.clear { clear:both;}
+		.showMenu{ width: 200px; display:block; float:left; background:#3A3B41;color:white;}
+		.hideMenu{ display: none;}
+		.subindent { text-indent: 10px; }
+		.indent { text-indent: 30px; }
+		.indent2 { text-indent: 60px; }
+		.space { margin-left: 1%;}
+		.space2 { margin-left: 10%;}
+
+		/*h1.header { font-family: courier sans-serif; text-align:center;}*/
+		.centered { text-align: center;}
+		.mainText { font-size: 150%;}
+		.padding { padding-left:5%; padding-right:10%; padding-bottom:5%;}
+		.padding2 { padding-left:10%; padding-right:10%; padding-bottom:5%;}
+		.next { float:right; }
+		.prev { float:left; }
+		.pagez::before{ clear:both;}
+		.pagez { float:left; width:50%; margin-top:30px;}
+		.pagez::after { clear:both;}
+		#side-menu {float:left;}
+
+		.comms { background-color:#FFFFF0; border-color:black; }
+
+		.stepsList li { padding-bottom: 10px;}
+		.alpha { list-style-type: lower-alpha;}
+		.roman { list-style-type: lower-roman;}
+
+		/*div[class^='tab-pane fade in'] { padding-left:10%; padding-right:10%;}*/
+		div[class^='col-'] p { padding-left: 30px;}
+		div[class^='col-'] table { margin-left: 30px;}
+		div[class^='col-'] { border-bottom: 1px dashed black; padding:10px;}
+		table#terminology tr td { padding: 20px; }
+	</style>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			// Handle all tooltips
+			$('[data-toggle="tooltip"]').tooltip( {html:true} ); 
+
+			// Automatically hide the hamburger icon. 
+			$("#hamburger").hide();
+
+			// Script to handle scrolling back to the top
+			$("[href^='#task']").click(function(){ scrollTo(0,0); });
+			$("[href^='#scenario']").click(function(){ scrollTo(0,0); });
+			$("[href^='#permissions']").click(function(){ scrollTo(0,0); });
+			$("[href^='#juniorLevel']").click(function(){ scrollTo(0,0); });
+			$("[href^='#midLevel']").click(function(){ scrollTo(0,0); });
+			$("[href^='#theEnd']").click(function(){ scrollTo(0,0); });
+			$("[href^='#purpose']").click(function(){ scrollTo(0,0); });
+
+
+			// Set the heights & widths for the main sections
+			var sideWidth = 200; 
+			var sideWidth2 = 250;
+			$("#side-menu").css({height: window.innerHeight+550}); 
+			$("#main-left").css({height: window.innerHeight+550}); 
+			$("#main-left").css({width: sideWidth}); 
+			$("#main-top").css({width: window.innerWidth-sideWidth2}); 
+			$("#main-body").css({width: window.innerWidth-sideWidth2});
+
+
+			// The following sectionhandles resizing the sections upon a resize; 
+			// Got the resize idea from W3 Schools 
+			// http://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_onresize_dom
+			document.getElementsByTagName("BODY")[0].onresize = function() {myFunction()};
+			function myFunction() {
+			    // alert("hello, world");
+			    var sideWidth = 200; 
+				var sideWidth2 = 250;
+				$("#side-menu").css({height: window.innerHeight+550}); 
+				$("#main-left").css({height: window.innerHeight+550}); 
+				$("#main-left").css({width: sideWidth}); 
+				$("#main-top").css({width: window.innerWidth-sideWidth2}); 
+				$("#main-body").css({width: window.innerWidth-sideWidth2});
+			}
+
+
+			// The functionality of the menu button upon click
+			$("#hamburger").click(function(){
+				$("#side-menu").toggleClass("hideMenu"); 
+				$("#hamburger").hide(); 
+				$("#main-left").css({width: sideWidth});
+				$("#main-top").css({width: window.innerWidth-sideWidth2}); 
+				$("#main-body").css({width: window.innerWidth-sideWidth2});
+
+			});
+
+			// Close the menu view and show the hamburger icon. 
+			$("#closeMenu").click(function(){
+				$("#side-menu").toggleClass("hideMenu"); 
+				$("#hamburger").show(); 
+				$("#main-left").css({width: 20});
+				$("#main-top").css({width: window.innerWidth-45}); 
+				$("#main-body").css({width: window.innerWidth-45});
+
+			});
+
+			// Toggle the chevrons upon the click. 
+			$("[id^='menu-collapse']").click(function(){
+				$(this).toggleClass("glyphicon-chevron-down");
+			});
+			$("#NEW").click(function(){
+				$("#menu-collapseEW").toggleClass("glyphicon-chevron-down");
+			});
+			$("#NEWS").click(function(){
+				$("#menu-collapseS").toggleClass("glyphicon-chevron-down");
+			});
+
+
+			// Commands to handle comments & submitting to zendesk. 
+
+			//Disabling the Zendesk button & the clear button
+			$("[id^='zen-']").attr("disabled", "disabled");
+			$("[id^='clear-']").attr("disabled", "disabled");
+
+
+			// Whenever comments are entered
+			$("[id^='comments-']").keyup(function (){
+				var element = $(this).attr("id");
+				var split = element.split("-"); 
+				var num = split[1];
+				var comments = $(this);
+				var zen = "#zen-"+ num;
+				if (comments.val().length >= 1){
+					$(zen).removeAttr("disabled"); 
+					$(zen).addClass("btn-danger");
+					
+					var mailtoZ =  "mailto:support@pubsvs.com?subject='#IRISBeta'&body=";
+					var commentsZ = comments.val().split("\n");
+					var body_line = escape("\n");
+					for (var i = 0; i < commentsZ.length; ++i){
+		        		mailtoZ += commentsZ[i] + body_line; 
+		        	}
+					$(zen).attr("href", mailtoZ); 
+				}
+			});
+
+			$("[id^='zen-']").click(function(){
+				var element = $(this).attr("id");
+				var split = element.split("-"); 
+				var num = split[1];
+				var clear = "#clear-"+ num;
+				$(clear).removeAttr("disabled");
+				$(clear).addClass("btn-info");
+
+			});
+			$("[id^='clear-']").click(function(){
+				var element = $(this).attr("id");
+				var split = element.split("-"); 
+				var num = split[1];
+				var comms = "#comments-"+ num;
+				var zens = "#zen-"+ num;
+				var clears = "#clear-"+ num;
+				$(comms).val(""); 
+				$(zens).attr("disabled", "disabled");
+				$(zens).attr("href", "#");
+				$(zens).removeClass("btn-danger");
+				$(clears).attr("disabled", "disabled");
+				$(clears).removeClass("btn-info");
+			});
+
+
+			// Code to handle closing of the page. Prompts users to submit all tickets first. 
+			// Determine if mouse is over body or no. This determines when to show pop-up.
+			var out = false; 
+			$("body").mouseover(function(){
+				out = false; 
+			}).mouseout(function(){
+				out=true;
+			});
+			// Just before closing the tab. Determine if mouse is not hovering over body. 
+			window.onbeforeunload = function(e) {
+
+				var text = "Leaving now will clear all comments that you have made."; 
+				text+= "\n\n If you were intending to submit a ticket to Zendesk, please be sure you have done so before closing this page!";
+
+				if(out){
+					return text;
+				}
+			};
+
+		});
+	</script>
+</head>
+<body onresize="resize()">
+
+	<!-- START: Side DIV -->
+	<div id="main-left">
+		<button id="hamburger" style="margin-left:25%; margin-top:10%;" >
+			<span class="glyphicon glyphicon-menu-hamburger" style="font-size:250%"></span>
+		</button>
+		<div id="side-menu" class="showMenu" style="padding-left:10px;">
+			<a href="#" id="closeMenu" href="#" style="float:right; font-size:150%;" class="glyphicon glyphicon-remove"></a>
+			<br style="clear:both;"/>
+			<h1><span id="menuLabel" href="#">Menu</span></h1>
+			<div><a href="#purpose" data-toggle="tab"><span class="glyphicon glyphicon-home" style="color:white;"/></span> Home</a></div>
+			<div>
+				<a href="#" id="menu-collapseEW" class="glyphicon glyphicon-chevron-right" data-toggle="collapse" data-target="#effortWorkflowMenu" style="color:white;"></a>
+				<a id='NEW' href="#effortWorkflowMenu" data-toggle="collapse">The New Effort Workflow</a>
+			</div>
+			<div id="effortWorkflowMenu" class="collapse">
+				<p class="indent"><a href="#task1" data-toggle="tab">Task #1</a></p>
+				<p class="indent"><a href="#task2" data-toggle="tab">Task #2</a></p>
+				<p class="indent"><a href="#task3" data-toggle="tab">Task #3</a></p>
+			</div>
+			<div>
+				<a href="#" id="menu-collapseJ" class="glyphicon glyphicon-chevron-right" style="visibility:hidden;"></a>
+				<a href="#permissions" data-toggle="tab">Permissions</a>
+			</div>
+			<div>
+				<a href="#" id="menu-collapseS" class="glyphicon glyphicon-chevron-right" data-toggle="collapse" data-target="#scenariosMenu" style="color:white;"></a>
+				<a id='NEWS' href="#scenariosMenu" data-toggle="collapse">Scenarios</a>
+			</div>
+			<div id="scenariosMenu" class="collapse" >
+				<div class="subindent">
+				<a href="#" id="menu-collapseJ" class="glyphicon glyphicon-chevron-right" data-toggle="collapse" data-target="#juniorLevelMenu" style="color:white;"></a>
+				<a href="#juniorLevel" data-toggle="tab">Junior Level Marketer</a>
+				</div>
+				<div id="juniorLevelMenu" class="collapse">
+					<p class="indent2"><a href="#scenario1J" data-toggle="tab">Scenario #1</a></p>
+					<p class="indent2"><a href="#scenario2J" data-toggle="tab">Scenario #2</a></p>
+					<p class="indent2"><a href="#scenario3J" data-toggle="tab">Scenario #3</a></p>
+					<p class="indent2"><a href="#scenario4J" data-toggle="tab">Scenario #4</a></p>
+					<p class="indent2"><a href="#scenario5J" data-toggle="tab">Scenario #5</a></p>
+					<p class="indent2"><a href="#scenario6J" data-toggle="tab">Scenario #6</a></p>
+				</div>
+				<div class="subindent">
+					<a href="#" id="menu-collapseM" class="glyphicon glyphicon-chevron-right" data-toggle="collapse" data-target="#midLevelMenu" style="color:white;"></a>
+					<a href="#midLevel" data-toggle="tab">Mid-Level Marketer</a>
+				</div>
+				<div id="midLevelMenu" class="collapse">
+					<p class="indent2"><a href="#scenario1M" data-toggle="tab">Scenario #1</a></p>
+					<p class="indent2"><a href="#scenario2M" data-toggle="tab">Scenario #2</a></p>
+					<p class="indent2"><a href="#scenario3M" data-toggle="tab">Scenario #3</a></p>
+					<p class="indent2"><a href="#scenario4M" data-toggle="tab">Scenario #4</a></p>
+					<p class="indent2"><a href="#scenario5M" data-toggle="tab">Scenario #5</a></p>
+					<p class="indent2"><a href="#scenario6M" data-toggle="tab">Scenario #6</a></p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- END: Side DIV -->
+
+	<!-- START: Top DIV -->
+	<div id="main-top" style="display:inline-block; text-align:center;">
+		<h1 style="font-size:44px;text-align:center;">IRIS Beta Tasks & Scenarios </h1>
+	</div>
+	<!-- END: Top DIV -->
+
+	<!-- <br style="clear:both;"/> -->
+
+	<!-- START: Main Tab Content -->
+	<div id="main-body" class="tab-content" >
+
+		<!-- START: Purpose / HOME -->
+		<div id='purpose' class="tab-pane fade in centered mainText active">
+			<h1>Purpose</h1>
+
+			<p>This webpage presents scenarios and tasks that highlight new permissions and an update to the effort workflow in <br/>
+			<span style="color:blue;font-weight:bold;background:lightgray; margin-top:5px; border-radius:10px;padding:5px;"> IRIS 4.0 Phase 1 Release 3 </span></p>
+			<p> It is intended to provide users with an opportunity to familiarize themselves with the variations of permissions and the new interface. </p>
+			<p> Furthermore, this document serves as an opportunity for testers to provide feedback on these changes.</p>
+			<br/><br/>
+			<h3>The deadline to submit feedback is <span style="color:red;font-weight:bold">Friday, January 22nd 2016</span> </h3>
+			<br/><br/>
+			<a href="#howTo" class="btn btn-primary" data-toggle="tab" style="font-size:120%">How To Use This Webpage</a>
+			<br/><br/>
+			<a id="quickTest" href="#task1" class="btn btn-success" data-toggle="tab" style="font-size:110%">Get Started With Tasks</a>	
+		</div>
+		<!-- END: Purpose / HOME -->
+
+
+		<!-- START: HOW TO  -->
+		<div id="howTo" class="tab-pane fade in mainText padding">
+			<h1>How To Use This Webpage</h1>
+			<div>
+				<h3>Comments/Notes Section:</h3>
+				<div class="padding">
+					<p >At the end of each scenario/task, you will find a comments section. We encourage you to use this section to record any comments, suggestions, questions or concerns you have while testing the associated scenario/task.</p>
+					<p>If you discover any issues with the system, or if you have any comments/suggestions, please submit a ticket to Zendesk via <a href="mailto:support@pubsvs.com?subject='#IRISBETA'">support@pubsvs.com</a>.</p>
+					<p> <span style="color:red;">Note:</span> Please include <span style="font-weight:bold">“#IRISBETA”</span> or <span style="font-weight:bold">“#irisbeta”</span> anywhere in your email subject line or body.</p>
+					<p>Remember - the deadline to submit feedback is <span style="color:red;font-weight:bold">Friday, January 22nd 2016</span></p>
+				</div>
+			</div>
+			<div>
+				<h3>Scenarios: </h3>
+				<div class="padding">
+					<p> For tasks, you should ensure that you have all permissions. For scenarios, we recommend that you modify your permissions accordingly to compare and contrast your abilities in the system.</p>
+					<p> Only Admin accounts can freely change their permissions. If you have a User account, please partner with someone who has an Admin account to change your permissions.</p>
+				</div>
+			</div>
+			<div>
+				<h3>Key Terminology: </h3>
+				<div class="padding">
+					<table id="terminology">
+						<tr>
+							<td style="width:200px; height:100px; ">Default</td>
+							<td>
+								The Creative that will be automatically associated with a selected Creative. 
+								Can be a default order form (for pages) or a default page (for emails and ads)
+							</td>
+						</tr>
+						<tr>
+							<td>Order Form</td>
+							<td>Synonymous to an Offer in IRIS </td>
+						</tr>
+						<tr>
+							<td>Page 1</td>
+							<td>
+								This is the first page a customer sees after clicking the promo link. 
+								It can be the landing page or the order form
+							</td>
+						</tr>
+						<tr>
+							<td>Page 2</td>
+							<td>
+								The second page a customer sees after your main page.
+								It could be a redirect page or the order form.
+							</td>
+						</tr>
+						<tr>
+							<td>Page 3</td>
+							<td>
+								This refers to the Order Form used. This field shows up if Page 2 is a redirect page.
+							</td>
+						</tr>
+					</table>
+				</div>				
+			</div>
+			<div class="centered">
+				<a href="#task1" class="btn btn-success mainText" data-toggle="tab">Get Started With Tasks</a>
+			</div>
+		</div>
+		<!-- END: HOW TO  -->
+
+
+		<!-- START: Effort Workflow Tasks -->
+		
+		<div id="task1" class="tab-pane fade in padding2">
+			<h1>New Effort Workflow</h1>
+			<br/>
+			<h2>Task #1: &nbsp;&nbsp;&nbsp; <span>Space Ad Efforts</span></h2>
+			<h4>Description: &nbsp;&nbsp;&nbsp; <span>Setting up a Space Ad effort using the new Page fields. The Ad is selected first, using the Advertisement pop-up window.</span><h4>
+			<h3>Steps:</h3>
+			<ol class="stepsList">
+				<li>Select the &lsquo;Effort&rsquo; tab.
+					<ol class="alpha">
+						<li>This is permission based. You must have &ldquo;Create &amp; Edit Efforts&rdquo; permission.</li>
+					</ol>
+				</li>
+				<li>Enter/Select a date.</li>
+				<li>Select Internal List or Website as Effort Destination.</li>
+				<li>Select Item Type (Subscription or Product). </li>
+				<li>Select Internal Item Code.</li>
+				<li>Select Space Ad as the Effort Type</li>
+				<li>Select a List</li>
+				<li>Select a Space Ad using the Select One button.</li>
+				<li>Select a Page in the Page 1 Field.
+					<ol class="alpha">
+						<li>If defaults have been set, Page 2 & Page 3 will automatically be filled with the redirect page and order form respectively.</li>
+						<li>If Page 1 does not have a redirect page, Page 2 will be the order form, provided there is a default.</li>
+					</ol>
+				</li>
+				<li>Create the Effort.</li>
+			</ol>
+			<div>
+				<form role='form' style="border-color:black;">
+					<label>Comments/Notes:</label>
+					<textarea type="text" class='form-control comms' rows='10' id='comments-task1'> </textarea>
+					<br/> 
+					<a style="float:left" id='zen-task1' href="#" class="btn btn-default" disabled> Submit Zendesk Ticket</a>
+					</button>
+					<br/><br/> 
+					<a href="#" style="left" id="clear-task1" type="submit" class="btn btn-default"> Clear Comments</a>
+				</form>
+			</div>
+			<div class="pagez">
+				<span class="prev"><a href="#task2" class="btn btn-primary" data-toggle="tab">Task #2 <span class="glyphicon glyphicon-chevron-right"/></span></a></span>
+			</div>
+		</div>
+		<div id="task2" class="tab-pane fade in padding2">
+			<h1>New Effort Workflow</h1>
+			<br/>
+			<h2>Task #2:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Order Form Only Effort</h2>
+			<p><strong>Description:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </strong>Setting up an effort using the new Page fields. This effort uses an order form in the page 1 field to make it an Order Form Only effort.</p>
+			<p><strong>Steps:</strong></p>
+
+			<ol class="stepsList">
+				<li>Select &lsquo;Effort&rsquo; tab
+					<ol class="alpha">
+						<li>This is permission based. You must have &ldquo;Create &amp; Edit Efforts&rdquo; permission.</li>
+					</ol>
+				</li>
+				<li>Enter/Select a date</li>
+				<li>Select Internal List or Website as Effort Destination.</li>
+				<li>Select Item Type (Subscription or Product).</li>
+				<li>Select Internal Item Code</li>
+				<li>Select Ed Mention as the Effort Type.</li>
+				<li>Select a List</li>
+				<li>Select an Order Form in Page 1 Field
+					<br/>
+					<ol style="list-style-type:none;">
+						<li><p>NOTE: You no longer have to click the ‘Order Form Only’ checkbox – it no longer exists. By selecting an Order Form in the page 1 field, the effort becomes an order form only (as noted by the Row Color field), and it will be labeled as such on the schedules page;</p></li>
+					</ol>
+				</li>
+				<li>Complete the remaining fields with any values of your choice.</li>
+				<li>Create the Effort.</li>
+			</ol>
+			<div>
+				<form role='form'>
+					<label>Comments/Notes:</label>
+					<textarea type="text" class='form-control comms' rows='10' id='comments-task2'> </textarea>
+					<br/> 
+					<a style="float:left" id='zen-task2' href="#" class="btn btn-default"> Submit Zendesk Ticket</a>
+					</button>
+					<br/><br/> 
+					<a href="#" style="left" id="clear-task2" type="submit" class="btn btn-default"> Clear Comments</a>
+				</form>
+			</div>
+			<div class="pagez">
+				<span class="prev"><a href="#task1" class="btn btn-primary" data-toggle="tab"><span class="glyphicon glyphicon-chevron-left"/></span> Task #1 </a></span>
+				<span class="next"><a href="#task3" class="btn btn-primary" data-toggle="tab">Task #3 <span class="glyphicon glyphicon-chevron-right"/></span></a></span>
+			</div>
+		</div>
+		<div id="task3" class="tab-pane fade in padding2">
+			<h1>New Effort Workflow</h1>
+			<br/>
+			<h2>Task #3:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Change Defaults on Efforts</h2>
+			<p><strong>Description:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </strong>Setting up an effort using the new Page fields. This task focuses on changing defaults that were set for a creative. This is a permissioned based ability.</p>
+			<p><strong>Steps:</strong></p>
+			<ol class="stepsList">
+				<li>Select &lsquo;Effort&rsquo; tab
+					<ol class="alpha">
+						<li>This is permission based. You must have &ldquo;Create &amp; Edit Efforts&rdquo; permission.</li>
+					</ol>
+				</li>
+				<li>Enter/Select a date</li>
+				<li>Select Internal List or Website as Effort Destination.</li>
+				<li>Select Item Type (Subscription or Product).</li>
+				<li>Select Internal Item Code</li>
+				<li>Select Banner Ad as Effort Type</li>
+				<li>Select List</li>
+				<li>Select Banner Size</li>
+				<li>Select a Banner Ad using the Select One button </li>
+				<li>Select a Page in Page 1 Field
+					<ol class="alpha">
+						<li>If defaults have been set, Page 2 & Page 3 will automatically be filled with the redirect page and order form respectively.</li>
+						<li>If Page 1 does not have a redirect page, Page 2 will be the order form, provided there is a default.</li> 
+					</ol>
+				</li>
+
+				<li>Change the default Order Form</li>
+				<li>Complete the remaining fields with any values of your choice.</li>
+				<li>Create the Effort.</li>
+			</ol>
+			<div>
+				<form role='form'> 
+					<label>Comments/Notes:</label>
+					<textarea type="text" class='form-control comms' rows='10' id='comments-task3'> </textarea>
+					<br/> 
+					<a style="float:left" id='zen-task3' href="#" class="btn btn-default"> Submit Zendesk Ticket</a>
+					</button>
+					<br/><br/> 
+					<a href="#" style="left" id="clear-task3" type="submit" class="btn btn-default"> Clear Comments</a>
+				</form>
+			</div>
+			<div class="pagez">
+				<span class="prev">
+					<a href="#task2" class="btn btn-primary" data-toggle="tab">
+						<span class="glyphicon glyphicon-chevron-left"/></span>
+						Task #2 
+					</a>
+				</span>
+				<span class="next">
+					<a href="#permissions" class="btn btn-warning" data-toggle="tab">
+						Next Section
+						<span class="glyphicon glyphicon-step-forward"/></span> 
+					</a>
+				</span>
+				<br class="clear"/><br class="clear"/>
+				<span class="prev">
+					<a href="#purpose" class="btn btn-success" data-toggle="tab">
+						<span class="glyphicon glyphicon-home"/></span> 
+						Home
+					</a>
+				</span>
+				<br class="clear"/>
+			</div>
+		</div>
+		<!-- END: Effort Workflow Tasks -->
+	
+
+
+		<!-- START: Permission -->
+
+		<div id="permissions" class="tab-pane fade in mainText centered">
+			<h1>Permissions</h1>
+			<p>As an IRIS user, permissions control your limitations and flexibility throughout the system <br/> from setting up entities (offers, pages, etc.) to creating efforts and scheduling mailings.</p>
+			<br/>
+			<p> The following diagrams highlights the relationship between permissions associated with your experience on the creative side and the effort side. </p>
+			<div class="col-lg-6">
+				<h3>Creative Permissions</h3>
+				<img alt="This is where the creative diagram would go" src="https://files.iris.pubsvs.com/images/IRIS_Permissions_Two_CreativesII.png" style="width: 700px; height: 777px;" />
+			</div>			
+			<div class="col-lg-6">
+				<h3>Effort Permissions</h3>
+				<img alt="This is where the effort diagram would go" src="https://files.iris.pubsvs.com/images/IRIS_Permissions_Two_EffortsII.png" style="width: 700px; height: 777px;" />
+			</div>
+			<div class="clear"></div>
+			<br/><br/>
+			<p>These two new permissions overlap with existing permissions to provide a customizable experience in the system. </p>
+			<br/>
+			<p> To help you become accustomed to these new permissions, and their relationship with existing ones, we have provided scenarios!</p> 
+			<br/>
+			<div class="centered">
+				<a href="#juniorLevel" class="btn btn-lg btn-warning" data-toggle="tab"> Scenarios Section <span class="glyphicon glyphicon-step-forward"></span></a>
+			</div>
+		</div>
+		<!-- END: Permission -->
+
+
+
+
+		<!-- START: Creative Permissions -->
+		<div id="juniorLevel" class="tab-pane fade in mainText centered">
+			<h1>Junior Level Marketer</h1>
+			<p>This section presents scenarios for a Junior Level Marketer's abilities in IRIS that are dependent on permissions.</p>
+			<br/>
+			<p style="font-weight:bold;color:red;">These scenarios should be completed in pairs! </p>
+			<br/>
+			<p>Each scenario has a Senior Level Marketer and a Junior Level Marketer.</p>
+			<br/>
+			<p>Please setup your accounts accordingly with the following permissions:</p>
+			<br/>
+			<h2>Senior Level Marketer (SM)</h2>
+			<p>Grant Access</p>
+			<p>Create &amp; Edit Creatives </p>
+			<p>Create &amp; Edit Efforts</p>
+			<p>Set Defaults on Creatives</p>
+			<p>Change Defaults on Efforts</p>
+			<br/>
+			<h2>Junior Level Marketer (JM)</h2>
+			<p>Create &amp; Edit Efforts</p>
+			<br/>
+			<a class="btn btn-lg btn-success" href="#scenario1J" data-toggle="tab">Begin Junior Level Marketer Scenarios</a>
+		</div>
+		<!-- END: Creative Permissions -->
+
+				<!-- START: Creative Permissions Scenarios -->
+				<div id="scenario1J" class="tab-pane fade in padding2">
+					<h1>Junior Level Marketer</h1>
+					<br/>
+					<h2>Scenario #1:&nbsp;&nbsp;&nbsp;<span>Access to Ad with a Default</span></h2>
+					<h4>Description:&nbsp;&nbsp;&nbsp;<span>This scenario focuses on a Junior Level Marketer being able to create an Effort using a Space Ad that has a default Page.</space></h4>
+					<h3>Roles:</h3>
+					<p class="space2">
+						Senior Level Marketer (SM) <a href="#" data-toggle="modal" data-target="#myModal"> <span class="glyphicon glyphicon-question-sign" style="font-size:105%;"></span></a>
+					</p>
+					<p class="space2">Junior Level Marketer (JM) <a href="#" data-toggle="modal" data-target="#myModal"> <span class="glyphicon glyphicon-question-sign" style="font-size:105%;"></span></a>
+					<ol class="stepsList">
+					    <li>JM: Verify that you cannot add, edit, copy or grant access to any creative.
+					    	<ol class="alpha">
+					        	<li>You should not be able to.</li>
+					        </ol>
+					    </li>
+					    <li>SM: Grant the JM access to an Internal Space Ad that has a default page.
+					    	<ol class="alpha">
+					        	<li>Inform the JM of the Item and Name for the Space Ad you gave them access to.</li>
+					        </ol>
+					    </li>
+					    <li>JM: Create a Space Ad Effort
+					    	<ol class="alpha">
+					        	<li>Use Internal List or Website as the Effort Destination</li>
+					        	<li>Select the given Item Code</li>
+					        	<li>Select Space Ad as Effort Type</li>
+					        	<li>Select a Space Ad using the &lsquo;Select One&rsquo; button.
+					        		<ol class="roman">
+					        			<li>You should be able to select the Ad you were given access to.</li>
+					        		</ol>
+					        	</li>
+					        </ol>
+					    </li>
+					    <li>SM: Remove the user&rsquo;s access to that Space Ad.</li>
+					    <li>JM: Refresh your page and try to select that Ad again in a Space Ad effort.
+					    	<ol class="alpha">
+					        	<li>You should no longer be able to.&nbsp;</li>
+					        </ol>
+					    </li>
+					</ol>
+					<div>
+						<form role='form'>
+							<label>Comments/Notes:</label>
+							<textarea type="text" class='form-control comms' rows='10' id='comments-scenario1J'> </textarea>
+							<br/> 
+							<a style="float:left" id='zen-scenario1J' href="#" class="btn btn-default"> Submit Zendesk Ticket</a>
+							</button>
+							<br/><br/> 
+							<a href="#" style="left" id="clear-scenario1J" type="submit" class="btn btn-default"> Clear Comments</a>
+						</form>
+					</div>
+					<div class="pagez">
+						<span class="prev"><a href="#scenario2J" class="btn btn-primary" data-toggle="tab">Scenario #2<span class="glyphicon glyphicon-chevron-right"/></span></a></span>
+					</div>
+				</div>
+				<div id="scenario2J" class="tab-pane fade in padding2">
+					<h1>Junior Level Marketer</h1>
+					<br/>
+					<h2>Scenario #2:&nbsp;&nbsp;&nbsp;<span>Access to Ad without a Default</span></h2>
+					<h4>Description:&nbsp;&nbsp;&nbsp;<span>This scenario focuses on a Junior Level Marketer not being able to create an Effort using a Space Ad that does not have a default Page.</space></h4>
+					<h3>Roles:</h3>
+					<p class="space2">Senior Level Marketer (SM) <a href="#" data-toggle="modal" data-target="#myModal"> <span class="glyphicon glyphicon-question-sign" style="font-size:105%;"></span></a></p>
+					<p class="space2">Junior Level Marketer (JM) <a href="#" data-toggle="modal" data-target="#myModal"> <span class="glyphicon glyphicon-question-sign" style="font-size:105%;"></span></a></p>
+					<h3>Steps:</h3>
+
+					<ol class="stepsList">
+					    <li>JM: Verify that you cannot add, edit, copy or grant access to any creative.
+					    	<ol class="alpha">
+					        	<li>You should not be able to.</li>
+					        </ol>
+					    </li>
+					    <li>SM: Grant the JM access to an Internal Space Ad that does NOT have a default
+					    	<ol class="alpha">
+					        	<li>Inform the JM of the Item and Name for the Space Ad you gave them access to.</li>
+					        </ol>
+					    </li>
+					    <li>JM: Create a Space Ad Effort
+					    	<ol class="alpha">
+					        	<li>Use Internal List or Website as the Effort Destination</li>
+					        	<li>Select the given Item Code.</li>
+					        </ol>
+					    </li>
+					    <li>Select Space Ad as Effort Type</li>
+					    <li>Select a Space Ad using the &lsquo;Select One&rsquo; button.
+					    	<ol class="alpha">
+					    		<li>You should not be able to select the Space Ad you were just given access to.</li>
+					    	</ol>
+					    </li>
+					</ol>
+					<div>
+						<form role='form'>
+							<label>Comments/Notes:</label> 
+							<textarea type="text" class='form-control comms' rows='10' id='comments-scenario2J' > </textarea>
+							<br/> 
+							<a style="float:left" id='zen-scenario2J' href="#" class="btn btn-default"> Submit Zendesk Ticket</a>
+							</button>
+							<br/><br/> 
+							<a href="#" style="left" id="clear-scenario2J" type="submit" class="btn btn-default"> Clear Comments</a>
+						</form>
+					</div>
+					<div class="pagez">
+						<span class="prev"><a href="#scenario1J" class="btn btn-primary" data-toggle="tab"><span class="glyphicon glyphicon-chevron-left"/></span> Scenario #1 </a></span>
+						<span class="next"><a href="#scenario3J" class="btn btn-primary" data-toggle="tab">Scenario #3<span class="glyphicon glyphicon-chevron-right"/></span></a></span>
+					</div>
+				</div>
+				<div id="scenario3J" class="tab-pane fade in padding2">
+					<h1>Junior Level Marketer</h1>
+					<br/>
+					<h2>Scenario #3:&nbsp;&nbsp;&nbsp;<span>Access to Page with a Default</span></h2>
+					<h4>Description:&nbsp;&nbsp;&nbsp;<span>This scenario focuses on a Junior Level Marketer being able to create an Effort using a Page that has a default Order Form.</space></h4>
+					<h3>Roles:</h3>
+					<p class="space2">Senior Level Marketer (SM) <a href="#" data-toggle="modal" data-target="#myModal"> <span class="glyphicon glyphicon-question-sign" style="font-size:105%;"></span></a></p>
+					<p class="space2">Junior Level Marketer (JM) <a href="#" data-toggle="modal" data-target="#myModal"> <span class="glyphicon glyphicon-question-sign" style="font-size:105%;"></span></a></p>
+
+					<h3>Steps:</h3>
+					<ol class="stepsList">
+					    <li>JM: Verify that you cannot add, edit, copy or grant access to any creative.
+					    	<ol class="alpha">
+					        	<li>You should not be able to.</li>
+					        </ol>
+					    </li>
+					    <li>SM: Grant the JM access to an Internal Page that has a default Order Form.
+					    	<ol class="alpha">
+					        	<li>Inform the JM of the Item and Name for the Page you gave them access to. &nbsp;</li>
+					        </ol>
+					    </li>
+					    <li>JM: Create a Tertiary Effort
+					    	<ol class="alpha">
+					        	<li>Use Internal List or Website as the Effort Destination</li>
+					        	<li>Select the given Item Code</li>
+					        	<li>Select any Tertiary Effort Type</li>
+					        	<li>Select a Page in the Page 1 Field
+					        		<ol class="roman">
+					        			<li>You should be able to select the page you were given access to.</li>
+					        		</ol>
+					        	</li>
+					        </ol>
+					    </li>
+					     <li>SM: Remove the user&rsquo;s access to that Page.</li>
+					    <li>JM: Refresh your page and try to select that Page again in a Tertiary Effort.
+					    	<ol class="alpha">
+					        	<li>You should no longer be able to.&nbsp;</li>
+					        </ol>
+					    </li>
+					</ol>
+					<div>
+						<form role='form'> 
+							<label>Comments/Notes:</label>
+							<textarea type="text" class='form-control comms' rows='10' id='comments-scenario3J'> </textarea>
+							<br/> 
+							<a style="float:left" id='zen-scenario3J' href="#" class="btn btn-default"> Submit Zendesk Ticket</a>
+							</button>
+							<br/><br/> 
+							<a href="#" style="left" id="clear-scenario3J" type="submit" class="btn btn-default"> Clear Comments</a>
+						</form>
+					</div>
+					<div class="pagez">
+						<span class="prev"><a href="#scenario2J" class="btn btn-primary" data-toggle="tab"><span class="glyphicon glyphicon-chevron-left"/></span> Scenario #2 </a></span>
+						<span class="next"><a href="#scenario4J" class="btn btn-primary" data-toggle="tab">Scenario #4<span class="glyphicon glyphicon-chevron-right"/></span></a></span>
+					</div>
+				</div>
+				<div id="scenario4J" class="tab-pane fade in padding2">
+					<h1>Junior Level Marketer</h1>
+					<br/>
+					<h2>Scenario #4:&nbsp;&nbsp;&nbsp;<span>Access to Page without a Default</span></h2>
+					<h4>Description:&nbsp;&nbsp;&nbsp;<span>This scenario focuses on a Junior Level Marketer not being able to create an Effort using a Page that does not have a default Order Form.</space></h4>
+					<h3>Roles:</h3>
+					<p class="space2">Senior Level Marketer (SM) <a href="#" data-toggle="modal" data-target="#myModal"> <span class="glyphicon glyphicon-question-sign" style="font-size:105%;"></span></a></p>
+					<p class="space2">Junior Level Marketer (JM) <a href="#" data-toggle="modal" data-target="#myModal"> <span class="glyphicon glyphicon-question-sign" style="font-size:105%;"></span></a></p>
+					<h3>Steps:</h3>
+
+					<ol class="stepsList">
+					    <li>JM: Verify that you cannot add, edit, copy or grant access to any creative.
+					    	<ol class="alpha">
+					        	<li>You should not be able to.</li>
+					        </ol>
+					    </li>
+					    <li>SM: Grant the JM access to an Internal Page that does NOT have a default Order Form.
+					    	<ol class="alpha">
+					        	<li>Inform the JM of the Item and Name for the Page you gave them access to. &nbsp;</li>
+					        </ol>
+					    </li>
+					    <li>JM: Create a Tertiary Effort
+					    	<ol class="alpha">
+					        	<li>Use Internal List or Website as the Effort Destination</li>
+					        	<li>Select the given Item Code</li>
+					        	<li>Select any Tertiary Effort Type</li>
+					        	<li>Attempt to select the Page in the Page 1 Field
+						        	<ol class="roman">
+						        		<li>You should not be able to select the page you were just given access to.</li>
+						        	</ol>
+						        </li>
+					        </ol>
+					    </li>
+					</ol>
+					<div>
+						<form role='form'>
+						<label>Comments/Notes:</label> 
+							<textarea type="text" class='form-control comms' rows='10' id='comments-scenario4J'> </textarea>
+							<br/> 
+							<a style="float:left" id='zen-scenario4J' href="#" class="btn btn-default"> Submit Zendesk Ticket</a>
+							</button>
+							<br/><br/> 
+							<a href="#" style="left" id="clear-scenario4J" type="submit" class="btn btn-default"> Clear Comments</a>
+						</form>
+					</div>
+					<div class="pagez">
+						<span class="prev"><a href="#scenario3J" class="btn btn-primary" data-toggle="tab"><span class="glyphicon glyphicon-chevron-left"/></span> Scenario #3 </a></span>
+						<span class="next"><a href="#scenario5J" class="btn btn-primary" data-toggle="tab">Scenario #5<span class="glyphicon glyphicon-chevron-right"/></span></a></span>
+					</div>
+				</div>
+				<div id="scenario5J" class="tab-pane fade in padding2">
+					<h1>Junior Level Marketer</h1>
+					<br/>
+					<h2>Scenario #5:&nbsp;&nbsp;&nbsp;<span>Change Defaults on Banner Ad Effort</span></h2>
+					<h4>Description:&nbsp;&nbsp;&nbsp;<span>This scenario focuses on a Junior Level Marketer not being able to change defaults on efforts for a Banner Ad effort.</space></h4>
+					<h3>Roles:</h3>
+					<p class="space2">Senior Level Marketer (SM) <a href="#" data-toggle="modal" data-target="#myModal"> <span class="glyphicon glyphicon-question-sign" style="font-size:105%;"></span></a></p>
+					<p class="space2">Junior Level Marketer (JM) <a href="#" data-toggle="modal" data-target="#myModal"> <span class="glyphicon glyphicon-question-sign" style="font-size:105%;"></span></a></p>
+					<h3>Steps:</h3>
+
+					<ol class="stepsList">
+					    <li>JM: Verify that you cannot add, edit, copy or grant access to any creative.
+					    	<ol class="alpha">
+					        	<li>You should not be able to.</li>
+					        </ol>
+					    </li>
+					    <li>SM: Grant the JM access to an Internal Banner Ad that has a default.
+					    	<ol class="alpha">
+					        	<li>Inform the JM of the Item and Name for the Banner Ad you gave them access to. &nbsp;</li>
+					        </ol>
+					    </li>
+					    <li>JM: Create a Banner Ad Effort.
+					    	<ol class="alpha">
+					        	<li>Use Internal List or Website as the Effort Destination</li>
+					        	<li>Select the given Item Code</li>
+					        	<li>Select Banner Ad as Effort Type</li>
+					        	<li>Select Size &amp; Choose Banner via the Select One Button.
+					        		<ol class="roman">
+						        		<li>You should be able to select the Banner Ad you were given access to.</li>
+					        		</ol>
+					        	</li>
+					        	<li>Select Page in Page 1 Field.
+					        		<ol class="roman">
+						        		<li>You should only be able to select the default page of the Banner Ad. </li>
+					        		</ol>
+					        	</li>
+					        	
+					        </ol>
+				        <li>JM: Attempt to change the default Page or Default Order Form on the Effort level.
+			        		<ol class="alpha">
+					        	<li>You should not be able to.&nbsp;</li>
+					        </ol>
+					    </li>
+					    </li>
+					</ol>
+					<div>
+						<form role='form'> 
+							<label>Comments/Notes:</label>
+							<textarea type="text" class='form-control comms' rows='10' id='comments-scenario5J'> </textarea>
+							<br/> 
+							<a style="float:left" id='zen-scenario5J' href="#" class="btn btn-default"> Submit Zendesk Ticket</a>
+							</button>
+							<br/><br/> 
+							<a href="#" style="left" id="clear-scenario5J" type="submit" class="btn btn-default"> Clear Comments</a>
+						</form>
+					</div>
+					<div class="pagez">
+						<span class="prev"><a href="#scenario4J" class="btn btn-primary" data-toggle="tab"><span class="glyphicon glyphicon-chevron-left"/></span> Scenario #4 </a></span>
+						<span class="next"><a href="#scenario6J" class="btn btn-primary" data-toggle="tab">Scenario #6<span class="glyphicon glyphicon-chevron-right"/></span></a></span>
+					</div>
+				</div>
+				<div id="scenario6J" class="tab-pane fade in padding2">
+					<h1>Junior Level Marketer</h1>
+					<br/>
+					<h2>Scenario #6:&nbsp;&nbsp;&nbsp;<span>Change Defaults on Tertiary Efforts</span></h2>
+					<h4>Description:&nbsp;&nbsp;&nbsp;<span>This scenario focuses on a Junior Level Marketer not being able to change defaults on efforts for any Tertiary Effort.</space></h4>
+					<h3>Roles:</h3>
+					<p class="space2">Senior Level Marketer (SM) <a href="#" data-toggle="modal" data-target="#myModal"> <span class="glyphicon glyphicon-question-sign" style="font-size:105%;"></span></a></p>
+					<p class="space2">Junior Level Marketer (JM) <a href="#" data-toggle="modal" data-target="#myModal"> <span class="glyphicon glyphicon-question-sign" style="font-size:105%;"></span></a></p>
+					<h3>Steps:</h3>
+
+					<ol class="stepsList">
+					    <li>JM: Verify that you cannot add, edit, copy or grant access to any creative.
+					    	<ol class="alpha">
+					        	<li>You should not be able to.</li>
+					        </ol>
+					    </li>
+					    <li>SM: Grant the JM access to an Internal Page that has a default.
+					    	<ol class="alpha">
+					        	<li>Inform the JM of the Item and Name for the Page you gave them access to. &nbsp;</li>
+					        </ol>
+					    </li>
+					    <li>JM: Create a Tertiary Effort.
+					    	<ol class="alpha">
+					        	<li>Use Internal List or Website as the Effort Destination</li>
+					        	<li>Select the given Item Code</li>
+					        	<li>Select any Tertiary Effort Type</li>
+							    <li>Select Page in Page 1 Field.
+							    	<ol class="roman">
+							    		<li>You should be able to select the Page you were given access to.</li>
+							    	</ol>		
+							    </li>					     
+					        </ol>
+					    </li>
+					    <li>JM: Attempt to change the default Order Form on the Effort level.
+					    	<ol class="alpha">
+					        	<li>You should not be able to.&nbsp;</li>
+					        </ol>
+					    </li>
+					</ol>
+					<div>
+						<form role='form'> 
+							<label>Comments/Notes:</label>
+							<textarea type="text" class='form-control comms' rows='10' id='comments-scenario6J'> </textarea>
+							<br/> 
+							<a style="float:left" id='zen-scenario6J' href="#" class="btn btn-default"> Submit Zendesk Ticket</a>
+							</button>
+							<br/><br/> 
+							<a href="#" style="left" id="clear-scenario6J" type="submit" class="btn btn-default"> Clear Comments</a>
+						</form>
+					</div>
+					<div class="pagez">
+						<span class="prev"><a href="#scenario5J" class="btn btn-primary" data-toggle="tab"><span class="glyphicon glyphicon-chevron-left"/></span> Scenario #5 </a></span>
+						<span class="next">
+							<a href="#midLevel" class="btn btn-warning" data-toggle="tab">
+								Next Section
+								<span class="glyphicon glyphicon-step-forward"/></span> 
+							</a>
+						</span>
+						<br class="clear"/><br class="clear"/>
+						<span class="prev">
+							<a href="#purpose" class="btn btn-success" data-toggle="tab">
+								<span class="glyphicon glyphicon-home"/></span> 
+								Home
+							</a>
+						</span>
+						<br class="clear"/>
+					</div>
+				</div>
+				<!-- END: Creative Permissions Scenarios -->
+
+
+
+
+
+
+
+		<!-- START: Effort Permissions -->
+		<div id="midLevel" class="tab-pane fade in centered mainText">
+			<h1>Mid Level Marketer</h1>
+			<p>This section presents scenarios for a Mid-Level Marketer's abilities in IRIS that are dependent on permissions.</p>
+			<br/>
+			<p style="font-weight:bold; color:red;">These scenarios should be completed in pairs! </p>
+			<br/>
+			<p>Each scenario has a Senior Level Marketer and a Mid-Level Marketer.</p>
+			<br/>
+			<p>Please setup your accounts accordingly with the following permissions:</p>
+			<br/>
+			<h2>Senior Level Marketer (SM)</h2>
+			<p>Grant Access</p>
+			<p>Create &amp; Edit Creatives </p>
+			<p>Create &amp; Edit Efforts</p>
+			<p>Set Defaults on Creatives</p>
+			<p>Change Defaults on Efforts</p>
+			<br/>
+			<h2>Mid-Level Marketer (MM)</h2>
+			<p>Create &amp; Edit Efforts</p>
+			<p>Change Defaults on Efforts</p>
+			<br/>
+			<a class="btn btn-lg btn-success" href="#scenario1M" data-toggle="tab">Begin Mid-Level Marketer Scenarios</a>
+		</div>
+		<!-- END: Effort Permissions -->
+
+				<!-- START: Effort Permissions Scenarios -->
+				<div id="scenario1M" class="tab-pane fade in padding2">
+					<h1>Mid Level Marketer</h1>
+					<br/>
+					<h2>Scenario #1:&nbsp;&nbsp;&nbsp;<span>Access to Ad with a Default</span></h2>
+					<h4>Description:&nbsp;&nbsp;&nbsp;<span>This scenario focuses on a Mid-Level Marketer being able to create an Effort using a Space Ad that has a default Page.</space></h4>
+					<h3>Roles:</h3>
+					<p class="space2">Senior Level Marketer (SM) <a href="#" data-toggle="modal" data-target="#myModal"> <span class="glyphicon glyphicon-question-sign" style="font-size:105%;"></span></a></p>
+					<p class="space2">Mid-Level Marketer (MM) <a href="#" data-toggle="modal" data-target="#myModal"> <span class="glyphicon glyphicon-question-sign" style="font-size:105%;"></span></a></p>
+					<h3>Steps:</h3>
+
+					<ol class="stepsList">
+					    <li>MM: Verify that you cannot add, edit, copy or grant access to any creative.
+					    	<ol class="alpha">
+					        	<li>You should not be able to.</li>
+					        </ol>
+					    </li>
+					    <li>SM: Grant the MM access to a Space Ad that has a default page.
+					    	<ol class="alpha">
+					        	<li>Inform the MM of the Item and Name for the Space Ad you gave them access to.</li>
+					        </ol>
+					    </li>
+					    <li>MM: Create a Space Ad Effort
+					    	<ol class="alpha">
+					        	<li>Use Internal List or Website as the Effort Destination</li>
+					        	<li>Select the given Item Code</li>
+					        	<li>Select Space Ad as Effort Type</li>
+					        	<li>Select a Space Ad using the &lsquo;Select One&rsquo; button.
+					        		<ol class="roman">
+					        			<li>You should be able to select the Ad that you were given access to.</li>
+					        		</ol>
+					        	</li>
+					        </ol>
+					    </li>
+					    <li>SM: Remove the user&rsquo;s access to that Space Ad.</li>
+					    <li>MM: Refresh your page and try to select the Space Ad again in a Space Ad effort.
+					    	<ol class="alpha">
+					        	<li>You should no longer be able to.&nbsp;</li>
+					        </ol>
+					    </li>
+					</ol>
+
+					<div>
+						<form role='form'>
+						<label>Comments/Notes:</label> 
+							<textarea type="text" class='form-control comms' rows='10' id='comments-scenario1M'> </textarea>
+							<br/> 
+							<a style="float:left" id='zen-scenario1M' href="#" class="btn btn-default"> Submit Zendesk Ticket</a>
+							</button>
+							<br/><br/> 
+							<a href="#" style="left" id="clear-scenario1M" type="submit" class="btn btn-default"> Clear Comments</a>
+						</form>
+					</div>
+					<div class="pagez">
+						<span class="prev"><a href="#scenario2M" class="btn btn-primary" data-toggle="tab">Scenario #2<span class="glyphicon glyphicon-chevron-right"/></span></a></span>
+					</div>
+				</div>
+				<div id="scenario2M" class="tab-pane fade in padding2">
+					<h1>Mid Level Marketer</h1>
+					<br/>
+					<h2>Scenario #2:&nbsp;&nbsp;&nbsp;<span>Access to Ad without a Default</span></h2>
+					<h4>Description:&nbsp;&nbsp;&nbsp;<span>This scenario focuses on a Mid-Level Marketer being able to create an Effort using a Space Ad that does not have a default Page.</space></h4>
+					<h3>Roles:</h3>
+					<p class="space2">Senior Level Marketer (SM) <a href="#" data-toggle="modal" data-target="#myModal"> <span class="glyphicon glyphicon-question-sign" style="font-size:105%;"></span></a></p>
+					<p class="space2">Mid-Level Marketer (MM) <a href="#" data-toggle="modal" data-target="#myModal"> <span class="glyphicon glyphicon-question-sign" style="font-size:105%;"></span></a></p>
+					<h3>Steps:</h3>
+					<ol class="stepsList">
+					    <li>MM: Verify that you cannot add, edit, copy or grant access to any creative.
+					    	<ol class="alpha">
+					        	<li>You should not be able to.</li>
+					        </ol>
+					    </li>
+					    <li>SM: Grant the MM access to a Space Ad that does NOT have a default page.
+					    	<ol class="alpha">
+					        	<li>Inform the MM of the Item and Name for the Space Ad you gave them access to.</li>
+					        </ol>
+					    </li>
+					    <li>SM: Give the MM access to 3 Pages for the same Item as the Space Ad.
+					    	<ol class="alpha">
+					        	<li>Inform the MM of the Name for the 3 Pages that you gave them access to.</li>
+					        </ol>
+					    </li>
+					    <li>MM: Create a Space Ad Effort
+					    	<ol class="alpha">
+					        	<li>Use Internal List or Website as the Effort Destination</li>
+					        	<li>Select the given Item Code</li>
+					        	<li>Select Space Ad as Effort Type</li>
+					        	<li>Select a Space Ad using the &lsquo;Select One&rsquo; button.
+					        		<ol class="roman">
+					        			<li>You should be able to select the Space Ad you were just given access to.</li>
+					        		</ol>
+					        	</li>
+					        	<li>Select a Page in the Page 1 Field.
+					        		<ol class="roman">
+					        			<li>You should see the 3 pages that you were given access to.</li>
+					        		</ol>
+					        	</li>
+					        </ol>
+					    </li>
+					</ol>
+					<div>
+						<form role='form'> 
+							<label>Comments/Notes:</label>
+							<textarea type="text" class='form-control comms' rows='10' id='comments-scenario2M'> </textarea>
+							<br/> 
+							<a style="float:left" id='zen-scenario2M' href="#" class="btn btn-default"> Submit Zendesk Ticket</a>
+							</button>
+							<br/><br/> 
+							<a href="#" style="left" id="clear-scenario2M" type="submit" class="btn btn-default"> Clear Comments</a>
+						</form>
+					</div>
+					
+					<div class="pagez">
+						<span class="prev"><a href="#scenario1M" class="btn btn-primary" data-toggle="tab"><span class="glyphicon glyphicon-chevron-left"/></span> Scenario #1 </a></span>
+						<span class="next"><a href="#scenario3M" class="btn btn-primary" data-toggle="tab">Scenario #3<span class="glyphicon glyphicon-chevron-right"/></span></a></span>
+					</div>
+				</div>
+				<div id="scenario3M" class="tab-pane fade in padding2 ">
+					<h1>Mid Level Marketer</h1>
+					<br/>
+					<h2>Scenario #3:&nbsp;&nbsp;&nbsp;<span>Access to Page with a Default</span></h2>
+					<h4>Description:&nbsp;&nbsp;&nbsp;<span>This scenario focuses on a Mid-Level Marketer being able to create an Effort using a Page that has a default Order Form.</space></h4>
+					<h3>Roles:</h3>
+					<p class="space2">Senior Level Marketer (SM) <a href="#" data-toggle="modal" data-target="#myModal"> <span class="glyphicon glyphicon-question-sign" style="font-size:105%;"></span></a></p>
+					<p class="space2">Mid-Level Marketer (MM) <a href="#" data-toggle="modal" data-target="#myModal"> <span class="glyphicon glyphicon-question-sign" style="font-size:105%;"></span></a></p>
+					<h3>Steps:</h3>
+					<ol class="stepsList">
+					    <li>MM: Verify that you cannot add, edit, copy or grant access to any creative.
+					    	<ol class="alpha">
+					            <li>You should not be able to.</li>
+					        </ol>
+					    </li>
+					    <li>SM: Grant the MM access to a Page that has a default Order Form.
+					    	<ol class="alpha">
+					           <li>Inform the MM of the Item and Name for the Page you gave them access to.</li>
+					        </ol>
+					    </li>
+					    <li>MM: Create a Tertiary Effort
+					    	<ol class="alpha">
+					        	<li>Use Internal List or Website as the Effort Destination</li>
+					            <li>Select the given Item Code</li>
+					            <li>Select any Tertiary Effort Type</li>
+					            <li>Select a Page in the Page 1 Field
+					            	<ol class="roman">
+					            		<li>You should be able to select the Page you were given access to.</li>
+					            	</ol>
+					            </li>
+					        </ol>
+					    </li>
+			            <li>SM: Remove the user&rsquo;s access to that Page</li>
+			            <li>MM: Refresh your page and try to select that Page again in any Tertiary effort.
+			            	<ol class="alpha">
+					            <li>You should no longer be able to.&nbsp;</li>
+					        </ol>
+					    </li>
+					</ol>
+					<div>
+						<form role='form'> 
+							<label>Comments/Notes:</label>
+							<textarea type="text" class='form-control comms' rows='10' id='comments-scenario3M' sytle="color: blue; border-color:black;"> </textarea>
+							<br/> 
+							<a style="float:left" id='zen-scenario3M' href="#" class="btn btn-default"> Submit Zendesk Ticket</a>
+							</button>
+							<br/><br/> 
+							<a href="#" style="left" id="clear-scenario3M" type="submit" class="btn btn-default"> Clear Comments</a>
+						</form>
+					</div>
+					<div class="pagez">
+						<span class="prev"><a href="#scenario2M" class="btn btn-primary" data-toggle="tab"><span class="glyphicon glyphicon-chevron-left"/></span> Scenario #2 </a></span>
+						<span class="next"><a href="#scenario4M" class="btn btn-primary" data-toggle="tab">Scenario #4<span class="glyphicon glyphicon-chevron-right"/></span></a></span>
+					</div>
+				</div>
+				<div id="scenario4M" class="tab-pane fade in padding2">
+					<h1>Mid Level Marketer</h1>
+					<br/>
+					<h2>Scenario #4:&nbsp;&nbsp;&nbsp;<span>Access to Page without a Default</span></h2>
+					<h4>Description:&nbsp;&nbsp;&nbsp;<span>This scenario focuses on a Mid-Level Marketer being able to create an Effort using a Page that does not have a default Order Form.</space></h4>
+					<h3>Roles:</h3>
+					<p class="space2">Senior Level Marketer (SM) <a href="#" data-toggle="modal" data-target="#myModal"> <span class="glyphicon glyphicon-question-sign" style="font-size:105%;"></span></a></p>
+					<p class="space2">Mid-Level Marketer (MM) <a href="#" data-toggle="modal" data-target="#myModal"> <span class="glyphicon glyphicon-question-sign" style="font-size:105%;"></span></a></p>
+					<h3>Steps:</h3>
+					<ol class="stepsList">
+					        <li>MM: Verify that you cannot add, edit, copy or grant access to any creative.
+					        	<ol class="alpha">
+					            	<li>You should not be able to.</li>
+					            </ol>
+					        </li>
+					        <li>SM: Grant the MM access to a Page that does NOT have a default Order Form.
+					        	<ol class="alpha">
+					            	<li>Inform the MM of the Item and Name for the Page you gave them access to.</li>
+					            </ol>
+					        </li>
+					        <li>SM: Give the MM access to 3 Offers for the same Item as the Page.
+					        	<ol class="alpha">
+					            	<li>Inform the MM of the Name for the 3 Offers that you gave them access to.</li>
+					            </ol>
+					        </li>
+					        <li>MM: Create a Tertiary Effort
+					        	<ol class="alpha">
+					            	<li>Use Internal List or Website as the Effort Destination</li>
+					            	<li>Select the given Item Code</li>
+					            	<li>Select any Tertiary Effort Type</li>
+					            	<li>Select the Page in the Page 1 Field
+					            		<ol class="roman">
+					            			<li>You should be able to select a page you were just given access to.</li>
+					            		</ol>
+					            	</li>
+					            	<li>Select an Offer to be the Order Form.
+					            		<ol class="roman">
+					            			<li> You should see the 3 Offers that you were given access to. </li>
+					            		</ol>
+					            	</li>
+					            </ol>
+					        </li>
+					</ol>
+					<div>
+						<form role='form'> 
+							<label>Comments/Notes:</label>
+							<textarea type="text" class='form-control comms' rows='10' id='comments-scenario4M'> </textarea>
+							<br/> 
+							<a style="float:left" id='zen-scenario4M' href="#" class="btn btn-default"> Submit Zendesk Ticket</a>
+							</button>
+							<br/><br/> 
+							<a href="#" style="left" id="clear-scenario4M" type="submit" class="btn btn-default"> Clear Comments</a>
+						</form>
+					</div>
+					<div class="pagez">
+						<span class="prev"><a href="#scenario3M" class="btn btn-primary" data-toggle="tab"><span class="glyphicon glyphicon-chevron-left"/></span> Scenario #3 </a></span>
+						<span class="next"><a href="#scenario5M" class="btn btn-primary" data-toggle="tab">Scenario #5<span class="glyphicon glyphicon-chevron-right"/></span></a></span>
+					</div>
+				</div>
+				<div id="scenario5M" class="tab-pane fade in padding2 ">
+					<h1>Mid Level Marketer</h1>
+					<br/>
+					<h2>Scenario #5:&nbsp;&nbsp;&nbsp;<span>Change Defaults on Banner Ad Effort</span></h2>
+					<h4>Description:&nbsp;&nbsp;&nbsp;<span>This scenario focuses on a Mid-Level Marketer being able to change defaults on creatives for a Banner Ad Effort.</space></h4>
+					<h3>Roles:</h3>
+					<p class="space2">Senior Level Marketer (SM) <a href="#" data-toggle="modal" data-target="#myModal"> <span class="glyphicon glyphicon-question-sign" style="font-size:105%;"></span></a></p>
+					<p class="space2">Mid-Level Marketer (MM) <a href="#" data-toggle="modal" data-target="#myModal"> <span class="glyphicon glyphicon-question-sign" style="font-size:105%;"></span></a></p>
+					<h3>Steps:</h3>
+
+					<ol class="stepsList">
+					    <li>MM: Verify that you cannot add, edit, copy or grant access to any creative.
+					    	<ol class="alpha">
+					        	<li>You should not be able to.</li>
+					        </ol>
+					    </li>
+					    <li>SM: Grant the MM access to a Banner Ad that has a default page.
+					    	<ol class="alpha">
+					        	<li>Inform the MM of the Item and Name for the Banner Ad you gave them access to</li>
+					        </ol>
+					    </li>
+					    <li>SM: Give the MM access to 3 Pages for the same Item as the Banner Ad.
+					    	<ol class="alpha">
+					        	<li>Inform the MM of the Name for the 3 Pages that you gave them access to.</li>
+					        </ol>
+					    </li>
+					    <li>MM: Create a Banner Ad Effort.
+					    	<ol class="alpha">
+					        	<li>Use Internal List or Website as the Effort Destination</li>
+					        	<li>Select the given Item Code</li>
+					        	<li>Select Banner Ad as Effort Type</li>
+					        	<li>Select Size &amp; Choose Banner via the Select One Button.</li>
+					        	<li>Select Page in Page 1 Field.
+					        		<ol class="roman">
+					        			<li>You should see the 3 pages you were given access to</li>
+					        		</ol>
+					        	</li>
+					        </ol>
+					    </li>
+					    <li>MM: Change the default Order Form on the Effort level.
+					    	<ol class="alpha">
+					        	<li>You should see default Order Forms of the 3 Pages you were given access to.&nbsp;</li>
+					        </ol>
+					    </li>
+					</ol>
+					<div>
+						<form role='form'>
+							<label>Comments/Notes:</label>
+							<textarea type="text" class='form-control comms' rows='10' id='comments-scenario5M'> </textarea>
+							<br/> 
+							<a style="float:left" id='zen-scenario5M' href="#" class="btn btn-default"> Submit Zendesk Ticket</a>
+							</button>
+							<br/><br/> 
+							<a href="#" style="left" id="clear-scenario5M" type="submit" class="btn btn-default"> Clear Comments</a>
+						</form>
+					</div>
+					<div class="pagez">
+						<span class="prev"><a href="#scenario4M" class="btn btn-primary" data-toggle="tab"><span class="glyphicon glyphicon-chevron-left"/></span> Scenario #4 </a></span>
+						<span class="next"><a href="#scenario6M" class="btn btn-primary" data-toggle="tab">Scenario #6<span class="glyphicon glyphicon-chevron-right"/></span></a></span>
+					</div>
+				</div>
+				<div id="scenario6M" class="tab-pane fade in padding2">
+					<h1>Mid Level Marketer</h1>
+					<br/>
+					<h2>Scenario #6:&nbsp;&nbsp;&nbsp;<span>Change Defaults on Tertiary Efforts</span></h2>
+					<h4>Description:&nbsp;&nbsp;&nbsp;<span>This scenario focuses on a Mid-Level Marketer being able to change defaults on creatives for any Tertiary Efforts.</space></h4>
+					<h3>Roles:</h3>
+					<p class="space2">Senior Level Marketer (SM) <a href="#" data-toggle="modal" data-target="#myModal"> <span class="glyphicon glyphicon-question-sign" style="font-size:105%;"></span></a></p>
+					<p class="space2">Mid-Level Marketer (MM) <a href="#" data-toggle="modal" data-target="#myModal"> <span class="glyphicon glyphicon-question-sign" style="font-size:105%;"></span></a></p>
+					<h3>Steps:</h3>
+
+					<ol class="stepsList">
+						<li> MM: Verify that you cannot add, edit, copy or grant access to any creative. 
+							<ol class="alpha">
+								<li>You should not be able to.</li>
+							</ol>
+						</li>
+						<li> SM: Grant the MM access to a Page that has a default order form.
+							<ol class="alpha">
+								<li> Inform the MM of the Item and Name for the Page you gave them access to</li>
+							</ol>
+						</li>
+						<li> SM: Give the MM access to 3 Offers for the same Item as the Pages.
+							<ol class="alpha">
+								<li> Inform the MM of the Name for the 3 Offers that you gave them access to. </li>
+							</ol>
+						</li>
+						<li> MM: Create a Tertiary Effort.
+							<ol class="alpha">
+								<li> Use Internal List or Website as the Effort Destination</li>
+								<li> Select the given Item Code</li>
+								<li> Select any Tertiary Effort Type</li>
+								<li> Select Page in Page 1 Field. 
+									<ol class="roman">
+										<li> You should be able to see the page you were given access to. </li>
+									</ol>
+								</li>
+							</ol>
+						</li>
+						<li> MM: Change the default Order Form on the Effort level. 
+							<ol class="alpha">
+								<li> You should be able to select from the 3 Offers you were given access to. </li>
+							</ol>
+						</li>
+					</ol>
+					<div>
+						<form role='form'> 
+							<label>Comments/Notes:</label>
+							<textarea type="text" class='form-control comms' rows='10' id='comments-scenario6M'> </textarea>
+							<br/> 
+							<a style="float:left" id='zen-scenario6M' href="#" class="btn btn-default"> Submit Zendesk Ticket</a>
+							</button>
+							<br/><br/> 
+							<a href="#" style="left" id="clear-scenario6M" type="submit" class="btn btn-default"> Clear Comments</a>
+						</form>
+					</div>
+					<div class="pagez">
+						<span class="prev"><a href="#scenario5M" class="btn btn-primary" data-toggle="tab"><span class="glyphicon glyphicon-chevron-left"/></span> Scenario #5 </a></span>
+						<span class="next">
+							<a href="#theEnd" class="btn btn-danger" data-toggle="tab">
+								The End
+								<span class="glyphicon glyphicon-fast-forward"/></span> 
+							</a>
+						</span>
+						<br class="clear"/><br class="clear"/>
+						<span class="prev">
+							<a href="#purpose" class="btn btn-success" data-toggle="tab">
+								<span class="glyphicon glyphicon-home"/></span> 
+								Home
+							</a>
+						</span>
+
+					</div>
+				</div>
+				<!-- END: Effort Permissions Scenarios -->
+
+
+		<!-- START: THE END -->
+		<div id="theEnd" class="tab-pane fade in centered mainText">
+			<h1>Tests Completed!</h1>
+			<p>This is the end of all beta tasks & scenarios!</p>
+
+			<p>If you have any final comments you would like to submit to Zendesk, please do so below!</p>
+			<div>
+				<textarea type="text" rows='10' id='comments-final' style="background-color:#FFFFF0; border-color:black; width:1000px;"> </textarea>
+					<br/> 
+					<a id='zen-final' href="#" class="btn btn-default"> Submit Zendesk Ticket</a>
+					</button>
+					<br/><br/> 
+					<a href="#" id="clear-final" type="submit" class="btn btn-default"> Clear Comments</a>
+			</div>
+		</div>
+		<!-- END: THE END -->
+
+
+
+
+		<!-- START: Scenario Roles Permissions Reminder -->
+		<div id="myModal" class="modal fade" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<a href="#" data-dismiss="modal" class="glyphicon glyphicon-remove" style="float:right; color:red;font-size:150%;"></a>
+						<h1>Scenario Roles Premissions</h1>
+						<p>The following roles should have the listed permissions</p>
+					</div>
+					<div class="modal-body">
+
+						<h2>Senior Level Marketer (SM)</h2>
+						<p>Grant Access</p>
+						<p>Create &amp; Edit Creatives </p>
+						<p>Create &amp; Edit Efforts</p>
+						<p>Set Defaults on Creatives</p>
+						<p>Change Defaults on Efforts</p>
+						<br/>
+						<h2>Mid-Level Marketer (MM)</h2>
+						<p>Create &amp; Edit Efforts</p>
+						<p>Change Defaults on Efforts</p>
+						<br/>
+						<h2>Junior Level Marketer (JM)</h2>
+						<p>Create &amp; Edit Efforts</p>
+						<br/>						
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- END: Scenario Roles Permissions Reminder -->
+
+	</div>
+	<!-- END: Main Tab Content -->
+</body>
+</html>
