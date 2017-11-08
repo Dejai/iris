@@ -1,0 +1,205 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>IRIS Permissions 2</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<style type="text/css">
+		#IRISPermissions { margin-top:50px; }
+	</style>
+	<script type="text/javascript">
+
+		$(document).ready(function(){
+
+			var permissions = {
+
+				// Application Permissions
+				AdManagement : ["Ad Management", "Managing Ads"],
+				LeadGen : ["Lead Gen" , "Users with this permission can add, copy & edit Lead Gen Creatives & Efforts.", "NOTE: They will also need the 'Co-Reg' permission to add, edit and copy Creatives & Efforts that involve Co-Regs"] ,
+				
+				EditAll : ["Edit All" , "Users with this permission can edit fields that would typically be locked for lower level users.", "Such fields are locked to maintain data integrity."] ,
+				
+				CrossSell : ["Cross Sell" , "Users with this permission can add, edit & copy Paid Offers that are Cross-Sells or Upsells", "Furthermore, they can add, edit & copy Main Offers that have Cross-Sells and/or Upsells."] ,
+				DomainRequest : ["Domain Request " , "Users with this permission can submit a request for a vanity domain via the Domain Request page."] ,
+				LeadGenBulkUpload : ["Lead Gen Bulk Upload" , "Users with this permission can can upload a list of names via the Lead Gen Bulk Upload page."] ,
+				LeadGenAnalytics : ["Lead Gen Analytics" , "Users with this permission can update the following fields:", "Analytics Code; Conversion Code; Confirmation Cookie Name; Confirmation Cookie Value"] ,
+				Renewals : ["Renewals" , "Users with this permission can designate an Effort to be a Renewal Effort"] ,
+				CoReg : ["Co Reg" , "Users with this permission can add, edit and copy Creatives & Efforts that involve Co-Regs", "This includes Co-Reg Offers, and main Lead Gen Offers that have Co-Regs"] ,
+				
+				Contingency : ["Contingency" , "Users with this permission can set Items to the \"Do Not Process\" option."] ,
+				SignupURLVariables : ["Signup URL Variables" , "Users with this permission can define the 'Custom URL Path' on the Effort level."] ,
+				Production : ["Production" , "Users with this permission can add, edit, delete and schedule mailings.", "Those users without the permission will only be able to view the mailing schedule, and the preview page of a selected mailing."] ,
+
+				MailingsApproval : ["Mailings Approval" , "Users with this permission can approve Mailings"] ,
+				WeeklyPlanner : ["Weekly Planner" , "Users with this permission can create/edit weekly planner templates on the List management page.", "Furthermore, the \"Weekly Planner\" button will be visible."] ,
+				TemplateDesigner : ["Template Designer" , "Users with this permission can add and edit mailing Templates."] ,
+				
+				DeleteAll : ["Delete All" , "Users with this permission can delete any Effort in the system."] ,
+
+				GrantAccess : ["Grant Access" , "Users with this permission can give other users access to Creatives, which they can then use in Efforts.", "Additionally, they can also use any active Paid Creatives on the Effort level (given that they also have the Change Defaults on Efforts Permission)."] ,
+				CreateAndEditCreatives : ["Create & Edit Creatives" , "Users with this permission can add, edit and copy most paid Creatives.", "NOTE: They will also need Cross-Sell for Paid sub-offers and main offers that have sub-offers attached."] ,
+				CreateAndEditEfforts : ["Crate & Edit Efforts" , "Users with this permission can add, edit and copy most paid Efforts.", "NOTE: They will also need Lead Gen & Co-Reg for Lead Gen Efforts"] ,
+				SetDefaultsOnCreatives : ["Set Defaults on Creatives" , "Users with this permission can select the Default Order Form on Pages and Default Page on Ads."] ,
+				ChangeDefaultsOnEfforts : [ "Change Defaults on Efforts", "Users with this permission can change the default page to other pages that they have access to."],
+
+
+				// Reporting Permissions
+				TestingGroup: ["Testing Group", "This permission gives a user access to the Testing Group page."],
+				Abandons: ["Abandons", "This permission gives a user access to the Abandons Report page." ],
+				Custom: ["Custom", "This permissions gives a user access to the Custom Report page."],
+				ContingencyReport: ["Contingency Report", "This permission gives a user access to the Contingency Report page."],
+
+
+				//AMS Email Permissions
+				AgoraCode: ["Agora Code ", "Users with this permission can enter Promo Codes for Agora Efforts." ],
+				PaidCode: ["Paid Code ", "Users with this permission can enter Promo Codes for Paid Efforts.", "This can be done directly on the Edit Effort page or via the Queue page."],
+				CampaignAlerts: ["Campaign Alerts", "Users with this permission will receive email alerts when an Offer's status is changed." ], 
+				RecieveDomainRequest: ["Recieve Domain Request", "Users with this permission will receive an email alert when a new Domain Request has been submitted." ],
+				PaidCodeEmail: ["Paid Code Email", "Users with this permission will recieve an email alart when a Promo Code request has been sent for a Paid Effort." ],
+				EffortRedirect: ["Effort Redirect ", "Users with this permission can set a Redirect page for an Effort on the Effor level.", "This user would see the \"Effort Redirect\" option when editing an Effort." ],
+				LeadGenCode: ["Lead Gen Code ", "Users with this permission can enter Promo Codes for Lead Gen Efforts.", "This can be done directly on the Edit Effort page or via the Queue page."],
+				LeadGenCodeEmail: ["Lead Gen Code Email", "Users with this permission will recieve an email alart when a Promo Code request has been sent for a Lead Gen Effort. " ], 
+				AbandonEmailTest: ["Abandon Email Test ", "Users with this permission can send a test Abandon Email." ],
+				DataIntegrityEmail: ["Data Integrity Email ", "Users with this permission will recieve an email notification if there are issues with data or statistics on an Effort." ],
+				TargetRequest: ["Target Request ", "Users with this permission will receive an email notification when an Ad Matrix has been created.", "This permission is not applicable until the system can send Editorial mailings." ],
+				IRISTestEmail: ["IRIS Test Email ", "Users with this permission can send an IRIS Test email when creating a Mailing." ],
+				AdvOfferEmail: ["Adv Offer Email", "Users with this permission can send an Advantage Offer email.", "This permission is not applicable until the system can create promo codes automatically." ],
+
+
+
+
+				// Affiliate Management Permissions
+				List: ["List", "Users with this permission can add and edit lists to be used in IRIS.", "Additionally, they can also create a schedule for a list." ],
+				Placement: ["Placement", "Users with this permission can add and edit placements to be used in IRIS." ],
+				ItemConfiguration: ["Item Configuration", "Users with this permission can view the Item Configuration page. On this page, they can add and edit Item Configurations used in IRIS.", "NOTE: This should only be used by the IRIS team." ],
+				OrganizationManagement: ["Organization Management ", "Users with this permission can view the Organization Mangement Page. This page contains general information that is applied to the entire instance." , "NOTE: This page should only be used by the IRIS team."],
+				
+				Robots: ["Robots ", "Users with this permission have access to the Robots page." , "On this page, they can add and edit Robot.txt configurations for their pages." ],
+				TagManagement: ["Tag Management ", "Users with this permission can view the Tag Management page.", "On this page, they can add and edit individual Tags as well as Tag Categories." ],
+				ItemManagement: ["Item Management", "Users with this permission can add and edit Items to be used in IRIS." ]
+			};
+
+			$("#firstClick").click(); 
+
+			$(".permission").click(function(){
+				var element = $(this).attr("id");
+				$("#permissionsHeader").empty(); 
+				$("#permissionsBody").empty();
+				$("#permissionsBody2").empty();
+
+				$("#permissionsHeader").append(permissions[element][0]); 
+				$("#permissionsBody").append(permissions[element][1]); 				
+				$("#permissionsBody2").append(permissions[element][2]); 				
+
+				// $("#modalButton").click(); 
+			});
+		});
+	</script>
+</head>
+<body>
+
+	<div class="col-lg-12" style="margin-bottom:50px;">
+		<h1 style="font-size:50px;">IRIS Permissions </h1>
+		<p>Below you will find the permissions available in IRIS. Each permission has a short description of it's purpose.</p>
+	</div>
+	<div id="IRISPermissions">
+		<div id="permissionsContainer" class="container-fluid" >
+			<nav id="permissionsStack" class="navbar navbar-default col-md-2" style="font-size:18px;">
+				<ul class="nav nav-pills nav-stacked">
+					<li><a id="firstClick" href="#" data-toggle="tab" data-target="#applications">Applications</a></li>
+					<li><a href="#" data-toggle="tab" data-target="#reporting">Reporting</a></li>
+					<li><a href="#" data-toggle="tab" data-target="#amsEmail">AMS Email</a></li>
+					<li><a href="#" data-toggle="tab" data-target="#affilManag">Affiliate Management</a></li>
+				</ul>
+			</nav>
+			<!-- END OF PERMISSIONS NAV BAR -->
+
+			<div class="tab-content col-md-6"  style="font-size:14px;">
+				<div id="applications" class="tab-pane fade in active">
+					<ul>
+						<li class="col-lg-4"><a href="#" id="LeadGen" class="permission">Lead Gen </a></li>
+						<li class="col-lg-4"><a href="#" id="EditAll" class="permission">Edit All </a></li>
+						<li class="col-lg-4"><a href="#" id="CrossSell" class="permission">Cross Sell </a></li>
+						<li class="col-lg-4"><a href="#" id="DomainRequest" class="permission">Domain Request </a></li>
+						<li class="col-lg-4"><a href="#" id="LeadGenBulkUpload" class="permission">Lead Gen Bulk Upload </a></li>
+						<li class="col-lg-4"><a href="#" id="LeadGenAnalytics" class="permission">Lead Gen Analytics </a></li>
+						<li class="col-lg-4"><a href="#" id="Renewals" class="permission">Renewals</a></li>
+						<li class="col-lg-4"><a href="#" id="CoReg" class="permission">Co Reg</a></li>
+						<li class="col-lg-4"><a href="#" id="Contingency" class="permission">Contingency </a></li>
+						<li class="col-lg-4"><a href="#" id="SignupURLVariables" class="permission">Signup URL Variables </a></li>
+						<li class="col-lg-4"><a href="#" id="Production" class="permission">Production </a></li>
+						<li class="col-lg-4"><a href="#" id="MailingsApproval" class="permission">Mailings Approval </a></li>
+						<li class="col-lg-4"><a href="#" id="WeeklyPlanner" class="permission">Weekly Planner </a></li>
+						<li class="col-lg-4"><a href="#" id="TemplateDesigner" class="permission">Template Designer </a></li>
+						<li class="col-lg-4"><a href="#" id="DeleteAll" class="permission">Delete All </a></li>
+						<li class="col-lg-4"><a href="#" id="CreateAndEditEfforts" class="permission">Create & Edit Efforts </a></li>
+						<li class="col-lg-4"><a href="#" id="GrantAccess" class="permission">Grant Access </a></li>
+						<li class="col-lg-4"><a href="#" id="CreateAndEditCreatives" class="permission">Create & Edit Creatives </a></li>
+						<li class="col-lg-4"><a href="#" id="ChangeDefaultsOnEfforts" class="permission">Change Defaults on Efforts </a></li>
+						<li class="col-lg-4"><a href="#" id="SetDefaultsOnCreatives" class="permission">Set Defaults on Creatives </a></li>
+						<!-- <li class="col-lg-4"><a href="#" id="AdManagement" class="permission" >Ad Management</a></a></li> -->
+					</ul>
+				</div>
+				<div id="reporting" class="tab-pane fade in">
+					<ul>
+						<li class="col-lg-4"><a href="#" id="TestingGroup" class="permission">Testing Group</a></li>
+						<li class="col-lg-4"><a href="#" id="Abandons" class="permission">Abandons</a></li>
+						<li class="col-lg-4"><a href="#" id="Custom" class="permission">Custom</a></li>
+						<li class="col-lg-4"><a href="#" id="ContingencyReport" class="permission">Contingency Report</a></li>
+					</ul>
+				</div>
+				<div id="amsEmail" class="tab-pane fade in">
+					<ul>
+						<li class="col-lg-4"><a href="#" id="AgoraCode" class="permission">Agora Code </a></li>
+						<li class="col-lg-4"><a href="#" id="PaidCode" class="permission">Paid Code </a></li>
+						<li class="col-lg-4"><a href="#" id="CampaignAlerts" class="permission">Campaign Alerts</a></li> 
+						<li class="col-lg-4"><a href="#" id="RecieveDomainRequest" class="permission">Recieve Domain Request</a></li>
+						<li class="col-lg-4"><a href="#" id="PaidCodeEmail" class="permission">Paid Code Email</a></li>
+						<li class="col-lg-4"><a href="#" id="EffortRedirect" class="permission">Effort Redirect </a></li>
+						<li class="col-lg-4"><a href="#" id="LeadGenCode" class="permission">Lead Gen Code </a></li>
+						<li class="col-lg-4"><a href="#" id="LeadGenCodeEmail" class="permission">Lead Gen Code Email</a></li> 
+						<li class="col-lg-4"><a href="#" id="AbandonEmailTest" class="permission">Abandon Email Test </a></li>
+						<li class="col-lg-4"><a href="#" id="DataIntegrityEmail" class="permission">Data Integrity Email </a></li>
+						<li class="col-lg-4"><a href="#" id="TargetRequest" class="permission">Target Request </a></li>
+						<li class="col-lg-4"><a href="#" id="IRISTestEmail" class="permission">IRIS Test Email </a></li>
+						<li class="col-lg-4"><a href="#" id="AdvOfferEmail" class="permission">Adv Offer Email</a></li>
+					</ul>
+				</div>
+				<div id="affilManag" class="tab-pane fade in">
+					<ul>
+						<li class="col-lg-4"><a href="#" id="List" class="permission">List</a></li>
+						<li class="col-lg-4"><a href="#" id="Placement" class="permission">Placement</a></li>
+						<li class="col-lg-4"><a href="#" id="ItemConfiguration" class="permission">Item Configuration</a></li>
+						<li class="col-lg-4"><a href="#" id="OrganizationManagement" class="permission">Organization Management</a></li>
+						<li class="col-lg-4"><a href="#" id="Robots" class="permission">Robots</a></li>
+						<li class="col-lg-4"><a href="#" id="TagManagement" class="permission">Tag Management</a></li>
+						<li class="col-lg-4"><a href="#" id="ItemManagement" class="permission">Item Management</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-md-4" style="border-left:1px solid;" >
+				<h3>Permission Description</h3><br/>
+				<table>
+					<tr >
+						<td id="permissionsHeader" style="font-size:120%; width:150px;"></td>
+					</tr>
+					<tr>
+						<td><hr/></td>
+					</tr>
+					<tr>
+						<td id="permissionsBody"></td>
+					</tr>
+					<tr>
+						<td id="permissionsBody2" style="padding-top:10px;"> </td>
+					</tr>
+
+				</table>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
