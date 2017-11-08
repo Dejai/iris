@@ -4,7 +4,7 @@ The pages in this repository are build primarily using Bootstrap 3.3.5. They wer
 
 ___
 ### Advanced Filters and Multiple Status Change
-> #### Date: October, 2015
+> #### Date: November, 2015
 > #### Description: This page highlights 2 features in one release.
 > #### Preview: [beta_tasks](https://dejai.github.io/iris_bros/beta/betaTasks.html)
 #### Features Included:
