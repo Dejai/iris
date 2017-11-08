@@ -1,8 +1,11 @@
 # IRIS  Testing
 
-These pages are used to test the 
+These pages are used to test the IRIS externally hosted page functionality. Includes options for Staging & ProdTesting
 
-### [Staging]()
+----
+### [Staging](https://dejai.github.io/iris_bros/testing/promoPage_staging.html)
+> Date: August, 2017
 
-
-### [Production]()
+----
+### [Production](https://dejai.github.io/iris_bros/testing/promoPage_prod.html)
+> Date: August, 2017
