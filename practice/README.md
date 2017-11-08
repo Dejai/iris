@@ -7,8 +7,7 @@ They were a way for me to practice my HTML/CSS/JS while also acclimating to the 
 
 ----
 ### [IRIS Exercises](https://dejai.github.io/iris_bros/practice/iris_exercises.html)
-> Date: October, 2015
-
+> Date: October, 2015 <br/>
 > Description: A very simple page to practice building creatives - a very common thing for the user workflow.
 
 ----
