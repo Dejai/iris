@@ -1,4 +1,4 @@
-<h1> IRIS Bros </h1>
+<h1> <a href="https://github.com/Dejai/iris_bros">IRIS Bros</a></h1>
 
 <p> This repository stores the pages that I worked on as a member of the IRIS team - Agora.</p>
 
