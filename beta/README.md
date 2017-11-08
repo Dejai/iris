@@ -7,13 +7,14 @@ ___
 > #### Date: October, 2015
 > #### Description: This page highlights 2 features in one release.
 > #### Preview: [beta_tasks](https://dejai.github.io/iris_bros/beta/betaTasks.html)
-#### Features Included:
+<div style="padding-left:5%;">
+<h3> Features Included: </h3>
    1. 'Reactive' Buttons
        * There is a button to submit a support ticket (only available after entering at least one character)
    2. An ability to submit comments to the support system
        * The support system was Zendesk, and comments could be submitted via email. 
        * Leveraged the 'mailto' functionality.
-
+</div>
 ---
 ### IRIS 4.0 Beta Tasks & Scenarios
 > #### Date: December, 2015
