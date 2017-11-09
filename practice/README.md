@@ -31,6 +31,6 @@ They were a way for me to practice my HTML/CSS/JS while also acclimating to the 
 > Description: This page was about altering href's and src's on a page to use secure. It was a quick workaround to help affiliates adjust their pages and avoid errors.
 
 ----
-### [Compare Lists](https://dejai.github.io/iris_bros/practice/compareLists.html)
-> Date: May, 2017 <br/><br/>
-> Description: This page had a specific purpose of comparing domains on an SSL certificate to ones that were not used on IRIS efforts.
+### [Compare Lists](https://dejai.github.io/iris_bros/practice/compareLists.html) & [Compare Lists 2](https://dejai.github.io/iris_bros/practice/comparelists2.html)
+> Date: November, 2017 <br/><br/>
+> Description: This was a quick edit to the original to make it less about a specific use case. Much more flexible in comparing lists.
