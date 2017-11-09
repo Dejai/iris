@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Compare Lists</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<style type="text/css">
+		.compare { height:700px; border:1px solid black; width:100%; overflow-y:scroll; background-color:white; margin-top:10px;}
+		#results { border:1px; solid }
+		.listLabel { font-size:18px; }
+	</style>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			// $(".resultsBased").hide();
+			showVsHideResults("hide");
+			$("#compare").click(function(){
+				// var list1Split = "\"" + $("#listOneSplitBy")[0].value + "\"";
+
+				var list1;
+				var list1Split = $("#listOneSplitBy")[0].value;
+				if ( list1Split == ","){
+					list1 = $("#listOne").val().trim().split(",");
+					list1 = cleanArray(list1);
+				} else {
+					list1 = $("#listOne").val().trim().split("\n");
+					list1 = cleanArray(list1);
+				}
+				console.log(list1);
+
+				var list2;
+				var list2Split = $("#listTwoSplitBy")[0].value;
+				if ( list2Split == ","){
+					list2 = $("#listTwo").val().trim().split(",");
+					list2 = cleanArray(list2);
+				} else {
+					list2 = $("#listTwo").val().trim().split("\n");
+					list2 = cleanArray(list2);
+				}
+				console.log(list2);
+
+				compareLists(list1, list2);
+			});
+
+			$("#editLists").click(function(){
+				showVsHideResults("hide");
+			});
+			
+		});
+		function cleanArray(array){
+			var ans = [];
+			for (var x = 0; x < array.length; x++){
+				if (array[x] != " "){
+					ans.push(array[x].trim());
+				}
+			}
+			return ans;
+		}
+
+		function compareLists(list1, list2){
+			$("#resultsList1").empty();
+			$("#resultsList2").empty();
+
+			$("#listOneResTitle").empty().text("Value in " + $("#listOneName")[0].value + " ... but not in ... " + $("#listTwoName")[0].value);
+			$("#listTwoResTitle").empty().text("Value in " + $("#listTwoName")[0].value + " ... but not in ... " + $("#listOneName")[0].value);
+
+			for (var x in list1){
+				if (!list2.includes(list1[x])){
+					$("#resultsList1").append("<li>" + list1[x] + "</li>");
+				}
+			}
+			for (var y in list2){
+				if (!list1.includes(list2[y])){
+					$("#resultsList2").append("<li>" + list2[y] + "</li>");
+				}
+			}
+			showVsHideResults("show");			
+		}
+		function showVsHideResults(val){
+			if (val == "hide"){
+				$(".resultsBased").hide();
+				$(".listArea").show();	
+			} else {
+				$(".resultsBased").show();
+				$(".listArea").hide();
+			}
+			
+		}
+	</script>
+</head>
+<body>
+<div class="col-lg-12" style="margin-bottom:2%;">
+	<h1>Compare Lists (2)</h1>
+	<button id="compare" class="btn btn-primary btn-lg col-lg-2 listArea">Compare</button>
+	<button id="editLists" class="btn btn-warning resultsBased">Edit Lists</button>
+</div>
+<br/>
+<div class="col-lg-6 listArea">
+	<label class="label label-primary listLabel" >List 1</label>
+	<input id="listOneName" placeholder="Name of List 1" value="List 1"></input>
+	&nbsp;
+	<label>Split data by: </label>
+	<select id="listOneSplitBy">
+		<option value="\n">New Line</option>
+		<option value=",">Comma</option>
+	</select>
+	<br/>
+	<textarea id='listOne' style="display:block;"  class="compare"></textarea>
+</div>
+<div class="col-lg-6 listArea">
+	<label class="label label-success listLabel">List 2</label>
+	<input id="listTwoName" placeholder="Name of List 2" value="List 2"></input>
+	&nbsp;
+	<label>Split data by: </label>
+	<select id="listTwoSplitBy">
+		<option value="\n">New Line</option>
+		<option value=",">Comma</option>
+	</select>
+	<textarea id='listTwo' style="display:block;"  class="compare"></textarea>
+</div>
+<div id="results" class="col-lg-12 resultsBased">
+	<h3>Results</h3>
+	<div style="width:40%;">
+		<h4 id="listOneResTitle"></h4>
+		<ol id="resultsList1"></ol>
+		<br/>
+		<h4 id="listTwoResTitle"></h4>
+		<ol id="resultsList2"></ol>
+	</div>
+</div>
+</body>
+</html>
