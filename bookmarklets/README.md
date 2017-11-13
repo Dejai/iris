@@ -1,3 +1,3 @@
-<h1> Bookmarklets </h1>
+Bookmarklets
 
 #[Append](https://dejai.github.com/iris_bros/bookmarklets/appendParams.js)
