@@ -8,10 +8,9 @@ function expand(){
 	document.getElementById("expander").blur();
 	document.getElementById("collapser").classList.add("selectedOption");
 	for (var x = 0; x < elements.length; x++){
-		elements[x].querySelectorAll("expand-control")[0].classList.add("expanded");
-		//elements[x].childNodes[0].childNodes[0].classList.add("expanded");
-		//elements[x].childNodes[1].classList.remove("expand-hidden");	
-		elements[x].querySelectorAll("expand-hidden")[0].classList.remove("epxand-hidden");
+		console.log(elements[x].querySelectorAll(".expand-control"));
+		elements[x].querySelectorAll(".expand-control")[0].classList.add("expanded");
+		elements[x].querySelectorAll(".expand-content")[0].classList.remove("expand-hidden");
 	}
 }
 function collapse(){
@@ -20,8 +19,8 @@ function collapse(){
 	document.getElementById("expander").classList.add("selectedOption");
 	document.getElementById("collapser").classList.remove("selectedOption");
 	document.getElementById("collapser").blur();
-	for (var x = 0; x < elements.length; x++){ 
-		elements[x].childNodes[0].childNodes[0].classList.remove("expanded");
-		elements[x].childNodes[1].classList.add("expand-hidden");
+	for (var x = 0; x < elements.length; x++){
+		elements[x].querySelectorAll(".expand-control")[0].classList.remove("expanded");
+		elements[x].querySelectorAll(".expand-content")[0].classList.add("expand-hidden");
 	}
 }
