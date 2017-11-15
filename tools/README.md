@@ -4,4 +4,4 @@ This repository contains the code for some tools that I built that related to ou
 
 -------
 
-# [Expand And Collapse](/expandAndCollapse)
+# [Expand And Collapse](/tools/expandAndCollapse)
