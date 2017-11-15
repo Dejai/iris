@@ -4,4 +4,5 @@ This repository contains the code for some tools that I built that related to ou
 
 -------
 
-# [Expand And Collapse](/tools/expandAndCollapse)
+ * [Expand And Collapse](/tools/expandAndCollapse)
+ * [The Email Generator Gadget (EGG)](/tools/egg)
