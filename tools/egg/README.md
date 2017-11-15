@@ -5,3 +5,5 @@ This tool was created as a way to simplify and streamline our email communicatio
 The EGG allowed you to pick the affiliate(s) and the topic, and simply click a button to generate an email shell with the appropriate email addresses included in the TO and CC fields.
 
 -----
+
+[Checkout The EGG](https://dejai.github.io/iros_bros/tools/egg/)
