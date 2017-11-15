@@ -1,10 +1,7 @@
 <style>
-	.optioner { border-radius:5px; border:1px solid gray; color:black; text-align:center; margin-right:10px; }
-	.optioner:hover { cursor:pointer }
-	.selectedOption { background-color:limegreen; }
+	
 </style>
-<button id="expander" class="optioner selectedOption"> Expand All </button>
-<button id="collapser" class="optioner" > Collapse All </button>
+
 <script type="text/javascript">
 	document.getElementById("expander").addEventListener("click", expand);
 	document.getElementById("collapser").addEventListener("click", collapse);
