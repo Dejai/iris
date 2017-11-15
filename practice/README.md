@@ -7,7 +7,7 @@ They were a way for me to practice my HTML/CSS/JS while also acclimating to the 
 ----
 
 ### [Compare Lists](https://dejai.github.io/iris_bros/practice/compareLists.html) & [Compare Lists 2](https://dejai.github.io/iris_bros/practice/comparelists2.html)
-> Dates: May, 2017 & November, 2017 <br/><br/>
+> Dates: May / November, 2017 <br/><br/>
 > Description: This was a quick edit to the original to make it less about a specific use case. Much more flexible in comparing lists.
 ----
 
