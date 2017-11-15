@@ -1,4 +1,5 @@
-Bookmarklets
+# Bookmarklets
+The following are some bookmarklets that I created to provide some assistance with some team tasks. These were my own initiative and provided some benefit in streamlining and simplifying some of our team needs.
 
 # [Sum of Hours](https://dejai.github.com/iris_bros/bookmarklets/sumOfHours.js)
 This code can be used to summarize the hours logged for billable time based on the categories we've agreed to. 
