@@ -2,7 +2,8 @@ document.getElementById("expander").addEventListener("click", expand);
 document.getElementById("collapser").addEventListener("click", collapse);
 
 function expand(){
-	var elements = document.getElementsByClassName("expand-container"); 
+	var elements = document.getElementsByClassName("expand-container");
+	console.log(elements);
 	document.getElementById("expander").classList.remove("selectedOption");
 	document.getElementById("expander").blur();
 	document.getElementById("collapser").classList.add("selectedOption");
@@ -13,6 +14,7 @@ function expand(){
 }
 function collapse(){
 	var elements = document.getElementsByClassName("expand-container"); 
+	console.log(elements);
 	document.getElementById("expander").classList.add("selectedOption");
 	document.getElementById("collapser").classList.remove("selectedOption");
 	document.getElementById("collapser").blur();
