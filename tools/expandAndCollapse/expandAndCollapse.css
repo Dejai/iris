@@ -18,6 +18,7 @@ body { padding: 2%; }
     width: 20px;
 }
 
+
 .expand-control-icon, .ui-tree li.closed>.click-zone, #children-section.children-hidden a.children-show-hide.icon, .icon-section-closed {
     background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAQAAAC1+jfqAAAALElEQ…Sg4EzBTPwKOgr+F6ThVzKTsJK7Bf/JN4GgG4C+6GAYigAASNYUTGaVYwsAAAAASUVORK5CYII=);
 }
