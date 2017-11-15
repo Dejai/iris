@@ -1,0 +1,5 @@
+.optioner { border-radius:5px; border:1px solid gray; color:black; text-align:center; margin-right:10px; }
+
+.optioner:hover { cursor:pointer }
+
+.selectedOption { background-color:limegreen; }
