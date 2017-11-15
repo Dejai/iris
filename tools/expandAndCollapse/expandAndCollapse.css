@@ -5,3 +5,62 @@ body { padding: 2%; }
 .optioner:hover { cursor:pointer }
 
 .selectedOption { background-color:limegreen; }
+
+// CSS Taken from the Confluence Page
+
+.expand-control {
+    cursor: pointer;
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+
+.expand-control-icon {
+    width: 20px;
+}
+
+.expand-control-icon, .ui-tree li.closed>.click-zone, #children-section.children-hidden a.children-show-hide.icon, .icon-section-closed {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAQAAAC1+jfqAAAALElEQ…Sg4EzBTPwKOgr+F6ThVzKTsJK7Bf/JN4GgG4C+6GAYigAASNYUTGaVYwsAAAAASUVORK5CYII=);
+}
+.expand-control-icon.expanded, .ui-tree li.opened>.click-zone, #children-section.children-showing a.children-show-hide.icon, .icon-section-opened {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAQAAAC1+jfqAAAAMUlEQ…TVUXAGm4KOgv8FM4H0TAiNTUkaUOouEKfhtiYNr/SQBQAsPRRMJnnlygAAAABJRU5ErkJggg==);
+}
+
+
+.icon, .icon-container {
+    display: inline-block;
+    height: 16px;
+    min-width: 16px;
+    text-align: left;
+    text-indent: -9999em;
+    background-repeat: no-repeat;
+    background-position: left center;
+    font-size: 0;
+    vertical-align: text-bottom;
+}
+
+.expand-control-text {
+    vertical-align: top;
+    color: #3572b0;
+}
+
+.expand-hidden {
+    display: none;
+    opacity: 0;
+}
+
+.expand-content {
+    margin: 0 0 10px 20px;
+}
+
+p {
+    display: block;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+}
+
+
+
+
+
