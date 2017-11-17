@@ -3,6 +3,11 @@
 These are some pages that I first worked on when I started at Agora. 
 They were a way for me to practice my HTML/CSS/JS while also acclimating to the new role.
 
+----
+
+### [Main + Upsell](https://dejai.github.io/iris_bros/practice/mainAndUpsell.html)
+> Dates: November, 2017 <br/><br/>
+> Description: This page was put together to highlight the general concept of a feature. The goal was to display main orders and upsell orders in a combined order summary.
 
 ----
 
