@@ -2,7 +2,7 @@
 <p> This "iris" repository contains some pages that I worked on as a member of the IRIS team (Agora). Below are some specific repositories for pages and tools that I worked on.</p>
 <hr/>
 <div style="margin-left:5%;">
-<p><a href="https://github.com/Dejai/iriss/tree/master/beta"> Beta Pages </a></p>
+<p><a href="https://github.com/Dejai/iris/tree/master/beta"> Beta Pages </a></p>
 <ul><li>This repository stores some pages that I made for helping users get familiar with some new features.</li></ul>
 <br/>
 <p><a href="https://github.com/Dejai/iris/tree/master/bookmarklets"> Bookmarklets </a></p>
