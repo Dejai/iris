@@ -13,7 +13,7 @@ class affilObj{
 // Instance variables
 var affiliateTable, allTopics, affilRows, listOfAffils, org, topic, orgOptionsIndex = [], includeARMS, includeBROS, emailMultipleButton, emailSingleButton, multiAffilTable, org_multi;
 var multiAffilBool = false; 
-orgNames = [ {"name":"Company #1", "desc": "Copmany #1"}, {"name":"Company #2", "desc": "Copmany #2"},  {"name":"Company #3", "desc": "Copmany #3"} ];
+orgNames = [ {"name":"Company #1", "desc": "Company #1"}, {"name":"Company #2", "desc": "Company #2"},  {"name":"Company #3", "desc": "Company #3"} ];
 
 document.addEventListener('DOMContentLoaded', loadTable , true);
 
