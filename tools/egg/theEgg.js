@@ -52,7 +52,7 @@ org_multi = document.getElementsByName("organizations");
 
 document.getElementById("sendAffilEmail").addEventListener("click", validateFields);
 document.getElementById("closeTooManyEmails").addEventListener("click", function() { document.getElementById("tooManyEmails").style.display = "none"; });
-document.getElementById("toggleCustomerTable".addEventListener("click", toggleTableView);
+document.getElementById("toggleCustomerTable").addEventListener("click", toggleTableView);
                         
 emailMultipleButton = document.getElementById("emailMultipleAffils");
 emailSingleButton= document.getElementById("emailSingleAffil");
