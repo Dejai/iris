@@ -14,9 +14,7 @@ class affilObj{
 var affiliateTable, allTopics, affilRows, listOfAffils, org, topic, orgOptionsIndex = [], includeARMS, includeBROS, emailMultipleButton, emailSingleButton, multiAffilTable, org_multi;
 var multiAffilBool = false; 
 orgNames = [ 
-    //{"name":"Agora Family", "desc": "Every Affiliate Together"},
-          //{"name":"Agora Affiliates", "desc": "Single Email for Each Affiliate"},
-          {"name":"Agora Financial(s)", "desc": "AGF | AFUK | AFAU"},
+    {"name":"Agora Financial(s)", "desc": "AGF | AFUK | AFAU"},
     {"name": "Agora Health UK" , "desc" : "AHUK"},
     {"name": "Banyan Hill" , "desc" : "BH"},
     {"name": "Charles Street" , "desc" : "CS"},
@@ -34,7 +32,34 @@ orgNames = [
     {"name": "Southbank" , "desc" : "SBK"}
       ];
 
-document.addEventListener('DOMContentLoaded', init , true);
+document.addEventListener('DOMContentLoaded', loadTable , true);
+
+function loadTable(){
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200){
+    document.getElementById("tableContainer").innerHTML = xhttp.responseText;
+    loadEggView();
+      } else if (this.readyState == 4 && this.status !== 200){
+    alert("Something went wrong! Couldn't load the user table");
+      }
+  };
+  xhttp.open("GET", "./contacts.html", true);
+  xhttp.send();
+}
+function loadEggView(){
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200){
+    document.getElementById("eggContainer").innerHTML = xhttp.responseText;
+        init();
+      } else if (this.readyState == 4 && this.status !== 200){
+    alert("Something went wrong! Couldn't load the user table");
+      }
+  };
+  xhttp.open("GET", "./egg.html", true);
+  xhttp.send();
+}
 
 function init(){
 org = document.getElementById("organizations");
