@@ -1,6 +1,6 @@
 # Tools
 
-This repository contains the code for some tools that I built that related to our team processes. You can visit the individual repositories for the tools by following the links below.
+This repository contains the code for some tools that I built to supplement some of our team processes. Checkout the repositories (below) for more info on each tool.
 
 -------
 
