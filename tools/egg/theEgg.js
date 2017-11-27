@@ -54,10 +54,10 @@ function loadEggView(){
     document.getElementById("eggContainer").innerHTML = xhttp.responseText;
         init();
       } else if (this.readyState == 4 && this.status !== 200){
-    alert("Something went wrong! Couldn't load the user table");
+    alert("Something went wrong! Couldn't load the Egg View!");
       }
   };
-  xhttp.open("GET", "./egg.html", true);
+  xhttp.open("GET", "./theEgg.html", true);
   xhttp.send();
 }
 
