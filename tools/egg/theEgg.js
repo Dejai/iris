@@ -294,36 +294,16 @@ return value.trim();
 }
 function addARM(org){
 switch(org){
-  case 'Money Map Press':
-  case 'New Market Group':
-  case 'Oxford Club':
-  case 'Omnivista Health':
-  case 'Sante Nature Innovation':
-  case 'Nova Health':
-  case 'Southbank':
-  case 'Charles Street':
-  case 'Banyan Hill':
-    return "Sean Lowry <slowry@pubsvs.com>;";
+  case 'Company #1':
+    return "Steve Lowry <slowry@arm.com>;";
     break;	
-  case 'Institute for Natural Healing':
-  case 'International Living':
-  case 'Legacy Research':
-  case 'Publishing Agora France':
-    return "Stacie Daer Keating <skeating@pubsvs.com>;";
-    break;
-  case 'Agora Health UK':
-    return "Sébastien Fournier <SFournier@pubsvs.ie>;";
-    break;
-  case 'Port Phillip Publishing':
-    return "Stacie Daer Keating <skeating@pubsvs.com>;Marcus Van Uitert <MUitert@pubsvs.ie>;";		
-    break;
-  case 'Portner Press':
-    return "Sébastien Fournier <SFournier@pubsvs.ie>; Marcus Van Uitert <MUitert@pubsvs.ie>;";
+  case 'Company #2':
+    return "Stanley Keating <skeating@arm.com>;";
     break;
   default:
-    return "Sean Lowry <slowry@pubsvs.com>;Stacie Daer Keating <skeating@pubsvs.com>;"
+    return "Steve Lowry <slowry@arm.com>;Stanley Keating <skeating@arm.com>;"
 }
 }
 function addBROS(){
-return "Thomas Keller <tkeller@pubsvs.com>; Whitney Harris <wharris@pubsvs.com>; Morgan Denner <mdenner@pubsvs.com>; Colin Witucki <CWitucki@pubsvs.com>; Jackie Ayendi <JAyendi@pubsvs.com>; Brent Budge <bbudge@pubsvs.com>; Derrick Fyfield <dfyfield@pubsvs.com>;"
+return "Jonathan Williams <jwilliams@team.com>; Marcus Smart <msmart@team.com>; Lindsay Johnson <ljohnson@team.com>;"
 }
