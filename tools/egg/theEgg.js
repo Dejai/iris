@@ -52,7 +52,8 @@ org_multi = document.getElementsByName("organizations");
 
 document.getElementById("sendAffilEmail").addEventListener("click", validateFields);
 document.getElementById("closeTooManyEmails").addEventListener("click", function() { document.getElementById("tooManyEmails").style.display = "none"; });
-
+document.getElementById("toggleCustomerTable".addEventListener("click", toggleTableView);
+                        
 emailMultipleButton = document.getElementById("emailMultipleAffils");
 emailSingleButton= document.getElementById("emailSingleAffil");
 
@@ -89,6 +90,12 @@ populateAffilList();
 createDataLists();
 }
 
+
+function toggleTableView(){
+  var tableContainer = document.getElementById("tableContainer");
+  var view = tableContainer.style.display == "block" ? "none" : "block";
+  tableContainer.style.display = view;
+}
 
 
 function populateAffilList(){
