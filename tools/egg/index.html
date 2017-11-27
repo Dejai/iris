@@ -4,15 +4,14 @@
 	<title>The Email Generator Gadget (EGG)</title>
 	<script>
 		document.addEventListener("DOMContentLoaded", function(){
-			loadTable();
-			loadEggView();
-			
+			loadTable();			
 		});
 		function loadTable(){
 			var xhttp = new XMLHttpRequest();
 			xhttp.onreadystatechange = function() {
 			    if (this.readyState == 4 && this.status == 200){
 				document.getElementById("tableContainer").innerHTML = xhttp.responseText;
+				loadEggView();
 			    } else if (this.readyState == 4 && this.status !== 200){
 				alert("Something went wrong! Couldn't load the user table");
 			    }
