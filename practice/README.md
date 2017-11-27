@@ -5,24 +5,24 @@ They were a way for me to practice my HTML/CSS/JS while also acclimating to the 
 
 ----
 
-### [Main + Upsell](https://dejai.github.io/iris_bros/practice/mainAndUpsell.html)
+### [Main + Upsell](https://dejai.github.io/iris/practice/mainAndUpsell.html)
 > Dates: November, 2017 <br/><br/>
 > Description: This page was put together to highlight the general concept of a feature. The goal was to display main orders and upsell orders in a combined order summary.
 
 ----
 
-### [Compare Lists](https://dejai.github.io/iris_bros/practice/compareLists.html) & [Compare Lists 2](https://dejai.github.io/iris_bros/practice/comparelists2.html)
+### [Compare Lists](https://dejai.github.io/iris/practice/compareLists.html) & [Compare Lists 2](https://dejai.github.io/iris/practice/comparelists2.html)
 > Dates: May / November, 2017 <br/><br/>
 > Description: This was a quick edit to the original to make it less about a specific use case. Much more flexible in comparing lists.
 ----
 
-### [Update Links To Secure](https://dejai.github.io/iris_bros/practice/updateLinksToSecure.html)
+### [Update Links To Secure](https://dejai.github.io/iris/practice/updateLinksToSecure.html)
 > Date: December, 2016 <br/><br/>
 > Description: This page was about altering href's and src's on a page to use secure. It was a quick workaround to help affiliates adjust their pages and avoid errors.
 
 ----
 
-### [Permissions](https://dejai.github.io/iris_bros/practice/permissions.html) & [Permissions 2](https://dejai.github.io/iris_bros/practice/permissions2.html) & [Permissions 3](https://dejai.github.io/iris_bros/practice/permissions3.html)
+### [Permissions](https://dejai.github.io/iris/practice/permissions.html) & [Permissions 2](https://dejai.github.io/iris/practice/permissions2.html) & [Permissions 3](https://dejai.github.io/iris/practice/permissions3.html)
 > Date: February / March / May, 2016 <br/><br/>
 > Description: These simple pages are meant to offer short descriptions of the different permissions in IRIS.<br/>
 > Version 1 has the description at the bottom of the list. <br/>
@@ -32,13 +32,13 @@ They were a way for me to practice my HTML/CSS/JS while also acclimating to the 
 
 ----
 
-### [IRIS Exercises](https://dejai.github.io/iris_bros/practice/iris_exercises.html)
+### [IRIS Exercises](https://dejai.github.io/iris/practice/iris_exercises.html)
 > Date: October, 2015 <br/><br/>
 > Description: A very simple page to practice building creatives - a very common thing for the user workflow.
 
 ----
 
-### [IRIS Quick Look](https://dejai.github.io/iris_bros/practice/iris_quicklook.html)
+### [IRIS Quick Look](https://dejai.github.io/iris/practice/iris_quicklook.html)
 > Date: October, 2015 <br/><br/>
 > Description: A page that contained bits of information regarding Publishing Services, the different Applications and the overall process related to what my job would be.
 
