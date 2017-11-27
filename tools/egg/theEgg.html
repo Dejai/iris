@@ -1,0 +1,88 @@
+<!-- ****** LIST OF ORGS ***** -->
+<datalist id="orgsList"></datalist>
+<datalist id="optionsList"></datalist>
+<div id="formSection">
+	<span id="emailSingleAffil" class="typeOfEmail selectedEmailType"> Single Affiliate </span>
+	<span id="emailMultipleAffils" class="typeOfEmail"> Multiple Affiliates </span>
+	<br/><br/>
+	<label class="formLabel">Select Organization <span class="requiredField"> *</span></label><br/>
+	<button id="prevAffil" class="iterateAffils">Prev</button>
+	<input id="organizations" class="marginAuto" placeholder="Type to search" onClick="this.select(); this.value=''; this.value=''; "/>
+	<button id="nextAffil" class="iterateAffils">Next</button>
+	<table id="multipleAffilTable" class="marginAuto">
+		<tr><td><input id="selectAllOrgs" type="checkbox" name="SelectAll" value="ALL"/>ALL</td></tr> 
+		<tr> 
+			<td><input type="checkbox" name="organizations" value="Agora Financial(s)"/> Agora Financial(s)</td>
+			<td><input type="checkbox" name="organizations" value="Legacy Research Group"/>Legacy Research Group</td> 
+			<td><input type="checkbox" name="organizations" value="Portner Press"/>Portner Press</td>
+		</tr> 
+		<tr> 
+			<td><input type="checkbox" name="organizations" value="Agora Health UK"/>Agora Health UK</td>
+			<td><input type="checkbox" name="organizations" value="Money Map Press"/>Money Map Press</td> 
+			<td><input type="checkbox" name="organizations" value="Port Phillip Publishing"/>Port Phillip Publishing</td> 
+		</tr> 
+		<tr> 
+			<td><input type="checkbox" name="organizations" value="Banyan Hill"/> Banyan Hill</td> 
+			<td><input type="checkbox" name="organizations" value="New Market Group"/>New Market Group</td> 
+ 			<td><input type="checkbox" name="organizations" value="Publishing Agora France"/>Publishing Agora France</td>
+		</tr> 
+		<tr> 
+			<td><input type="checkbox" name="organizations" value="Charles Street"/>Charles Street</td>
+			<td><input type="checkbox" name="organizations" value="OmniVista Health"/>OmniVista Health</td>  
+			<td><input type="checkbox" name="organizations" value="Sante Nature Innovation"/>Sante Nature Innovation</td> 
+		</tr> 
+		<tr> 
+			<td><input type="checkbox" name="organizations" value="International Living"/>International Living</td>
+			<td><input type="checkbox" name="organizations" value="Oxford Club"/>Oxford Club</td>
+			<td><input type="checkbox" name="organizations" value="Southbank"/>Southbank</td> 
+		</tr> 
+	</table>
+	<p id="orgError" class="errorMsg">Please select an organization</p>
+	<br/><br/>
+	<!-- ***** LIST OF TOPICS ***** -->
+	<label class="formLabel">Select Topic <span class="requiredField"> *</span></label><br/>
+	<input id="topic" placeholder="Type to search" onClick="this.select(); this.value=''; this.value=''; "/>
+	<p id="topicError" class="errorMsg">Please select a topic</p>
+	<br/><br/>
+	<label class="formLabel">Subject Line (optional)</label><br/>
+	<input id="subjectLine" placeholder = "Enter subject line" onclick="this.select();"/>
+	<br/><br/>
+	<label class="formLabel">Include ARM? &nbsp;</label>
+	Yes <input type="radio" name="includeARMS" class="include" value="yes" checked />
+	&nbsp;&nbsp;
+	No <input type="radio" name="includeARMS" class="include" value="no" />
+	<br/><br/>
+	<label class="formLabel">Include BROS? &nbsp;</label>
+	Yes <input type="radio" name="includeBROS" class="include" value="yes" checked />
+	&nbsp;&nbsp;
+	No <input type="radio" name="includeBROS" class="include" value="no" />
+	<br/>
+	<span style="color:orange;font-size:12px;">NOTE: Your own name will be CC'd as well. :)</span>
+	<br/><br/>
+	<button id="sendAffilEmail"> Generate Email </button>
+	<p id="errorMessageForm" style="display:none;color:red;">Something went wrong!</p>
+	<br/>
+	<p style="text-align:left; font-size:10px;color:black;">Version <span id="versionNumber">1.8</p>
+</div>
+<div id="tooManyEmails">
+	<span id="tooManyEmails_title"> So Many Emails ... </span>
+	<span id="closeTooManyEmails">&#9747;</span>
+	<br class="clearFloat"/>
+	<hr/>
+	<p> Unfortunately, there is a limit on how many emails can be included in the 'mailto' links </p>
+	<p> You can copy the emails from below. Click the button next to the field to select all emails.</p>
+	<br/>
+	<button id="selectTOEmails">TO:</button>
+	<input id="toEmailsList" type="text"/>
+	<br/><br/>
+	<button id="selectCCEmails">CC:</button>&nbsp;
+	<input id="ccEmailsList" type="text"/>
+	<br/>
+</div>
+<div id="processingIndicator">
+	<h2 >Processing ... </h2>
+	<iframe src="https://giphy.com/embed/dV4WMwFUzS4G4" width="100%" height="50%" frameBorder="0"></iframe>
+</div>
+<br style="clear:both;"/>
+
+
