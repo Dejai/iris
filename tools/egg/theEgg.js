@@ -13,24 +13,7 @@ class affilObj{
 // Instance variables
 var affiliateTable, allTopics, affilRows, listOfAffils, org, topic, orgOptionsIndex = [], includeARMS, includeBROS, emailMultipleButton, emailSingleButton, multiAffilTable, org_multi;
 var multiAffilBool = false; 
-orgNames = [ 
-    {"name":"Agora Financial(s)", "desc": "AGF | AFUK | AFAU"},
-    {"name": "Agora Health UK" , "desc" : "AHUK"},
-    {"name": "Banyan Hill" , "desc" : "BH"},
-    {"name": "Charles Street" , "desc" : "CS"},
-    {"name": "International Living" , "desc" : "ILV"},
-    {"name": "Institute for Natural Healing" , "desc" : "INH"},
-    {"name": "Legacy Research Group" , "desc" : "LRG"},
-    {"name": "Money Map Press" , "desc" : "MMP"},
-    {"name": "New Market Group" , "desc" : "NMG"},
-    {"name": "OmniVista Health" , "desc" : "OVH"},
-    {"name": "Oxford Club" , "desc" : "OC"},
-    {"name": "Portner Press" , "desc" : "POR"},
-    {"name": "Port Phillip Publishing" , "desc" : "PPP"},
-    {"name": "Publishing Agora France" , "desc" : "PAF"},
-    {"name": "Sante Nature Innovation" , "desc" : "SNI"},
-    {"name": "Southbank" , "desc" : "SBK"}
-      ];
+orgNames = [ {"name":"Company #1", "desc": "Copmany #1"}, {"name":"Company #2", "desc": "Copmany #2"},  {"name":"Company #3", "desc": "Copmany #3"} ];
 
 document.addEventListener('DOMContentLoaded', loadTable , true);
 
