@@ -4,6 +4,11 @@
 	<title>The Email Generator Gadget (EGG)</title>
 	<script>
 		document.addEventListener("DOMContentLoaded", function(){
+			loadTable();
+			loadEggView();
+			
+		});
+		function loadTable(){
 			var xhttp = new XMLHttpRequest();
 			xhttp.onreadystatechange = function() {
 			    if (this.readyState == 4 && this.status == 200){
@@ -14,9 +19,19 @@
 			};
 			xhttp.open("GET", "./contacts.html", true);
 			xhttp.send();
-			xhttp.close();	
-			
-		});
+		}
+		function loadEggView(){
+			var xhttp = new XMLHttpRequest();
+			xhttp.onreadystatechange = function() {
+			    if (this.readyState == 4 && this.status == 200){
+				document.getElementById("eggContainer").innerHTML = xhttp.responseText;
+			    } else if (this.readyState == 4 && this.status !== 200){
+				alert("Something went wrong! Couldn't load the user table");
+			    }
+			};
+			xhttp.open("GET", "./egg.html", true);
+			xhttp.send();
+		}
 	</script>
 	<style>
 		#tableContainer { display:none; }
@@ -25,10 +40,9 @@
 <body>
 
 <h3> Customer Table</h3>
-<div id="tableContainer">
-		
-</div>
+<div id="tableContainer"></div>
 <h2>The EGG Block</h2>
+<div id="eggContainer"></div>
 <p>If I don't want to worry about the crazy logic of the ATM, I could just include the code on Github. And then just describe it's intended behavior.</p>
 </body>
 </html>
