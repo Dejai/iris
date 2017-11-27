@@ -1,0 +1,18 @@
+#formSection { width:35%; float:left; margin-left:5%; border:1px solid black; border-radius:5px; text-align:center; padding:1%; }
+@media only screen and (max-width:900px){ #formSection { width:60%; } }
+#tooManyEmails {display:none; float:left; margin-left:2%; border:1px solid black; border-radius:5px; padding:1%; }
+#processingIndicator { display:none; float:left; margin-left:2%; padding:1%; text-align:center; }
+.errorMsg { display:none; color:red; }
+.formLabel { text-weight:bold; color:blue; margin-right:10px;}
+#tooManyEmails_title {color:blue; float:left;font-size:18px; }
+#closeTooManyEmails { float:right; color:red; font-weight:bold; cursor:pointer; font-size:18px; }
+.clearFloat { clear:both; }
+.requiredField { color:red; }
+.iterateAffils { cursor:pointer; display:none; }
+.typeOfEmail { padding:1%; display:inline-block; width:25%; border:1px solid black; cursor:pointer;}
+.typeOfEmail:hover { background-color:blue; color:white; }
+#multipleAffilTable {display:none; text-align:left; margin-left:1%; width:100%; border:1px dotted black; }
+#multipleAffilTable tr { width:32%; }
+#multipleAffilTable tr td { font-size:12px; }
+.selectedEmailType { background-color:blue; color:white; cursor:initial; }
+.marginAuto { margin:auto; }
