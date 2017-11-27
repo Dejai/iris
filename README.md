@@ -1,4 +1,4 @@
-<h1> <a href="https://dejai.github.io/iris">IRIS Bros</a></h1>
+<h1> <a href="https://dejai.github.io/iris">IRIS</a></h1>
 <p> This "iris" repository contains some pages that I worked on as a member of the IRIS team (Agora). Below are some specific repositories for pages and tools that I worked on.</p>
 <hr/>
 <div style="margin-left:5%;">
