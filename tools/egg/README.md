@@ -6,4 +6,4 @@ The EGG allowed you to pick the affiliate(s) and the topic, and simply click a b
 
 -----
 
-[Checkout The EGG](https://dejai.github.io/iris_bros/tools/egg/)
+[Checkout The EGG](https://dejai.github.io/iris/tools/egg/)
