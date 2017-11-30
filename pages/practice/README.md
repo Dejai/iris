@@ -1,9 +1,8 @@
 # Practice Pages
 
-> <br/>
-> This repository contains some pages that I worked on as a way to practice my HTML/CSS/JS. <br/><br/>
-> <strong>Click on the title of a page to visit it.</strong> <br/>
-> <br/>
+This repository contains some pages that I worked on as a way to practice my HTML/CSS/JS. <br/><br/>
+
+**Click on the title of a page to visit it.**
 
 ----
 
