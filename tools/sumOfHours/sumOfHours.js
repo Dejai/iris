@@ -13,7 +13,8 @@ document.addEventListener("DOMContentLoaded", function(){
 });
 
 
-
+    /* Global variable for the array of rows for logged time */
+    var level3;
 
     /* A class that servs as a way to store the different hours for each team member. */
     class peepObj {
@@ -29,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function(){
     }
 
     function init(){
-        var level3 = document.getElementsByClassName('level-3');
+        level3 = document.getElementsByClassName('level-3');
         var peeps = ['total_hours'];
         var peepsObj = [];
         peepsObj.push(new peepObj(peeps[0]));
