@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function(){
 });
 
     function showVsHideData(){
-        document.getElementById("showDataTable").addEvenetListener("click", function(){
+        document.getElementById("showDataTable").addEventListener("click", function(){
             var dataTable = document.getElementById("reportContainer");
             var showVsHide = dataTable.style.display == "none" ? "block" : "none";
             dataTable.style.display = showVsHide;
