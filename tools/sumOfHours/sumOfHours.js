@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function(){
             alert("Something went wrong! Couldn't load the reports table");
         }
     };
-  xhttp.open("GET", "./reportsReplica.html", true);
+  xhttp.open("GET", "./reportReplica.html", true);
   xhttp.send();
 });
 
