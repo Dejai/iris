@@ -9,78 +9,11 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
 	<!-- BEGIN: Personal Styled Elements -->
-	<style type="text/css">
-		body { background-color: gainsboro; padding:10px;}
-		#central {	margin-right: 25%;	margin-left: 25%;	padding: 10px; 	}
-		.jumbotron { text-align: center;}
-		.steps { font-size: 16px; 	}
-		.steps li { padding:10px;}
-		a { text-decoration: none; color:inherit; }
-		a:hover { text-decoration: none; color:inherit;}
-		h2 { font-family: Verdana, Geneva, sans-serif;}
-		#disclaimer { margin-right: 25%; margin-left: 25%; font-weight:bold; color:white; text-align:center; font-size:15px; }
-		[type="text"] {	  background-color : ghostwhite; }
-	</style>
+	<link rel="stylesheet" type="text/css" href="./assets/css/betaTasks.css">
 	<!-- END: Personal Styled Elements -->
 
 	<!-- BEGIN: Personal JQuery -->
-	<script type="text/javascript">		
-		$(document).ready(function(){
-
-			$('[data-toggle="tooltip"]').tooltip(); 
-
-			$("a").hide(); 
-			$("button").hide();
-
-			$('#filterComms').keyup(function(){
-				var FC = $("#filterComms");
-				if (FC.val().length > 0) {
-			    	$('#zenA').show(); 
-				} 
-			});
-
-			$('#statusComms').keyup(function(){
-				var SC = $("#statusComms");
-				if (SC.val().length >= 1) {
-			    	$('#zenB').show(); 
-				}
-			});
-
-
-	    	$("#zenA").mouseover(function(){
-	        	var mailtoA =  "mailto:support@pubsvs.com?subject='#IRISBeta'&body=";
-	        	var filter_comments = $("#filterComms");
-
-	        	var fcArr = filter_comments.val().split('\n');
-	        	var body_line = escape("\n"); 
-
-	        	for (var i = 0; i < fcArr.length; ++i){
-	        		mailtoA += fcArr[i] + body_line; 
-	        	}
-		    	$("#zenA").attr("href",  mailtoA);
-	    	});
-
-	    	$("#zenB").mouseover(function(){
-	    		var mailtoB =  "mailto:support@pubsvs.com?subject='#IRISBeta'&body=";
-	        	var status_comments = $("#statusComms");
-
-	   			var scArr = status_comments.val().split('\n');
-	        	var body_line = escape("\n"); 
-
-	        	for (var i = 0; i < scArr.length; ++i){
-	        		mailtoB += scArr[i] + body_line; 
-	        	}
-
-	        	$("#zenB").attr("href", mailtoB);
-	    	});
-
-
-			$("#zenA").click(function(){ $("#clearFilterComms").show(); });
-	    	$("#clearFilterComms").click(function(){ $("#filterComms").val(""); $("#zenA").hide(); $("#clearFilterComms").hide();});
-    		$("#zenB").click(function(){ $("#clearStatusComms").show(); });
-    		$("#clearStatusComms").click(function(){ $("#statusComms").val("");	$("#zenB").hide(); $("#clearStatusComms").hide();});
-		});
-	</script>
+	<script type="text/javascript" src="./assets/js/betaTasks.js"></script>
 	<!-- END: Personal JQuery -->
 
 </head>

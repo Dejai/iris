@@ -1,0 +1,37 @@
+#main-left { float:left; }
+#main-top { float:right; margin-bottom: 30px; }
+#main-top::after { clear:both; }
+#main-body { float:right; }
+
+.clear { clear:both;}
+.showMenu{ width: 200px; display:block; float:left; background:#3A3B41;color:white;}
+.hideMenu{ display: none;}
+.subindent { text-indent: 10px; }
+.indent { text-indent: 30px; }
+.indent2 { text-indent: 60px; }
+.space { margin-left: 1%;}
+.space2 { margin-left: 10%;}
+
+/*h1.header { font-family: courier sans-serif; text-align:center;}*/
+.centered { text-align: center;}
+.mainText { font-size: 150%;}
+.padding { padding-left:5%; padding-right:10%; padding-bottom:5%;}
+.padding2 { padding-left:10%; padding-right:10%; padding-bottom:5%;}
+.next { float:right; }
+.prev { float:left; }
+.pagez::before{ clear:both;}
+.pagez { float:left; width:50%; margin-top:30px;}
+.pagez::after { clear:both;}
+#side-menu {float:left;}
+
+.comms { background-color:#FFFFF0; border-color:black; }
+
+.stepsList li { padding-bottom: 10px;}
+.alpha { list-style-type: lower-alpha;}
+.roman { list-style-type: lower-roman;}
+
+/*div[class^='tab-pane fade in'] { padding-left:10%; padding-right:10%;}*/
+div[class^='col-'] p { padding-left: 30px;}
+div[class^='col-'] table { margin-left: 30px;}
+div[class^='col-'] { border-bottom: 1px dashed black; padding:10px;}
+table#terminology tr td { padding: 20px; }

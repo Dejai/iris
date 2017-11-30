@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Main + Upsell Stats</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="./assets/css/mainAndUpsell.css">
+</head>
+<body ng-app = "myApp" ng-controller="myCtrl">
+	<div id="disclaimerSection">
+		<h2>DISCLAIMER: The purpose of this page is to visualize the concept for the project. This does NOT indicate how this will look (or work) in IRIS.</h2>
+	</div>
+	<div id="howTo">
+		<h2>How To Use This Page: <button ng-click="showInstructions()">Show/Hide Instructions</button></h2>
+		<div id="instructions">
+			<p>You can use this page to simulate the orders/revenue collected for <strong>one</strong> IRIS Effort. </p>
+			<ol>
+				<li>First, add choices that would be available through this effort. Include both main & upsell choices.</li>
+				<li>Click to start the customer experience.</li>
+				<li>Test different combinations of ordering the main & upsell choices.</li>
+				<li>Checkout the tables to see how each order updates the order data.</li>
+			</ol>	
+		</div>
+	</div>
+	<div id="leftSection">
+		<div id="addChoicesSubSection">
+			<h3>Add Choices</h3>
+			<table>
+				<tr>
+					<td>Choice Code</td>
+					<td>Price</td>
+					<td>Type</td>
+				</tr>
+				<tr>
+					<td><input type="text" placeholder="Enter a choice code" ng-model="newChoiceCode"/></td>
+					<td>
+						<input type="number" placeholder="Enter number for price" ng-model="newChoicePrice"/>
+					</td>
+					<td>
+						<input type="radio" name="choiceType" ng-model="newChoiceType" value="Main"/>Main
+						<input type="radio" name="choiceType" ng-model="newChoiceType" value="Upsell"/>Upsell
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<button ng-disabled="!newChoiceCode || !newChoicePrice || !newChoiceType" ng-click="addChoice()">Add Choice</button>
+					</td>
+				</tr>
+			</table>	
+		</div>
+		<div id="startExperience" ng-show="choices.length > 0 && !customerExperience">
+			<button ng-click="startCustomerExperience()">Start Customer Experience</button>
+		</div>
+		<div ng-show="choices.length > 0 && customerExperience">
+			<h2>Customer Experience</h2>
+			<div ng-show="!mainBought">	
+				<p>	This is my order page. Please buy one of my main choices.</p>
+				<p ng-repeat="x in choices | filter : {choiceType : 'Main'} ">
+					<input type="radio" name="mainChoice" value="{{x.choiceCode}}"/>{{x.choiceCode | uppercase}} - {{x.choicePrice | currency}}
+				</p>
+				<p ng-show="mainError" style="color:red;">Please select at least one choice</p>
+				<button ng-click="validateMain()">Buy Main Choice</button>
+			</div>
+			<div ng-show="mainBought && !funnelComplete">	
+				<p>Thanks. Now, would you like to also buy one of my upsell choices?</p>
+				<p ng-repeat="x in choices | filter : {choiceType : 'Upsell'} ">
+					<input type="radio" name="upsellChoice" value="{{x.choiceCode}}"/>{{x.choiceCode | uppercase}} - {{x.choicePrice | currency}}
+				</p>
+				<p ng-show="upsellError" style="color:red;">Please select at least one choice.</p>
+				<button ng-click="validateUpsells()">Yes please!</button> 
+				<button ng-click="noUpsells()">No thanks!</button>
+			</div>
+			<div ng-show="funnelComplete">	
+				<h3>Funnel complete.</h3>
+				<button ng-click="newOrder()">New Order</button>
+			</div>
+		</div>
+	</div>
+
+	<div id="rightSection" ng-show="choices.length > 0">
+		<div ng-show="choices.length > 0">
+			<h3>Choices</h3>
+			<table>
+				<tr>
+					<td>Choice Code</td>
+					<td>Type</td>
+					<td>Price</td>
+					<td>Orders</td>
+				</tr>
+				<tr ng-repeat="x in choices | orderBy: 'choiceType' ">
+					<td>{{x.choiceCode | uppercase}}</td>
+					<td>{{x.choiceType}}</td>
+					<td>{{x.choicePrice | currency}}</td>
+					<td>{{x.purchases}}</td>
+				</tr>
+			</table>
+		</div>
+		<div ng-show="choices.length > 0 && customerExperience">
+			<h3>Summary Reporting</h3>
+			<table>
+				<tr>
+					<td>Type</td>
+					<td>Orders</td>
+					<td>Revenue</td>
+				</tr>
+				<tr>
+					<td>Main</td>
+					<td>{{mainOrders}}</td>
+					<td>{{mainRevenue | currency}}</td>
+				</tr>
+				<tr>
+					<td>Upsell</td>
+					<td>{{upsellOrders}}</td>
+					<td>{{upsellRevenue | currency}}</td>
+				</tr>
+				<tr>
+					<td>"Combo" (main + upsell)</td>
+					<td>{{comboOrders}}</td>
+					<td>{{comboRevenue | currency}}</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	
+	<script type="text/javascript" src="./assets/js/mainAndUpsell.js"></script>
+	
+</body>
+</html>

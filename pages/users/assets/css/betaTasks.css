@@ -1,0 +1,10 @@
+body { background-color: gainsboro; padding:10px;}
+#central {	margin-right: 25%;	margin-left: 25%;	padding: 10px; 	}
+.jumbotron { text-align: center;}
+.steps { font-size: 16px; 	}
+.steps li { padding:10px;}
+a { text-decoration: none; color:inherit; }
+a:hover { text-decoration: none; color:inherit;}
+h2 { font-family: Verdana, Geneva, sans-serif;}
+#disclaimer { margin-right: 25%; margin-left: 25%; font-weight:bold; color:white; text-align:center; font-size:15px; }
+[type="text"] {	  background-color : ghostwhite; }
