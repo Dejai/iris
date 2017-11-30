@@ -6,7 +6,7 @@ The pages in this repository are build primarily using Bootstrap 3.3.5. They wer
 ___
 
 
-### [Main + Upsell](https://dejai.github.io/iris/practice/mainAndUpsell.html)
+### [Main + Upsell](https://dejai.github.io/iris/pages/users/mainAndUpsell.html)
 > Dates: November, 2017 <br/><br/>
 > Description: This page was put together to highlight the general concept of a feature. The goal was to display main orders and upsell orders in a combined order summary.
 
