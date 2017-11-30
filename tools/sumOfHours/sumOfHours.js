@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function(){
                 var fullName = log.querySelectorAll('td.displayName')[0].innerHTML.trim().toLowerCase().split(' ');
                 var nameOfBA = fullName.join('_');
                 var worklogSummary = log.querySelectorAll("[data-field='edit-desc']")[0].innerHTML.trim().toLowerCase();
-                var worklogNumber = parseFloat(log.querySelectorAll("td.editable [data-editable='isHoursEditable']")[1].innerHTML.trim());
+                var worklogNumber = parseFloat(log.querySelectorAll("[data-editable='isHoursEditable']")[0].innerHTML.trim());
             } catch (err) {
                 console.log('Does not compute! The bean counter ran out of beans! ' + err);
                 return -1;
