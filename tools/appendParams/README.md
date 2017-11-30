@@ -9,6 +9,8 @@ This tool works best as a bookmarklet. You can use the following instructions to
 > 4. Then save this bookmark, and put it somewhere you prefer in your bookmarks.
 > 5. Now, just click the bookmark to use it.
 
+Expected Results: &nbsp; After clicking the bookmark, the URL of the page you are currently on should be updated with two new parameters - one for a 'sessionid' and another for 'success'.
+
 <hr/>
 
 <br/>
