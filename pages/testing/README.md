@@ -1,6 +1,6 @@
 # IRIS  Testing
 
-These pages are used to test the IRIS functionality for hosting pages externally. This includes the pages for both the staging location as well as production (both similar pages, but accessed from two different IRIS environments). 
+These pages are used to test the IRIS functionality for hosting pages externally. They serve as very simple landing pages.
 
 **Click on the title of a page to visit it.**
 
