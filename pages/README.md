@@ -4,7 +4,7 @@ This repository contains pages related to IRIS features, testing, and general pr
 
 
 ### [Practice](https://github.com/Dejai/iris/tree/master/pages/practice)
-This pages in this repository are ones that I worked on as a way to practice my HTML/CSS/JS.
+The pages in this repository are ones that I worked on as a way to practice my HTML/CSS/JS.
 [Visit repository](https://github.com/Dejai/iris/tree/master/pages/practice)
 
 ----
