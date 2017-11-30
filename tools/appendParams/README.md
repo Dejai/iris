@@ -1,6 +1,6 @@
 # Append Params
 
-This tool was created as a way to append a unique session ID and a success parameter to the testing URL for an eCommerce order page. This was in conjunction with the new eCommerce application were building with Magento.
+This tool was created as a way to append a unique session ID and a success parameter to the testing URL for an eCommerce order page. This was in conjunction with the new eCommerce application we were building with Magento.
 
 This tool works best as a bookmarklet. You can use the following instructions to create your bookmarklet and test it out.
 > 1. Create a new bookmark in your favorite web browser. I suggest creating it from your browser's bookmark manager page.
