@@ -31,7 +31,7 @@
 
 ----
 
-### [IRIS Quick Look](https://dejai.github.io/iris/practice/iris_quicklook.html)
+### [IRIS Quick Look](https://dejai.github.io/iris/pages/practice/iris_quicklook.html)
 > Date: October, 2015 <br/><br/>
 > Description: This page was put together to consolidate new pieces of information as I was learning about Publishing Services, the different Applications, and the overall process related to what my new role.
 
