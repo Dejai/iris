@@ -14,27 +14,29 @@ This tool works best as a bookmarklet. You can use the following instructions to
 <br/>
 Bookmarklet Code
 <pre>
-javascript: (function() {
-    var URL = window.location; /*Get the current URL location*/
-    
-    /* Prompt the user to enter a session ID */
-    var sessionNum = prompt("Session ID");
-    
-    /* Continue with the appending process, if a session number is entered */
-    if (sessionNum != null){
-        /* If the user does not enter a number, or it is a negative number, then generate a random one*/
-        if(isNaN(sessionNum) || Number(sessionNum) < 1){
-            /* Generate a random number to be the session ID */
-            sessionNum = Math.floor(Math.random()*10000); 
-        }
-        
-        /* Create a new URL with a query string that includes the session ID.*/
-        /* The success param value is just a way to see the results of your purchase */
-        var newURL = URL + "?sessionid="+sessionNum+"&success="+encodeURIComponent("http://ecomm-mag-t1.agora.local/marketplacecheckout/success/stub");
-        
-        /* Load the new URL */
-        location.replace(newURL);        
-    }  
-}());
+    javascript: (function() {
+        var URL = window.location; /*Get the current URL location*/
+
+        /* Prompt the user to enter a session ID */
+        var sessionNum = prompt("Session ID");
+
+        /* Continue with the appending process, if a session number is entered */
+        if (sessionNum != null){
+            /* If the user does not enter a number, or it is a negative number, then generate a random one*/
+            if(isNaN(sessionNum) || Number(sessionNum) < 1){
+                /* Generate a random number to be the session ID */
+                sessionNum = Math.floor(Math.random()*10000); 
+            }
+
+            /* Create a new URL with a query string that includes the session ID.*/
+            /* The success param value is just a way to see the results of your purchase */
+            var successURL = "http://ecomm-mag-t1.agora.local/marketplacecheckout/success/stub";
+            var newURL = URL + "?sessionid="+sessionNum+"&success="+encodeURIComponent(successURL);
+
+            /* Load the new URL */
+            location.replace(newURL);        
+        }  
+    }());
+
 </pre>
 
