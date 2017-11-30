@@ -4,4 +4,4 @@ The "Expand and Collapse" tool was originally built as a simple JavaScript tool 
 
 This macro was convenient in helping to make a large amount of data presentable. However, there did not seem to be a way to expand all sections at once. So, I worked on this tool to do just that - expand and collapse multiple "Expand" macros on a Confluence page. 
    
-[Checkout a Mock Version](https://dejai.github.io/iris/tools/expandAndCollapse/)
+[Checkout a replica of this tool.](https://dejai.github.io/iris/tools/expandAndCollapse/)
