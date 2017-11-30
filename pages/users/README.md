@@ -1,4 +1,4 @@
-# IRIS User Pages
+# User Pages
 
 The pages in this repository were built to be shared with users of the IRIS application. 
 
