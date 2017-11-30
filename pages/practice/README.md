@@ -8,15 +8,15 @@
 ----
 
 ### [Compare Lists](https://dejai.github.io/iris/pages/practice/compareLists.html) & [Compare Lists 2](https://dejai.github.io/iris/pages/practice/comparelists2.html)
-Dates: May / November, 2017 <br/><br/>
-Description: These pages were made as a way to compare two lists. <br/>
-Version 1 - this version was specific for comparing the domains in our application to the ones on our SSL certificate.
-Version 2 - this version was made more flexible, and allows you to compare any two lists. Includes a way to select how to split the data entered in each field.
+> Dates: May / November, 2017 <br/><br/>
+> Description: These pages were made as a way to compare two lists. <br/>
+> Version 1 - this version was specific for comparing the domains in our application to the ones on our SSL certificate.
+> Version 2 - this version was made more flexible, and allows you to compare any two lists. Includes a way to select how to split the data entered in each field.
 
 ----
 
 ### [Permissions](https://dejai.github.io/iris/pages/practice/permissions.html) & [Permissions 2](https://dejai.github.io/iris/pages/practice/permissions2.html) & [Permissions 3](https://dejai.github.io/iris/pages/practice/permissions3.html)
-> Date: February / March / May, 2016 <br/><br/>
+> Dates: February / March / May, 2016 <br/><br/>
 > Description: These simple pages are meant to offer short descriptions of the different permissions in IRIS.<br/>
 > Version 1 has the description at the bottom of the list. <br/>
 > Version 2 has the descriptions at the right of the list.  <br/>
