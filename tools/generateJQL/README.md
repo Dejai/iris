@@ -4,4 +4,4 @@ This tool was created as a way to generate a JIRA Query Language (JQL) query tha
 
 -----
 
-[Checkout a replica of the tool!](https://dejai.github.io/iris/tools/generateJQL/)
+[Checkout a replica of this tool!](https://dejai.github.io/iris/tools/generateJQL/)
