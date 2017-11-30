@@ -1,10 +1,13 @@
 <h1> <a href="https://dejai.github.io/iris">IRIS</a></h1>
-<p> This "iris" repository contains examples of pages and tools that I worked on as a member of the IRIS team (Agora).</p>
+<p> This repository contains examples of pages and tools that I worked on as a member of the IRIS team (Agora).</p>
 <hr/>
 <div style="margin-left:5%;">
+  <h4> <a href="https://github.com/Dejai/iris/tree/master/pages"> Pages </a> </h4>
   <p><a href="https://github.com/Dejai/iris/tree/master/pages"> Pages </a></p>
-  <ul><li>This repository contains pages related to IRIS features, testing purposes, and general  practicing of HTML/CSS/JS.</li></ul>
+  <ul>
+    <li>This repository contains pages related to IRIS features, testing, and general  practicing of HTML/CSS/JS. <a href="https://github.com/Dejai/iris/tree/master/pages">Visit repository</a></li>
+  </ul>
   <br/>
-  <p><a href="https://github.com/Dejai/iris/tree/master/tools"> Tools </a></p>
-  <ul><li>This repository contains replica pages and source code for tools that I built related to our team processes.</li></ul>
+  <h4><a href="https://github.com/Dejai/iris/tree/master/tools"> Tools </a></h4>
+  <ul><li>This repository contains replica pages and source code for tools that I built related to our team processes.<a href="https://github.com/Dejai/iris/tree/master/tools"> Visit repository </a></li></ul>
 <div>
