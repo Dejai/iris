@@ -1,4 +1,20 @@
-javascript: (function() {
+document.addEventListener("DOMContentLoaded", function(){
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if ( this.readyState == 4 && this.status == 200 ){
+            document.getElementById("reportContainer").innerHTML = xhttp.responseText;
+            document.getElementById("showTableButton").addEventListener("click", init, true);
+        } else if ( this.readyState == 4 && this.status !== 200 ){
+            alert("Something went wrong! Couldn't load the reports table");
+        }
+    };
+  xhttp.open("GET", "./reportsReplica.html", true);
+  xhttp.send();
+});
+
+
+
+
     /* A class that servs as a way to store the different hours for each team member. */
     class peepObj {
         constructor(name) {
@@ -11,13 +27,8 @@ javascript: (function() {
             this.testingHours = 0.0;
         }
     }
-    /* Gets the current URL */
-    var currentURL = window.location.search;
-    /* This works under the assumption that the JIRA page maintains the query string parameter of 'periodType=BILLING'*/
-    /* This query string correlates with the page that contains a breakdown of hours logged for tickets within a particular query */
-    if (!currentURL.includes('periodType=BILLING')) {
-        alert('Sorry!\n\nYou cannot use this tool with this page.\n\nYou should go to the Tempo Timesheet page, then try to use this tool.\n\nBe sure to use the Advanced option along with the Report view, on this page.');
-    } else {
+
+    function init(){
         var level3 = document.getElementsByClassName('level-3');
         var peeps = ['total_hours'];
         var peepsObj = [];
@@ -26,7 +37,6 @@ javascript: (function() {
             showSumTable();
         }
     }
- 
     function calculateSums() {
         for (var x = 0; x < level3.length / 2; x++) {
             try {
@@ -123,4 +133,3 @@ javascript: (function() {
         var resultsWindow = window.open(' ', 'Summary of Hours', windowDim);
         resultsWindow.document.write(style + objSummary);
     }
-})();
