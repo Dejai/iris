@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function(){
         if ( this.readyState == 4 && this.status == 200 ){
             document.getElementById("reportContainer").innerHTML = xhttp.responseText;
             document.getElementById("showTableButton").addEventListener("click", init, true);
+            showVsHideData()
         } else if ( this.readyState == 4 && this.status !== 200 ){
             alert("Something went wrong! Couldn't load the reports table");
         }
@@ -12,6 +13,13 @@ document.addEventListener("DOMContentLoaded", function(){
   xhttp.send();
 });
 
+    function showVsHideData(){
+        document.getElementById("showDataTable").addEvenetListener("click", function(){
+            var dataTable = document.getElementById("reportContainer");
+            var showVsHide = dataTable.style.display == "none" ? "block" : "none";
+            dataTable.style.display = showVsHide;
+        });
+    }
 
     /* Global variables*/
     var level3;
