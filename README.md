@@ -2,7 +2,7 @@
 <p> This "iris" repository contains examples of things I worked on as a member of the IRIS team (Agora). Below are some specific repositories for pages and tools that I worked on.</p>
 <hr/>
 <div style="margin-left:5%;">
-  <p><a href="https://github.com/Dejai/iris/tree/master/beta"> Pages </a></p>
+  <p><a href="https://github.com/Dejai/iris/tree/master/pages"> Pages </a></p>
   <ul><li>This repository contains pages related to IRIS features, testing purposes, and general  practicing of HTML/CSS/JS.</li></ul>
   <br/>
   <p><a href="https://github.com/Dejai/iris/tree/master/signupApp2/"> Signupp App 2 </a></p>
