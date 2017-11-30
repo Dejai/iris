@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function(){
         }
     }
     function calculateSums() {
-        for (var x = 0; x < level3.length / 2; x++) {
+        for (var x = 0; x < level3.length; x++) {
             try {
                 var log = level3[x];
                 var fullName = log.querySelectorAll('td.displayName')[0].innerHTML.trim().toLowerCase().split(' ');
