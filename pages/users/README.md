@@ -6,6 +6,9 @@ The pages in this repository were built to be shared with users of the IRIS appl
 ******are build primarily using Bootstrap 3.3.5. They were built as a personal initiative and as a way to help guide users through new IRIS features. 
 
 
+**Click on the title of a page to visit it.**
+
+
 ___
 
 
