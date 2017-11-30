@@ -2,7 +2,7 @@
 <blockquote>
 <br/>
 <span> This repository contains examples of pages and tools that I worked on as a member of the IRIS team (Agora).</span>
-<br/>
+<br/><br/>
 </blockquote>
 <hr/>
 <div style="margin-left:5%;">
