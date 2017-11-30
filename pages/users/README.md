@@ -2,46 +2,43 @@
 
 The pages in this repository were built to be shared with users of the IRIS application. 
 
-
-******are build primarily using Bootstrap 3.3.5. They were built as a personal initiative and as a way to help guide users through new IRIS features. 
-
-
 **Click on the title of a page to visit it.**
-
 
 ___
 
 
 ### [Main + Upsell](https://dejai.github.io/iris/pages/users/mainAndUpsell.html)
-> Dates: November, 2017 <br/><br/>
-> Description: This page was put together to highlight the general concept of a feature. The goal was to display main orders and upsell orders in a combined order summary.
+> Date: November, 2017 <br/><br/>
+> Description: This page was put together to highlight the general concept of a feature - being able to display main orders and upsell orders in a combined order summary.
 
 ___
 
-### [IRIS 4.0 Beta Tasks & Scenarios](https://dejai.github.io/iris/beta/iris_4.0.html)
-> #### Date: December, 2015
-> #### Description: This page highlights major changes in user workflow related to common user roles. Based on IRIS 4.0
-##### Features Included:
-   1. Left side navigation bar
-   1. Some 'Responsive Web Design'
-   2. Bootstrap Tab-Panes (with a 'fade in')
-   3. Bootstrap Modals
-       * Contains supplementary information about user roles
-   4. 'Reactive' Buttons
-       * There is a button to submit a support ticket (only available after entering at least one character)
-       * There is also a button to clear comments (only available after submitting comments)
-   5. An ability to submit comments to the support system
-       * The support system was Zendesk, and comments could be submitted via email. 
-       * Leveraged the 'mailto' functionality.
----
+### [Release Notes](https://dejai.github.io/iris/pages/users/releaseNotes.html)
+> Date: August, 2017 <br/><br/>
+> Description: This page was what we used to display our release notes, which were sent out through the application. 
+
+___
+
+### [Signups Page](https://dejai.github.io/iris/pages/users/signups.html)
+> Date: August, 2017 <br/><br/>
+> Description: This page is an updated version of the page to take signups to the IRIS list.
+
+___
+
+### [Reponsive Video Page](https://dejai.github.io/iris/pages/users/videoPage_responsive.html)
+> Date: May, 2016 <br/><br/>
+> Description: This page was used for several months as a way for us to share short video clips of our features with our users.
+
+___
 
 
-### [Advanced Filters and Multiple Status Change](https://dejai.github.io/iris/beta/betaTasks.html)
-> #### Date: November, 2015
-> #### Description: This page highlights 2 features in one release.
-#### Features Included:
-   1. 'Reactive' Buttons
-       * There is a button to submit a support ticket (only available after entering at least one character)
-   2. An ability to submit comments to the support system
-       * The support system was Zendesk, and comments could be submitted via email. 
-       * Leveraged the 'mailto' functionality.
+### [IRIS 4.0 Beta Tasks & Scenarios](https://dejai.github.io/iris/pages/users/iris_4.0.html)
+> Date: December, 2015
+> Description: This page highlights major changes in user workflow for IRIS 4.0, and is based on common user roles. 
+
+___
+
+### [Advanced Filters and Multiple Status Change](https://dejai.github.io/iris/pages/users/betaTasks.html)
+> Date: November, 2015
+> Description: This page highlights 2 features in one release.
+
