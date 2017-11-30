@@ -140,5 +140,6 @@ document.addEventListener("DOMContentLoaded", function(){
         var style = '<title>Summary of Hours</title><style> table {width:100%; border-collapse: collapse; border-spacing: 0; padding:2%;} table * { border-right:1px solid black; border-bottom:1px solid gray; padding:1%;} table tbody tr:hover { background-color:lightblue; }thead tr * { font-weight:bold; } tbody tr * {text-align:center;} .totalHours:hover {background-color:yellow;} </style>';
         var windowWidth = (windowDim = 'width=' + screen.width + 'px,height=' + screen.height + 'px' + ',location=no');
         var resultsWindow = window.open(' ', 'Summary of Hours', windowDim);
+        resultsWindow.document.body.innerHTML = '';
         resultsWindow.document.write(style + objSummary);
     }
