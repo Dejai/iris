@@ -1,6 +1,6 @@
 # Append Params
 
-This tool was created as a way to append a unique session ID and a success parameter to the testing URL for an eCommerce order page. This was in conjunction with the new eCommerce application we were building with Magento.During testing, the Magento order domain structure was as follows: http://ecomm-mag-t1.agora.local/[name_of_page]. Keep in mind that the Magento order pages can only be accessed from within the internal networks at Agora.
+This tool was created as a way to append a unique session ID and a success parameter to the testing URL for an eCommerce order page. This was in conjunction with the new eCommerce application we were building with Magento.
 
 This tool works best as a bookmarklet. You can use the following instructions to create your bookmarklet and test it out.
 > 1. Create a new bookmark in your favorite web browser. I suggest creating it from your browser's bookmark manager page.
