@@ -1,6 +1,6 @@
 # Practice Pages
 
-This repository contains some pages that I worked on as a way to practice my HTML/CSS/JS. <br/><br/>
+This repository contains some pages that I worked on as a way to practice my HTML/CSS/JS.
 
 **Click on the title of a page to visit it.**
 
