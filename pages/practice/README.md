@@ -1,10 +1,6 @@
 # Practice Pages
 
-These are some pages that I first worked on when I started at Agora. 
-They were a way for me to practice my HTML/CSS/JS while also acclimating to the new role.
-
-----
-
+This repository contains some pages that I worked on as a way to practice my HTML/CSS/JS.
 
 ----
 
