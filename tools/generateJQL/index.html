@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Generate JQL</title>
+	<style> body { padding:2%; }</style>
+	<script type="text/javascript" src="./generateJQL.js"></script>
+</head>
+<body>
+<h1>Generate JQL</h1>
+<p>This tool was created as a way to generate a JIRA Query Language (JQL) query that could find all JIRA tickets related to a given project (in the form of an issue key).</p>
+<p> Below is a <strong>replica</strong> of the tool, which was originally created as a bookmarklet. Click <a href="./src.js" targ="_blank">here</a> to see the original bookmarklet code.</p>
+
+<hr/>
+
+<label>Enter an Issue Key. Be sure to include the project acronym part along with the number</label><br/><br/>
+<input id="issueKey" type="text" placeholder="Enter issue key"/> &nbsp;&nbsp;<button id="generator"> Generate JQL </button>
+<p id="error" style="color:red;display:none;"> ERROR: Please include an issuekey</p>
+<br/><br/><textarea id="genQ" rows=\'3\' style="width:100%; resize:none;" placeholder="Results of JQL generator" readonly></textarea><br/>
+<p id="inst" style="color:blue;display:none;"> Copy this JQL and paste into the search in JIRA </p>
+
+</body>
+</html>
