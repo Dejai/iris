@@ -2,10 +2,14 @@
 
 These pages are used to test the IRIS functionality for hosting pages externally. This includes the pages for both the staging location as well as production (both similar pages, but accessed from two different IRIS environments). 
 
-----
-### [Staging Page](https://dejai.github.io/iris/testing/promoPage_staging.html)
-> Date: August, 2017
+**Click on the title of a page to visit it.**
 
 ----
-### [Production Page](https://dejai.github.io/iris/testing/promoPage_prod.html)
-> Date: August, 2017
+### [Staging Page](https://dejai.github.io/iris/pages/testing/promoPage_staging.html)
+> Date: August, 2017<br/><br/>
+> Description: This page would be shown if accessed from an IRIS staging location.
+
+----
+### [Production Page](https://dejai.github.io/iris/pages/testing/promoPage_prod.html)
+> Date: August, 2017 <br/><br/>
+> Description: This page would be shown if accessed from an IRIS production location.
