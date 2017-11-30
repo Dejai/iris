@@ -1,7 +1,7 @@
 <h1> <a href="https://dejai.github.io/iris">IRIS</a></h1>
 <blockquote>
 <br/>
-<p> This repository contains examples of pages and tools that I worked on as a member of the IRIS team (Agora).</p>
+<span> This repository contains examples of pages and tools that I worked on as a member of the IRIS team (Agora).</span>
 <br/>
 </blockquote>
 <hr/>
