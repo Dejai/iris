@@ -3,7 +3,6 @@
 <hr/>
 <div style="margin-left:5%;">
   <h4> <a href="https://github.com/Dejai/iris/tree/master/pages"> Pages </a> </h4>
-  <p><a href="https://github.com/Dejai/iris/tree/master/pages"> Pages </a></p>
   <ul>
     <li>This repository contains pages related to IRIS features, testing, and general  practicing of HTML/CSS/JS. <a href="https://github.com/Dejai/iris/tree/master/pages">Visit repository</a></li>
   </ul>
