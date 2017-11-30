@@ -6,7 +6,9 @@ This repository contains some pages that I worked on as a way to practice my HTM
 
 ### [Compare Lists](https://dejai.github.io/iris/practice/compareLists.html) & [Compare Lists 2](https://dejai.github.io/iris/practice/comparelists2.html)
 > Dates: May / November, 2017 <br/><br/>
-> Description: This was a quick edit to the original to make it less about a specific use case. Much more flexible in comparing lists.
+> Description: This was a quick edit to the original to make it less about a specific use case. Much more flexible in comparing lists.<br/>
+> Version 1 - this version was specific for comparing the domains in our application to the ones on our SSL certificate.
+> Version 2 - this version was edited to be more flexible and compare any types of lists. Includes a way to select how to split the data entered in each field
 ----
 
 ### [Update Links To Secure](https://dejai.github.io/iris/practice/updateLinksToSecure.html)
