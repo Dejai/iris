@@ -1,25 +1,55 @@
 document.addEventListener("DOMContentLoaded", function(){
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-        if ( this.readyState == 4 && this.status == 200 ){
-            document.getElementById("reportContainer").innerHTML = xhttp.responseText;
-            document.getElementById("showTableButton").addEventListener("click", init, true);
-            showVsHideData()
-        } else if ( this.readyState == 4 && this.status !== 200 ){
-            alert("Something went wrong! Couldn't load the reports table");
+    var table = "<table id='workLogTable'><tr><th>Date</th><th>Name</th><th>Work Log Description</th><th>Work Log Hours</th></tr>";
+    var names = ["Derrick Fyfield", "Aaron Maxwell", "Paul Simmons", "Matthew Stuart", "Leroy Johnson", "Sean King"];
+    var categories = ["requirements", "clarification", "project management", "design", "testing", "Working"];
+    for (var x = 0; x < names.length; x++){
+        var date = new Date();
+        var today = date.getMonth() + "/" + date.getDate() + "/" + date.getFullYear();
+        var person = names[x];
+        for (var y = 0; y < 10; y++){
+            var summary = categories[Math.round(Math.random() * categories.length)];
+            var hour = Math.round(Math.random() * 4);
+            var minute = hour > 0 && (1 / hour) > 0 && hour !=3 ? (1 / hour) : 0;
+            var time = hour + minute;
+            table += "<tr class=\"level-3\">"
+                    +"<td>" + today + "</td>"
+                    +"<td><span data-field=\"edit-desc\">" + summary + "</span></td>"
+                    +"<td class=\"displayName\">" + person + "</td>"
+                    +"<td><span data-editable=\"isHoursEditable\">" + time + "</span></td>"
+                    + "</tr>";
         }
-    };
-  xhttp.open("GET", "./reportReplica.html", true);
-  xhttp.send();
-});
-
-    function showVsHideData(){
-        document.getElementById("showDataTable").addEventListener("click", function(){
+    }
+    table += "</table>";
+    // document.body.innerHTML = table;
+    document.getElementById("reportContainer").innerHTML = table;
+    document.getElementById("showTableButton").addEventListener("click", init, true);
+    document.getElementById("showDataTable").addEventListener("click", function(){
             var dataTable = document.getElementById("reportContainer");
             var showVsHide = dataTable.style.display == "none" ? "block" : "none";
             dataTable.style.display = showVsHide;
         });
-    }
+
+  //   var xhttp = new XMLHttpRequest();
+  //   xhttp.onreadystatechange = function() {
+  //       if ( this.readyState == 4 && this.status == 200 ){
+  //           document.getElementById("reportContainer").innerHTML = xhttp.responseText;
+  //           document.getElementById("showTableButton").addEventListener("click", init, true);
+  //           showVsHideData()
+  //       } else if ( this.readyState == 4 && this.status !== 200 ){
+  //           alert("Something went wrong! Couldn't load the reports table");
+  //       }
+  //   };
+  // xhttp.open("GET", "./reportReplica.html", true);
+  // xhttp.send();
+});
+
+    // function showVsHideData(){
+    //     document.getElementById("showDataTable").addEventListener("click", function(){
+    //         var dataTable = document.getElementById("reportContainer");
+    //         var showVsHide = dataTable.style.display == "none" ? "block" : "none";
+    //         dataTable.style.display = showVsHide;
+    //     });
+    // }
 
     /* Global variables*/
     var level3;
