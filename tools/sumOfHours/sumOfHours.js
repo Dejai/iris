@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function(){
-    var table = "<table id='workLogTable'><tr><th>Date</th><th>Name</th><th>Work Log Description</th><th>Work Log Hours</th></tr>";
+    var table = "<table id='workLogTable' cellspacing='0' border='1' style='width:50%;'><tr><th>Date</th><th>Name</th><th>Work Log Description</th><th>Work Log Hours</th></tr>";
     var names = ["Derrick Fyfield", "Aaron Maxwell", "Paul Simmons", "Matthew Stuart", "Leroy Johnson", "Sean King"];
     var categories = ["requirements", "clarification", "project management", "design", "testing", "Working"];
     for (var x = 0; x < names.length; x++){
@@ -20,7 +20,6 @@ document.addEventListener("DOMContentLoaded", function(){
         }
     }
     table += "</table>";
-    // document.body.innerHTML = table;
     document.getElementById("reportContainer").innerHTML = table;
     document.getElementById("showTableButton").addEventListener("click", init, true);
     document.getElementById("showDataTable").addEventListener("click", function(){
@@ -28,28 +27,7 @@ document.addEventListener("DOMContentLoaded", function(){
             var showVsHide = dataTable.style.display == "none" ? "block" : "none";
             dataTable.style.display = showVsHide;
         });
-
-  //   var xhttp = new XMLHttpRequest();
-  //   xhttp.onreadystatechange = function() {
-  //       if ( this.readyState == 4 && this.status == 200 ){
-  //           document.getElementById("reportContainer").innerHTML = xhttp.responseText;
-  //           document.getElementById("showTableButton").addEventListener("click", init, true);
-  //           showVsHideData()
-  //       } else if ( this.readyState == 4 && this.status !== 200 ){
-  //           alert("Something went wrong! Couldn't load the reports table");
-  //       }
-  //   };
-  // xhttp.open("GET", "./reportReplica.html", true);
-  // xhttp.send();
 });
-
-    // function showVsHideData(){
-    //     document.getElementById("showDataTable").addEventListener("click", function(){
-    //         var dataTable = document.getElementById("reportContainer");
-    //         var showVsHide = dataTable.style.display == "none" ? "block" : "none";
-    //         dataTable.style.display = showVsHide;
-    //     });
-    // }
 
     /* Global variables*/
     var level3;
