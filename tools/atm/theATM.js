@@ -1,8 +1,6 @@
-orgNames2 = [ 
-            {"name":"Agora Financial(s)", "desc": "AGF | AFUK | AFAU"},
-			{"name": "Company #1" , "desc" : "Company #1"},
-			{"name": "Company #2" , "desc" : "Company #2"},
-			{"name": "Company #3" , "desc" : "Company #3"}
+orgNames2 = [ {"name": "Company #1" , "desc" : "Company #1"},
+	      {"name": "Company #2" , "desc" : "Company #2"},
+	      {"name": "Company #3" , "desc" : "Company #3"}
         ];
 var style = "<style> #addTopicForm { display:none; width:50%; float:left; margin-left:5%; border:1px solid black; border-radius:5px; text-align:left; padding:1%; }"
 	+ "#addAffiliateForm { display:none; width:50%; float:left; margin-left:5%; margin-right:2%; border:1px solid black; border-radius:5px; text-align:left; padding:1%; }"
