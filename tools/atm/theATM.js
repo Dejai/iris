@@ -46,30 +46,10 @@ var addTopicForm = "<div id=\"addTopicForm\" class=\"sectionz\">"
 	+ "<table>"
 		+ "<tr><td><input id=\"selectAllOrgs\" type=\"checkbox\" name=\"SelectAll\" value=\"ALL\"/>ALL</td></tr>" 
 		+ "<tr>" 
-			+ "<td><input type=\"checkbox\" name=\"organizations\" value=\"Agora Financial(s)\"/> Agora Financial(s)</td>" 
-			+ "<td><input type=\"checkbox\" name=\"organizations\" value=\"Agora Health UK\"/>Agora Health UK</td>" 
-			+ "<td><input type=\"checkbox\" name=\"organizations\" value=\"Banyan Hill\"/> Banyan Hill</td>" 
-		+ "</tr>" 
-		+ "<tr>" 
-			+ "<td><input type=\"checkbox\" name=\"organizations\" value=\"Charles Street\"/>Charles Street</td>" 
-			+ "<td><input type=\"checkbox\" name=\"organizations\" value=\"International Living\"/>International Living</td>" 
-			+ "<td><input type=\"checkbox\" name=\"organizations\" value=\"Legacy Research Group\"/>Legacy Research Group</td>" 
-		+ "</tr>" 
-		+ "<tr>" 
-			+ "<td><input type=\"checkbox\" name=\"organizations\" value=\"Money Map Press\"/>Money Map Press</td>" 
-			+ "<td><input type=\"checkbox\" name=\"organizations\" value=\"New Market Group\"/>New Market Group</td>" 
-			+ "<td><input type=\"checkbox\" name=\"organizations\" value=\"OmniVista Health\"/>OmniVista Health</td>" 
-		+ "</tr>" 
-		+ "<tr>" 
-			+ "<td><input type=\"checkbox\" name=\"organizations\" value=\"Oxford Club\"/>Oxford Club</td>" 
-			+ "<td><input type=\"checkbox\" name=\"organizations\" value=\"Portner Press\"/>Portner Press</td>" 
-			+ "<td><input type=\"checkbox\" name=\"organizations\" value=\"Port Phillip Publishing\"/>Port Phillip Publishing</td>" 
-		+ "</tr>" 
-		+ "<tr>" 
-			+ "<td><input type=\"checkbox\" name=\"organizations\" value=\"Publishing Agora France\"/>Publishing Agora France</td>" 
-			+ "<td><input type=\"checkbox\" name=\"organizations\" value=\"Sante Nature Innovation\"/>Sante Nature Innovation</td>" 
-			+ "<td><input type=\"checkbox\" name=\"organizations\" value=\"Southbank\"/>Southbank</td>" 
-		+ "</tr>" 
+			+ "<td><input type=\"checkbox\" name=\"organizations\" value=\"Company #1\"/> Company #1</td>" 
+			+ "<td><input type=\"checkbox\" name=\"organizations\" value=\"Company #2\"/> Company #2</td>" 
+			+ "<td><input type=\"checkbox\" name=\"organizations\" value=\"Company #3\"/> Company #3</td>" 
+		+ "</tr>"  
 	+ "</table>" 
 	+ "<br/><br/>" 
 	+ "<button id=\"addNewTopic\"> Add New Topic </button>" 
@@ -476,7 +456,6 @@ function addNewAffilRow(nameVal, orgNameVal , emailVal) {
 
 function checkForAffiliate(name){
 	try {
-		getTable("edit");
 		var checkAffilResults = "<h3>Results:</h3>";
         for (var y = 2; y < affilRows_atm.length; y++) {
             var TDs = affilRows_atm[y].querySelectorAll("td.confluenceTd");
