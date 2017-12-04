@@ -1,20 +1,8 @@
 orgNames2 = [ 
             {"name":"Agora Financial(s)", "desc": "AGF | AFUK | AFAU"},
-			{"name": "Agora Health UK" , "desc" : "AHUK"},
-			{"name": "Banyan Hill" , "desc" : "BH"},
-			{"name": "Charles Street" , "desc" : "CS"},
-			{"name": "International Living" , "desc" : "ILV"},
-			{"name": "Institute for Natural Healing" , "desc" : "INH"},
-			{"name": "Legacy Research Group" , "desc" : "LRG"},
-			{"name": "Money Map Press" , "desc" : "MMP"},
-			{"name": "New Market Group" , "desc" : "NMG"},
-			{"name": "OmniVista Health" , "desc" : "OVH"},
-			{"name": "Oxford Club" , "desc" : "OC"},
-			{"name": "Portner Press" , "desc" : "POR"},
-			{"name": "Port Phillip Publishing" , "desc" : "PPP"},
-			{"name": "Publishing Agora France" , "desc" : "PAF"},
-			{"name": "Sante Nature Innovation" , "desc" : "SNI"},
-			{"name": "Southbank" , "desc" : "SBK"}
+			{"name": "Company #1" , "desc" : "Company #1"},
+			{"name": "Company #2" , "desc" : "Company #2"},
+			{"name": "Company #3" , "desc" : "Company #3"}
         ];
 var style = "<style> #addTopicForm { display:none; width:50%; float:left; margin-left:5%; border:1px solid black; border-radius:5px; text-align:left; padding:1%; }"
 	+ "#addAffiliateForm { display:none; width:50%; float:left; margin-left:5%; margin-right:2%; border:1px solid black; border-radius:5px; text-align:left; padding:1%; }"
