@@ -136,20 +136,11 @@ var checkAffiliateForm = "<div id=\"checkAffiliateForm\" class=\"sectionz\">"
 	+ "<br class=\"clear\"/>";
 /* ------------------------------------------------------------------------------------------------------------------------------------------------- */
 
-var loggedInUser = document.getElementById("user-menu-link").dataset.username;
-var allowedUsers =  ["tkeller", "wharris", "cwitucki", "jayendi", "bbudge", "dfyfield", "mdenner"];
-if (allowedUsers.includes(loggedInUser)){
-	document.getElementById("startATM").style.display = "block";
-}
-
 /* Global Variables */
 var winHeight = screen.height - 500;
 var winWidth = screen.width / 2.5;
 var winTop = 100;
 var windowDim = "top=" + winTop  + "px, width=" + winWidth  + "px,height=" + winHeight  + "px" + ",location=no";
-//var windowDim = "width=" + screen.width / 2 + "px,location=yes";
-
-
 
 var originalWindow = window;
 var editPageQuery = "?draftId=38093736&draftShareId=c4a37cf3-eb06-44da-a4b0-49b409b5a524";
@@ -171,40 +162,16 @@ document.getElementById("startATM").addEventListener("click", startATM);
 
 
 function startATM(){
-	originalWindow = window;
-	resultsWindow = window.open("", "This is a Test", windowDim);
-    resultsWindow.document.write(style + dataList + orgsDataList + description + menuList  + addTopicForm + addAffiliateForm + checkAffiliateForm);
-
-	getTable("view");
-	init_atm();
-	originalWindow.location.assign("https://wiki.pubsvs.com/pages/resumedraft.action?draftId=38093736&draftShareId=c4a37cf3-eb06-44da-a4b0-49b409b5a524");
-}
-
-
-function getTable(pageState){
-    try{
-        if (pageState == "view"){
-            affiliateTable_atm = originalWindow.document.getElementsByTagName("table");   
-        } else if (pageState == "edit"){
-            ifr = originalWindow.document.getElementById("wysiwygTextarea_ifr");
-            ifrDoc = ifr.contentDocument || ifr.contentWindow.document;
-            affiliateTable_atm = ifrDoc.getElementsByTagName("table");
-        } else{
-			alert("Something is wrong");
-		}
-		console.log(affiliateTable_atm);
-        for (var x = 0; x < affiliateTable_atm.length; x++) {
-            var headers = affiliateTable_atm[x].querySelectorAll("tbody tr th");
-            for (var y = 0; y < headers.length; y++) {
-                if (headers[y].innerText == "Affiliate Table") {
-                    theRightTable = affiliateTable_atm[x];
-                }
-            }
-        }
-        affilRows_atm = theRightTable.querySelectorAll("tbody tr");
-    } catch (err) {
-        resultsWindow.alert(err);
-    }
+	try{
+	    originalWindow = window;
+	    resultsWindow = window.open("", "This is a Test", windowDim);
+	    resultsWindow.document.write(style + dataList + orgsDataList + description + menuList  + addTopicForm + addAffiliateForm + checkAffiliateForm);
+	    affiliateTable_atm = originalWindow.document.getElementById("tableContainer");
+	    affilRows_atm = affiliateTable_atm.querySelectorAll("tbody tr");
+	    init_atm();	
+	} catch (err){
+	    alert(err);
+	}
 }
 
 
@@ -411,7 +378,6 @@ function cleanup(value) {
 
 function addTopicsToExistingRows(value, selected) {
     try {
-		getTable("edit");
         var numberAdded = 0;
         for (var y = 2; y < affilRows_atm.length; y++) {
             var topicAlreadyIncluded = false;
@@ -453,7 +419,6 @@ function addTopicsToExistingRows(value, selected) {
 
 function addNewAffilRow(nameVal, orgNameVal , emailVal) {
     try {
-		getTable("edit");
 		var row = originalWindow.document.createElement("tr");
 		var columnOne = originalWindow.document.createElement("td");
 			columnOne.setAttribute("class", "confluenceTd");
