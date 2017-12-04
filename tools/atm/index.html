@@ -8,23 +8,47 @@
       xhttp.onreadystatechange = function(){
         if (this.readyState == 4 && this.status == 200){
           document.getElementById("tableContainer").innerHTML = this.responseText;
+	  document.getElementById("toggleCustomerTable").addEventListener("click", toggleTableView);
         }
       }
       xhttp.open("GET", "../egg/contacts.html", true);
       xhttp.send();
+	    
     });
+    function toggleTableView(){
+	var tableContainer = document.getElementById("tableContainer");
+	var view = tableContainer.style.display == "block" ? "none" : "block";
+	tableContainer.style.display = view;
+    }
+	   
   </script>
   <style>
 	  #startATM { display:none; font-size:16px; cursor:pointer; border-radius:10px; background-color:orange; color:black;}
+	  #tableContainer { display:none; }
+	  .divSection { width:45%; float:left; }
   </style>
 </head>
 <body>
-  
-<button id="startATM"> Click Here To Manage Affiliate Table </button>
+	
+	
+<h2>The Affiliate Table Manager (ATM)</h2>
+	<div class="divSection">
+		<p>This tool was created as a way to easily manage the users and topics in the table of users that was used with <a href="../egg" target="_blank"> The Email Generator Gadget </a> simplify and streamline email communication with IRIS users. Using this tool, you could ensure that the information for each user was consistent with the table structure.</p>
+		
+		<p> Below is a button that serves as a <strong>replica</strong> of the tool. , which was originally created as a bookmarklet. Click <a href="./src.js">here</a> to see the original bookmarklet code.</p>
+		
+		<button id="startATM"> Click Here To Manage Affiliate Table </button>
 
-<div id="tableContainer"></div>
+		
+	</div>
+	
+	<div class="divSection">
+		<h3> Customer Table</h3>	
+		<button id="toggleCustomerTable">Show/Hide Table</button>
+		<div id="tableContainer"></div>
+	</div>
 
-	<script type="text/javascript" src=".theATM.js"></script>
+<script type="text/javascript" src=".theATM.js"></script>
 
 </body>
 </html>
