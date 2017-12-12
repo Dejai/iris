@@ -7,8 +7,8 @@
 <hr/>
 <div style="margin-left:5%;">
   <h3> <a href="https://dejai.github.io/iris/pages/"> Pages </a> </h3>
-  <p>This repository contains pages related to IRIS features, testing, and general  practicing of HTML/CSS/JS.<br/><a href="https://github.com/Dejai/iris/tree/master/pages">Visit repository</a></p>
+  <p>This repository contains pages related to IRIS features, testing, and general  practicing of HTML/CSS/JS.<br/><a href="https://dejai.github.io/iris/pages/">Visit repository</a></p>
   <hr/>
   <h3><a href="https://dejai.github.io/iris/tools/"> Tools </a></h3>
-  <p>This repository contains replica pages and source code for tools that I built related to our team processes.<br/><a href="https://github.com/Dejai/iris/tree/master/tools"> Visit repository </a></p>
+  <p>This repository contains replica pages and source code for tools that I built related to our team processes.<br/><a href="https://dejai.github.io/iris/tools/"> Visit repository </a></p>
 <div>
