@@ -6,25 +6,25 @@
 
 -------
 
-### [Append Params](/tools/appendParams)
+### [Append Params](https://github.com/Dejai/iris/tree/master/tools/appendParams)
 This tool was created as a way to append a unique session ID and a success parameter to the testing URL for an eCommerce order page. [Checkout this tool.](/tools/appendParams)
 
 -------
 
-### [The Email Generator Gadget (EGG)](/tools/egg)
+### [The Email Generator Gadget (EGG)](https://github.com/Dejai/iris/tree/master/tools/egg)
 This tool was created as a way to simplify and streamline our email communication with our users. [Checkout this tool.](/tools/egg)
 
 ------
 
-### [Expand And Collapse](/tools/expandAndCollapse)
+### [Expand And Collapse](https://github.com/Dejai/iris/tree/master/tools/expandAndCollapse)
 This tool was used to expand and collapse the "Expand" macro on Confluence pages. [Checkout this tool.](/tools/expandAndCollapse)
 
 -------
 
-### [Generate JQL](/tools/generateJQL)
+### [Generate JQL](https://github.com/Dejai/iris/tree/master/tools/generateJQL)
 This tool was created as a way to generate a JIRA Query Language (JQL) query. [Checkout this tool.](/tools/generateJQL)
 
 ------
 
-### [Sum of Hours](/tools/sumOfHours)
+### [Sum of Hours](https://github.com/Dejai/iris/tree/master/tools/sumOfHours)
 This tool was created as a way to easily summarize the number of hours logged for our development tickets. [Checkout this tool.](/tools/sumOfHours)
