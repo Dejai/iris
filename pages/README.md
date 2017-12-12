@@ -3,7 +3,8 @@
 > <br/>
 > This repository contains pages related to IRIS features, testing, and general practicing of HTML/CSS/JS.
 > <br/><br/>
-> [View in Github](https://github.com/Dejai/iris/master/tree/pages)
+[View in Github](https://github.com/Dejai/iris/blob/master/pages/)
+
 ----
 
 ### [Practice](https://dejai.github.io/iris/pages/practice)
