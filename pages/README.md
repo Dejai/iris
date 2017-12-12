@@ -1,9 +1,9 @@
 # Pages
-
+[View in Github](https://github.com/Dejai/iris/blob/master/pages/)
 > <br/>
 > This repository contains pages related to IRIS features, testing, and general practicing of HTML/CSS/JS.
 > <br/><br/>
-[View in Github](https://github.com/Dejai/iris/blob/master/pages/)
+
 
 ----
 
