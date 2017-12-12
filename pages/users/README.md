@@ -33,12 +33,12 @@ ___
 
 
 ### [IRIS 4.0 Beta Tasks & Scenarios](https://dejai.github.io/iris/pages/users/iris_4.0.html)
-> Date: December, 2015
+> Date: December, 2015 <br/><br/>
 > Description: This page highlights major changes in user workflow for IRIS 4.0, and is based on common user roles. 
 
 ___
 
 ### [Advanced Filters and Multiple Status Change](https://dejai.github.io/iris/pages/users/betaTasks.html)
-> Date: November, 2015
+> Date: November, 2015 <br/><br/>
 > Description: This page highlights 2 features in one release.
 
