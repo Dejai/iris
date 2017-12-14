@@ -12,7 +12,8 @@ This tool was created as a way to append a unique session ID and a success param
 -------
 
 ### [The Affiliate Table Manager](https://dejai.github.io/iris/tools/atm)
-This tool was created as a way to easily manage the users and topics in the table of users that was used with [The Email Generator Gadget (EGG)](https://dejai.github.io/iris/tools/egg)
+This tool was created as a way to easily manage the users and topics in the table of users that was used with [The Email Generator Gadget (EGG)](https://dejai.github.io/iris/tools/egg). [Checkout this tool.](https://dejai.github.io/iris/tools/atm)
+
 
 -------
 
