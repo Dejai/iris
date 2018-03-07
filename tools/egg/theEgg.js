@@ -211,7 +211,7 @@ generateEmail(emailCounter, toEmails, ccEmails, subjectLine, greeting);
 function generateEmail(counter, toEmails, ccEmails, subjectLine, greeting){
 try{
   processingImg("show");
-  if (counter < 20){
+  if (counter < 7){
     document.getElementById("tooManyEmails").style.display = "none";
     //iterateSelectedAffil();			
     window.location.href = "mailto:"+toEmails+ccEmails+subjectLine+greeting;
