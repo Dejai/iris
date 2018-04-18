@@ -23,7 +23,34 @@ var affiliateTables, theOrgsTable , thePeoplesTable, theTopicsTable, allTopics, 
 var multiAffilBool = false;
 var orgtoARM = {};
 
-document.addEventListener('DOMContentLoaded', init , true);
+document.addEventListener('DOMContentLoaded', loadTable, true);
+
+function loadTable(){
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200){
+      document.getElementById("tableContainer").innerHTML = xhttp.responseText;
+      loadEggView();
+    } else if (this.readyState == 4 && this.status !== 200){
+      alert("Something went wrong! Couldn't load the user table");
+    }
+  };
+  xhttp.open("GET", "./contacts.html", true);
+  xhttp.send();
+}
+function loadEggView(){
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200){
+      document.getElementById("eggContainer").innerHTML = xhttp.responseText;
+      init();
+    } else if (this.readyState == 4 && this.status !== 200){
+      alert("Something went wrong! Couldn't load the Egg View!");
+    }
+  };
+  xhttp.open("GET", "./theEgg.html", true);
+  xhttp.send();
+}
 
 /* GETTING STARTED - Building the components, and setting event listeners */
 function init(){
