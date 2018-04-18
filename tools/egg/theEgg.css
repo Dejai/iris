@@ -21,3 +21,4 @@
 #multipleAffilTable tr td { font-size:12px; }
 .selectedEmailType { background-color:blue; color:white; cursor:initial; }
 .marginAuto { margin:auto; }
+.ccCheckboxes { width:20%;display:inline-block; }
