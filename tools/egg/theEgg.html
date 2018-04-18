@@ -43,17 +43,30 @@
 	<label class="formLabel">Subject Line (optional)</label><br/>
 	<input id="subjectLine" placeholder = "Enter subject line" onclick="this.select();"/>
 	<br/><br/>
-	<label class="formLabel">Include ARM? &nbsp;</label>
-	Yes <input type="radio" name="includeARMS" class="include" value="yes" checked />
-	&nbsp;&nbsp;
-	No <input type="radio" name="includeARMS" class="include" value="no" />
-	<br/><br/>
-	<label class="formLabel">Include BROS? &nbsp;</label>
-	Yes <input type="radio" name="includeBROS" class="include" value="yes" checked />
-	&nbsp;&nbsp;
-	No <input type="radio" name="includeBROS" class="include" value="no" />
+
+	<h4>Would you like to CC anyone?</h4>
+	<p class="ccCheckboxes">
+		<label class="formLabel">ARMs</label><br/>
+		<input type="checkbox" id="includeARMS" class="include" checked/>
+	</p>
+	<p class="ccCheckboxes">
+		<label class="formLabel">IRIS Admins</label><br/>
+		<input type="checkbox" id="includeAdmins" class="include" checked/>&nbsp;
+	</p>
+	<p class="ccCheckboxes">
+		<label class="formLabel">IRIS PM</label><br/>
+		<input type="checkbox" id="includePM" class="include" checked/>&nbsp;
+	</p>
+	<p class="ccCheckboxes">
+		<label class="formLabel">IRIS BAs</label><br/>
+		<input type="checkbox" id="includeBAs" class="include" checked/>&nbsp;
+	</p>
 	<br/>
+	<span style="color:darkorange;font-size:12px;">NOTE: Your own email may be CC'd as well.</span>
 	<br/><br/>
+	
+	
+	
 	<button id="sendAffilEmail"> Generate Email </button>
 	<p id="errorMessageForm" style="display:none;color:red;">Something went wrong!</p>
 	<br/>
