@@ -60,6 +60,7 @@
             orgRows_atm = theRightOrgsTable.querySelectorAll("tbody tr");
         } catch (err) {
             atmWindow.alert(err);
+	    atmWindow.console.log(err);
         }
     }
 
@@ -369,7 +370,6 @@
                     var newTopicLI = originalWindow.document.createElement("li");
                     var newTopicLI_text = originalWindow.document.createTextNode(value);
                     newTopicLI.appendChild(newTopicLI_text);
-                    atmWindow.console.log(newTopicLI);
                     theULElement.appendChild(newTopicLI);
                     numberAdded++; 
                 }
@@ -379,6 +379,7 @@
 
         } catch (err) {
             atmWindow.alert(err);
+	    atmWindow.console.log(err);
         }
     }
 
@@ -396,13 +397,13 @@
             row.append(columnOne);
             row.append(columnTwo);
 
-            atmWindow.console.log(row);
             var lastRowIndex = topicRows_atm.length-1;
             var parent = topicRows_atm[lastRowIndex].parentNode;  
             parent.insertBefore(row, parent.childNodes[lastRowIndex-1]);
             sortTable("topics");
         } catch (err) {
             atmWindow.alert(err);
+	    atmWindow.console.log(err);
         }
     }
 
@@ -484,7 +485,6 @@
             row.append(columnThree);
             row.append(columnFour);
 
-            atmWindow.console.log(row);
             var lastRowIndex = orgRows_atm.length-1;
             var parent = orgRows_atm[lastRowIndex].parentNode;  
             parent.insertBefore(row, parent.childNodes[lastRowIndex-1]);
@@ -493,6 +493,7 @@
 
         } catch (err) {
             atmWindow.alert(err);
+	    atmWindow.console.log(err);
         }
     }
 
@@ -551,8 +552,6 @@
         let resultsState = isSuccess ? "Success:<br/><br/>" : "Error!<br/><br/>";
 
         let resultsMessage = resultsState + "<em>" + value + "</em>" + verbage;
-        //atmWindow.alert(resultsMessage);
-
 
         var resultsColor = "";
         if (entityName == "topic" && topicsCount == 0){
@@ -605,6 +604,7 @@
             addEditPersonListener();
         } catch (err){
             atmWindow.alert(err);
+	    atmWindow.console.log(err);
         }
     }
 
@@ -647,7 +647,6 @@
     function sortTable(whichRows){
         getTablesForATM();
         let rowsToSort = whichRows == "affils" ? affilRows_atm : whichRows == "orgs" ? orgRows_atm : topicRows_atm;
-        atmWindow.console.log(rowsToSort);
         for (var x = 2; x < rowsToSort.length; x++){
             if (rowsToSort.length == 1){ return; }
             if (x == 2){ continue; }
@@ -668,14 +667,12 @@
                 let compare = topRowValue.localeCompare(bottomRowValue);
                 
                 if (compare > 0){
-                    //atmWindow.console.log("Swap Rows: " + bottomRowValue + " - " + topRowValue);
                     swapRows(topRowCols, bottomRowCols);
                 } else if (compare == 0) {
                     let topRowValue2 = topRowCols[1].innerHTML;
                     let bottomRowValue2 = bottomRowCols[1].innerHTML;
                     let compare2 = topRowValue2.localeCompare(bottomRowValue2);
                     if (compare2 > 0){
-                        //atmWindow.console.log("Swap Rows: " + bottomRowValue2 + " - " + topRowValue2);
                         swapRows(topRowCols, bottomRowCols);
                     }
                 }
