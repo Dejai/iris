@@ -2,6 +2,7 @@
 .confluenceTable { width:50% }
 .confluenceTable td { padding-left:1%; }
 #howItWorksDiv { width:35%;  margin-left:5%; }
+#howItWorksSentence { color:blue; cursor:pointer; width:35%; margin-left:5%; padding:0%; }
 #formSection { width:35%; float:left; margin-left:5%; border:1px solid black; border-radius:5px; text-align:center; padding:1%; }
 @media only screen and (max-width:900px){ #formSection { width:60%; } }
 #tooManyEmails {display:none; float:left; margin-left:2%; border:1px solid black; border-radius:5px; padding:1%; }
