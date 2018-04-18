@@ -30,12 +30,8 @@
 	<input id="organizations" class="marginAuto" placeholder="Type to search" onClick="this.select(); this.value=''; this.value=''; "/>
 	<button id="nextAffil" class="iterateAffils">Next</button>
 	<table id="multipleAffilTable" class="marginAuto">
-		<tr><td><input id="selectAllOrgs" type="checkbox" name="SelectAll" value="ALL"/>ALL</td></tr> 
-		<tr> 
-			<td><input type="checkbox" name="organizations" value="Company #1"/>Company #1</td>
-			<td><input type="checkbox" name="organizations" value="Company #2"/>Company #2</td>
-			<td><input type="checkbox" name="organizations" value="Company #3"/>Company #3</td>
-		</tr>  
+		<tr><td><input id="selectAllOrgs" type="checkbox" name="SelectAll" value="ALL"/>ALL</td></tr>
+		<tbody id="multipleOrgCheckboxes"></tbody>
 	</table>
 	<p id="orgError" class="errorMsg">Please select an organization</p>
 	<br/><br/>
