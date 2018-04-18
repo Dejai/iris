@@ -1,6 +1,25 @@
 <!-- ****** LIST OF ORGS ***** -->
 <datalist id="orgsList"></datalist>
 <datalist id="optionsList"></datalist>
+<div id="howItWorksDiv"  style="display:none;">
+	<ul>
+		<li><p>The tool scans the tables above to get a list of the following:</p>
+			<ul>
+				<li>Organizations</li>
+				<li>Topics</li>
+				<li>People (+ their associated topics)</li>
+			</ul>
+		</li><br/>
+		<li><p style="color:red;">Scanning these tables is very "finicky", so it is important that each row has a consistent format</p></li><br/>
+		<li><p>A user's email address will be included in the generated email if they meet the following criteria:</p>
+			<ul>
+				<li><strong>Their affiliate name is the selected affiliate in the form below</strong></li>
+				<br/>
+				<li><strong>They have the selected topic checked off in their list of topics.</strong></li>
+			</ul>
+		</li>
+	</ul>
+</div>
 <div id="formSection">
 	<span id="emailSingleAffil" class="typeOfEmail selectedEmailType"> Single Affiliate </span>
 	<span id="emailMultipleAffils" class="typeOfEmail"> Multiple Affiliates </span>
