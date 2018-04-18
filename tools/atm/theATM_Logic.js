@@ -33,27 +33,16 @@
         atmWindow = window.open("", "_blank", windowDim);
         atmWindow.document.write(style + dataList + orgsDataList + description + menuList + resultsMessages + helpAndTips + addTopicForm + addAffiliateForm + checkAffiliateForm);
 
-        getTablesForATM("view");
+        getTablesForATM();
         init_atm();
     }
     
     //  Scans the table on the confluence page to get a list of the users
     // The 'pageState' variable indicates whether or not to scan the page in edit mode.
-    function getTablesForATM(pageState){
+    function getTablesForATM(){
         try{
-            if (pageState == "view"){
-                theTables = originalWindow.document.getElementsByTagName("table");   
-                atmWindow.console.log("iFrame in " + pageState + " Mode?");
-                atmWindow.console.log(theTables);
-            } else if (pageState == "edit"){
-                ifr = originalWindow.document.getElementById("wysiwygTextarea_ifr");
-                atmWindow.console.log("iFrame in " + pageState + " Mode?");
-                atmWindow.console.log(ifr);
-                ifrDoc = ifr.contentDocument || ifr.contentWindow.document;
-                theTables = ifrDoc.getElementsByTagName("table");
-            } else {
-                alert("Something went wrong! Tried to " + pageState + " the page, but could not!");
-            }
+            
+            theTables = originalWindow.document.getElementsByTagName("table");
             for (var x = 0; x < theTables.length; x++) {
                 var headers = theTables[x].querySelectorAll("tbody tr th");
                 for (var y = 0; y < headers.length; y++) {
@@ -359,7 +348,7 @@
     // Returns a count of how many people it was added to.
     // It does *NOT* automatically check it for the users, just adds it as an option
     function addTopicsToExistingRows(value, description) {
-        getTablesForATM("edit");
+        getTablesForATM();
         try {
             if (!alltopics_atm.includes(value)){
                 alltopics_atm.push(value);
@@ -419,7 +408,7 @@
 
     // Adds a new Affiliate to the Affiliate table
     function addNewAffilRow(nameVal, orgNameVal , emailVal, isNewOrg) {
-        getTablesForATM("edit");
+        getTablesForATM();
         try {
             var row = originalWindow.document.createElement("tr");
             var columnOne = originalWindow.document.createElement("td");
@@ -509,7 +498,7 @@
 
     // Edits the currently loaded person, updating any information that changed
     function editAffilRow(nameVal, orgNameVal, emailVal){
-        getTablesForATM("edit");
+        getTablesForATM();
         try{
             let rowNum = atmWindow.document.getElementById("hiddenRowNum").value;
             let TDs = affilRows_atm[rowNum].querySelectorAll("td.confluenceTd");
@@ -656,7 +645,7 @@
 
     // This function sorts the table after any changes that are made to the listed folks
     function sortTable(whichRows){
-        getTablesForATM("edit");
+        getTablesForATM();
         let rowsToSort = whichRows == "affils" ? affilRows_atm : whichRows == "orgs" ? orgRows_atm : topicRows_atm;
         atmWindow.console.log(rowsToSort);
         for (var x = 2; x < rowsToSort.length; x++){
