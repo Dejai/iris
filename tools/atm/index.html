@@ -2,23 +2,24 @@
 <html>
 <head>
 	<title>The Affiliate Table Manager (ATM)</title>
-  <script type="text/javascript">
-    document.addEventListener("DOMContentLoaded", function(){
-      var xhttp = new XMLHttpRequest();
-      xhttp.onreadystatechange = function(){
-        if (this.readyState == 4 && this.status == 200){
-          document.getElementById("tableContainer").innerHTML = this.responseText;
-        }
-      }
-      xhttp.open("GET", "../egg/contacts.html", true);
-      xhttp.send();
-	    
-    });
-  </script>
-<script type="text/javascript" src="./theATM_View.js"></script>
-  <style>
-	  #startATM { font-size:16px; cursor:pointer; border-radius:10px; background-color:orange; color:black;}
-  </style>
+ 	<script type="text/javascript">
+		document.addEventListener("DOMContentLoaded", function(){
+      			var xhttp = new XMLHttpRequest();
+      			xhttp.onreadystatechange = function(){
+	        		if (this.readyState == 4 && this.status == 200){
+		          		document.getElementById("tableContainer").innerHTML = this.responseText;
+	        		}
+      			}
+      			xhttp.open("GET", "../egg/contacts.html", true);
+	      		xhttp.send();
+		});
+ 	</script>
+	<script type="text/javascript" src="./theATM_View.js"></script>
+	<style>
+		#startATM { font-size:16px; cursor:pointer; border-radius:10px; background-color:orange; color:black;}
+		.confluenceTable { width:50%; margin-bottom:5%; }
+		.confluenceTable td { padding-left:1%; }
+  	</style>
 </head>
 <body>
 	
