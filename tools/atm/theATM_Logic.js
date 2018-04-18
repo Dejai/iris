@@ -35,10 +35,6 @@
 
         getTablesForATM("view");
         init_atm();
-        originalWindow.location.assign("https://wiki.pubsvs.com/pages/resumedraft.action?draftId=38093736&draftShareId=c4a37cf3-eb06-44da-a4b0-49b409b5a524");
-        originalWindow.on("DOMContentLoaded", function(){
-            atmWindow.alert("Edit Page loaded");
-        });
     }
     
     //  Scans the table on the confluence page to get a list of the users
