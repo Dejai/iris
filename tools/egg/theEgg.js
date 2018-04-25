@@ -265,34 +265,34 @@ startEmail(orgArray, topic.value);
 /* EXECUTION - Processing selected values to generate an email */
 function startEmail(orgValue, topicName){
 	var toEmails = "";
-	var ccEmails = "?cc=";
+	var ccEmails = "cc=";
 	var subj = document.getElementById("subjectLine");
-	var subjectLine = subj.value ? "&subject=" + encodeURI(subj.value) : "";
+	var subjectLine = subj.value ? "subject=" + encodeURI(subj.value) : "";
 	var emailCounter = 0;
 
 	var includeARMS = document.getElementsByName("includeARMS");
 	var includeBROS = document.getElementsByName("includeBROS");
 
 	for (var x = 0; x < listOfPeople.length; x++){
-//if ( (listOfPeople[x].affiliate == orgValue || orgValue == "Agora Family") && listOfPeople[x].topics.includes(topicName)){ 
-	if ( orgValue.includes(listOfPeople[x].affiliate) && listOfPeople[x].topics.includes(topicName)){ 
-		emailCounter += 1;
-		toEmails += listOfPeople[x].name + " <" + listOfPeople[x].email + ">;";
-	}	
-}
+		//if ( (listOfPeople[x].affiliate == orgValue || orgValue == "Agora Family") && listOfPeople[x].topics.includes(topicName)){ 
+		if ( orgValue.includes(listOfPeople[x].affiliate) && listOfPeople[x].topics.includes(topicName)){ 
+			emailCounter += 1;
+			toEmails += listOfPeople[x].name + " <" + listOfPeople[x].email + ">;";
+		}	
+	}
 
 
-var includeARMS = document.getElementById("includeARMS");
-var includeAdmins = document.getElementById("includeAdmins");
-var includeBAs = document.getElementById("includeBAs");
-var includePM = document.getElementById("includePM");
+	var includeARMS = document.getElementById("includeARMS");
+	var includeAdmins = document.getElementById("includeAdmins");
+	var includeBAs = document.getElementById("includeBAs");
+	var includePM = document.getElementById("includePM");
 
-if (includeARMS.checked){ ccEmails += addARM(orgValue);	}
-if (includeAdmins.checked){ ccEmails += irisBros["admins"];	}
-if (includeBAs.checked){ ccEmails += irisBros["BAs"]; }
-if (includePM.checked){ ccEmails += irisBros["PM"];	}
+	if (includeARMS.checked){ ccEmails += addARM(orgValue);	}
+	if (includeAdmins.checked){ ccEmails += irisBros["admins"];	}
+	if (includeBAs.checked){ ccEmails += irisBros["BAs"]; }
+	if (includePM.checked){ ccEmails += irisBros["PM"];	}
 
-generateEmail(emailCounter, toEmails, ccEmails, subjectLine);
+	generateEmail(emailCounter, toEmails, ccEmails, subjectLine);
 }
 
 function generateEmail(counter, toEmails, ccEmails, subjectLine){
@@ -300,22 +300,23 @@ function generateEmail(counter, toEmails, ccEmails, subjectLine){
 		processingImg("show");
 		if (counter < 20){
 			document.getElementById("tooManyEmails").style.display = "none";
-	//iterateSelectedAffil();			
-	window.location.href = "mailto:"+toEmails+ccEmails+subjectLine;
-	setTimeout(function(){ processingImg("hide"); }, 1200);
-} else {
-	processingImg("hide");
-	document.getElementById("tooManyEmails").style.display = "block";
-	tooManyEmails(toEmails, ccEmails);
-}
+	let theCC = ccEmails == "cc=" ? "" : "?" + ccEmails;
+	let theSubLine = subjectLine == "subject=" ? "" : theCC == "" ? "?" + subjectLine : "&" + subjectLine;				
+			let mailToVals = toEmails+theCC+theSubLine;
+			window.location.href = "mailto:"+mailToVals;
+			setTimeout(function(){ processingImg("hide"); }, 1200);
+		} else {
+			processingImg("hide");
+			document.getElementById("tooManyEmails").style.display = "block";
+			tooManyEmails(toEmails, ccEmails);
+		}
 
-
-if(!multiAffilBool){
-	iterateSelectedAffil();
-}
-} catch(err){
-	alert(err);
-}
+		if(!multiAffilBool){
+			iterateSelectedAffil();
+		}
+	} catch(err){
+		alert(err);
+	}
 }
 
 function processingImg(visible){
