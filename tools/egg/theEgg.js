@@ -110,9 +110,9 @@ function init(){
 	
 	document.getElementById("toggleCustomerTable").addEventListener("click", function(){
 		let table = document.getElementById("tableContainer");
-		let view = table.display == "block" ? "none" : "block";
+		let view = table.style.display == "block" ? "none" : "block";
 		console.log(view);
-		table.display = view;
+		table.style.display = view;
 	});
 
 	getTables();
