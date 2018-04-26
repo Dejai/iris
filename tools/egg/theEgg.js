@@ -107,6 +107,12 @@ function init(){
 			}
 		}
 	});
+	
+	document.getElementById("toggleCustomerTable").addEventListener("click", function(){
+		let table = document.getElementById("tableContainer");
+		let view = table.display == "block" ? "none" : "block";
+		table.display = view;
+	});
 
 	getTables();
 	getListOfPeople();
