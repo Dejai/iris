@@ -6,6 +6,7 @@
 #formSection { width:35%; float:left; margin-left:5%; border:1px solid black; border-radius:5px; text-align:center; padding:1%; }
 @media only screen and (max-width:900px){ #formSection { width:60%; } }
 #tooManyEmails {display:none; float:left; margin-left:2%; border:1px solid black; border-radius:5px; padding:1%; }
+.additionalInfoBox {display:none; float:left; margin-left:2%; border:1px solid black; border-radius:5px; padding:1%; }
 #processingIndicator { display:none; float:left; margin-left:2%; padding:1%; text-align:center; }
 .errorMsg { display:none; color:red; }
 .formLabel { text-weight:bold; color:blue; margin-right:10px;}
