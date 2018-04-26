@@ -298,15 +298,21 @@ function startEmail(orgValue, topicName){
 function generateEmail(counter, toEmails, ccEmails, subjectLine){
 	try{
 		processingImg("show");
-		if (counter < 20){
+		if (counter < 1){
+			processingImg("hide");
+			document.getElementById("noMatchesFoundDiv").style.display = "block";
 			document.getElementById("tooManyEmails").style.display = "none";
-	let theCC = ccEmails == "cc=" ? "" : "?" + ccEmails;
-	let theSubLine = subjectLine == "subject=" ? "" : theCC == "" ? "?" + subjectLine : "&" + subjectLine;				
+		} else if (counter > 0 && counter < 20){
+			document.getElementById("noMatchesFoundDiv").style.display = "none";
+			document.getElementById("tooManyEmails").style.display = "none";
+                	let theCC = ccEmails == "cc=" ? "" : "?" + ccEmails;
+                	let theSubLine = subjectLine == "subject=" ? "" : theCC == "" ? "?" + subjectLine : "&" + subjectLine;				
 			let mailToVals = toEmails+theCC+theSubLine;
 			window.location.href = "mailto:"+mailToVals;
 			setTimeout(function(){ processingImg("hide"); }, 1200);
 		} else {
 			processingImg("hide");
+			document.getElementById("noMatchesFoundDiv").style.display = "none";
 			document.getElementById("tooManyEmails").style.display = "block";
 			tooManyEmails(toEmails, ccEmails);
 		}
